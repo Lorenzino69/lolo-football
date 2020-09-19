@@ -30,6 +30,7 @@ import {MatExpansionModule} from '@angular/material/expansion';
 import {SafePipe} from './Pipe/safe.pipe';
 import {MatTabsModule} from '@angular/material/tabs';
 import { ResultatComponent } from './components/resultat/resultat.component';
+import { StatComponent } from './components/stat/stat.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { ResultatComponent } from './components/resultat/resultat.component';
     LeagueComponent,
     SafePipe,
     ResultatComponent,
+    StatComponent,
   ],
   imports: [
     BrowserModule,

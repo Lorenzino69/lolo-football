@@ -1,0 +1,71 @@
+<div class="ResultCard">
+  <mat-accordion *ngFor="let data of data ; let i=index">
+    <mat-expansion-panel hideToggle >
+      <mat-expansion-panel-header (click)="getMatch(data.side1,data.side2)">
+        <mat-panel-title class="ResultLine">
+          <div class="over">
+            <div class="sub-date-line">
+              <div>{{data.date | date}}</div>
+            </div>
+          </div>
+          <div class="team">
+            <div class="name"><strong>{{data.side1}}</strong></div>
+            <img
+              class="team-logo"
+              src="https://s3.amazonaws.com/bookmkrs/img/logos/mini/{{data.side1ScId}}.png">
+          </div>
+          <!--            score-->
+
+          <div class="date-or-score">
+            <!-- Not Started Yet-->
+            <div class="not-started" *ngIf="data.s === '-'">
+              <div class="score-line">
+                <mat-icon>alarm</mat-icon>
+              </div>
+              <div
+                class="sub-score-line"
+              >{{(data.date | date) }} : {{(data.date | date)}}}
+              </div>
+            </div>
+            <!-- Postponed -->
+            <div class="not-over" *ngIf="data.status === 'Pst'">
+              <div class="score-line">{{ data.score1 }} - {{ data.score2 }}</div>
+              <div class="sub-score-line">Prolongations</div>
+            </div>
+            <div class="not-over" *ngIf="data.status === '2T'">
+              <div class="score-line">{{ data.score1 }} - {{ data.score2 }}</div>
+              <div class="sub-score-line">2ème Mi-temps</div>
+            </div>
+            <!-- Full Time -->
+            <div class="over" *ngIf="data.status === 'FT'">
+              <div class="score-line">{{ data.score1 }} - {{ data.score2 }}</div>
+              <div class="sub-score-line">Fin du match</div>
+            </div>
+            <!-- On Going -->
+            <div class="on-going" *ngIf="data.status === 'HT'">
+              <div class="score-line">{{ data.score1 }} - {{ data.score2 }}</div>
+              <div class="sub-score-line">
+                <div *ngIf="data.s === 'HT'">Mi-temps</div>
+              </div>
+            </div>
+          </div>
+
+          <!--            fin score-->
+          <div class="team">
+            <div class="name"><strong>{{data.side2}}</strong></div>
+            <img
+              class="team-logo"
+              src="https://s3.amazonaws.com/bookmkrs/img/logos/mini/{{data.side2ScId}}.png">
+          </div>
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <div style='width:100%;height:0px;position:relative;padding-bottom:calc(56.25% + 335px);'>
+        <div  *ngIf="events.t === 'goal'">
+          <img src="https://cdn.icon-icons.com/icons2/390/PNG/512/soccer-ball_39433.png" alt="">
+<!--          <div class="score-line">{{ events.m }}min &nbsp;&nbsp;{{ events.n }}<img src="https://cdn.icon-icons.com/icons2/390/PNG/512/soccer-ball_39433.png" alt=""> {{ data.score2 }}</div>-->
+        </div>
+      </div>
+    </mat-expansion-panel>
+  </mat-accordion>
+</div>
+<script>(function(d, s, id) { var js, fjs = d.getElementsByTagName(s)[0]; if (d.getElementById(id)) return; js = d.createElement(s); js.id = id; js.src = 'https://www.scorebat.com/embed/embed.js?v=arrv'; fjs.parentNode.insertBefore(js, fjs); }(document, 'script', 'scorebat-jssdk'));</script>

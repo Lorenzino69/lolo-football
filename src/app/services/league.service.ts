@@ -25,6 +25,10 @@ export class LeagueService {
     return this.http.get(`https://www.scorebat.com/api/feed`);
   }
 
+  getMatch(team1: string, team2:string): Observable<any> {
+    return this.http.get(`https://www.scorebat.com/api/feed/match/${team1}/${team2}`);
+  }
+
 
 
 }
