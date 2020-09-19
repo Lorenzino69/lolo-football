@@ -27,6 +27,8 @@ import { MatCardModule } from '@angular/material/card';
 import { MatMenuModule } from '@angular/material/menu';
 import {LeagueService} from './services/league.service';
 import {HttpClientModule} from '@angular/common/http';
+import {MatExpansionModule} from '@angular/material/expansion';
+import {SafePipe} from './Pipe/safe.pipe';
 
 @NgModule({
   declarations: [
@@ -38,7 +40,8 @@ import {HttpClientModule} from '@angular/common/http';
     SerieAComponent,
     PremierLeagueComponent,
     LeagueComponent,
-    ResultsComponent
+    ResultsComponent,
+    SafePipe
   ],
   imports: [
     BrowserModule,
@@ -57,7 +60,8 @@ import {HttpClientModule} from '@angular/common/http';
     MatGridListModule,
     MatCardModule,
     MatMenuModule,
-    HttpClientModule
+    HttpClientModule,
+    MatExpansionModule
   ],
   providers: [LeagueService],
   bootstrap: [AppComponent]

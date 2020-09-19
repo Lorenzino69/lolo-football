@@ -21,8 +21,8 @@ export class LeagueService {
     return this.http.get(`https://www.scorebat.com/api/competition/${id}`);
   }
 
-  getTVAiringToday(page: number): Observable<any> {
-    return this.http.get(`${this.baseUrl}tv/airing_today?api_key=${this.apiKey}&page=${page}&language=${this.language}`);
+  getFeed(): Observable<any> {
+    return this.http.get(`https://www.scorebat.com/api/feed`);
   }
 
 

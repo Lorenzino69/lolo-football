@@ -1,31 +1,69 @@
-<!--<mat-sidenav-container class="sidenav-container">-->
-<!--  <mat-sidenav #drawer class="sidenav" fixedInViewport-->
-<!--      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"-->
-<!--      [mode]="(isHandset$ | async) ? 'over' : 'side'"-->
-<!--      [opened]="(isHandset$ | async) === false">-->
-<!--    <mat-toolbar>Menu</mat-toolbar>-->
-<!--    <mat-nav-list>-->
-<!--      <a mat-list-item routerLink="/Ligue1">Ligue 1</a>-->
-<!--      <a mat-list-item routerLink="/Bundesliga">BundesLiga</a>-->
-<!--      <a mat-list-item routerLink="/LigueA">Ligue A</a>-->
-<!--      <a mat-list-item routerLink="/SerieA">Série A</a>-->
-<!--      <a mat-list-item routerLink="/PremierLeague">Première League</a>-->
-<!--    </mat-nav-list>-->
-<!--  </mat-sidenav>-->
-<!--  <mat-sidenav-content>-->
-<!--    <mat-toolbar color="primary">-->
-<!--      <button-->
-<!--        type="button"-->
-<!--        aria-label="Toggle sidenav"-->
-<!--        mat-icon-button-->
-<!--        (click)="drawer.toggle()"-->
-<!--        *ngIf="isHandset$ | async">-->
-<!--        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>-->
-<!--      </button>-->
-<!--      <span>LOLO-FOOTBALL</span>-->
-<!--    </mat-toolbar>-->
-<!--    &lt;!&ndash; Add Content Here &ndash;&gt;-->
-<!--  </mat-sidenav-content>-->
-<!--</mat-sidenav-container>-->
-<div>home works</div>
+<div class="ResultCard">
+  <mat-accordion *ngFor="let data of data ; let i=index">
+    <div *ngIf="i<10">
+      <mat-expansion-panel hideToggle>
+        <mat-expansion-panel-header>
+          <mat-panel-title class="ResultLine">
+            <div class="team">
+              <div class="name"><strong>{{data.s1}}</strong></div>
+              <img
+                class="team-logo"
+                src="https://s3.amazonaws.com/bookmkrs/img/logos/mini/{{data.s1Id}}.png">
+            </div>
+            <!--            score-->
 
+            <div class="date-or-score">
+              <!-- Not Started Yet-->
+              <div class="not-started" *ngIf="data.s === '-'">
+                <div class="score-line">
+                  <mat-icon>alarm</mat-icon>
+                </div>
+                <div
+                  class="sub-score-line"
+                >{{(data.dt * 1000) }} : {{(data.dt * 1000)}}}
+                </div>
+              </div>
+              <!-- Postponed -->
+              <div class="not-over" *ngIf="data.s === 'Pst'">
+                <div class="score-line">{{ data.sc1 }} - {{ data.sc2 }}</div>
+                <div class="sub-score-line">Prolongations</div>
+              </div>
+              <div class="not-over" *ngIf="data.s === '2T'">
+                <div class="score-line">{{ data.sc1 }} - {{ data.sc2 }}</div>
+                <div class="sub-score-line">2ème Mi-temps</div>
+              </div>
+              <!-- Full Time -->
+              <div class="over" *ngIf="data.s === 'FT'">
+                <div class="score-line">{{ data.sc1 }} - {{ data.sc2 }}</div>
+                <div class="sub-score-line">Fin du match</div>
+              </div>
+              <!-- On Going -->
+              <div class="on-going" *ngIf="data.s === 'HT'">
+                <div class="score-line">{{ data.sc1 }} - {{ data.sc2 }}</div>
+                <div class="sub-score-line">
+                  <div *ngIf="data.s === 'HT'">Mi-temps</div>
+                </div>
+              </div>
+            </div>
+
+            <!--            fin score-->
+            <div class="team">
+              <div class="name"><strong>{{data.s2}}</strong></div>
+              <img
+                class="team-logo"
+                src="https://s3.amazonaws.com/bookmkrs/img/logos/mini/{{data.s2Id}}.png">
+              <!--            src="https://s3.amazonaws.com/bookmkrs/img/logos/mini/{{row.teamScId}}.png"-->
+
+            </div>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <div style='width:100%;height:0px;position:relative;padding-bottom:calc(350px);' class='_scorebatEmbeddedPlayerW_'>
+          <iframe src='https://www.scorebat.com/embed/g/960500/' frameborder='0' width='560' height='650'
+                  allowfullscreen allow='autoplay; fullscreen' style='width:100%;height:100%;
+position:absolute;left:0px;top:0px;overflow:hidden;' class='_scorebatEmbeddedPlayer_'></iframe>
+        </div>
+      </mat-expansion-panel>
+    </div>
+  </mat-accordion>
+
+</div>

@@ -15,3 +15,63 @@
   top: 0;
   z-index: 1;
 }
+.ResultCard{
+  width:auto;
+  margin:10px;
+  justify-content: space-between;
+}
+.ResultLine{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height:auto;
+}
+.mat-expansion-panel-header{
+  height:100px !important;
+  padding:0;
+}
+.team{
+  width: 40vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 250px;
+}
+
+.date-or-score {
+  display: flex;
+  max-width: 50px;
+  font-weight: bold;
+}
+
+.score-line {
+  font-size: 1.5em;
+
+}
+
+.sub-score-line {
+  font-size: 0.7em;
+  width:75px;
+}
+
+.not-started {
+  color: #757575;
+}
+
+.on-going .score-line {
+  color: #9a3a44;
+}
+
+.over {
+  color: darkgrey;
+}
+.team-logo {
+  margin: 0 15px;
+  max-width: 50px;
+}
+
+.mat-panel-title{
+  width:250px;
+}
+
