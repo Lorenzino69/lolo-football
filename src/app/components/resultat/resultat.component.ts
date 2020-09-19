@@ -21,6 +21,7 @@ export class ResultatComponent implements OnInit {
     );
   data: any;
   public url: any;
+  private stats: any;
 
   constructor(private breakpointObserver: BreakpointObserver,private leagueService: LeagueService,private route: ActivatedRoute) {
   }
@@ -33,6 +34,8 @@ export class ResultatComponent implements OnInit {
       this.leagueService.getLigue(id).subscribe(
         res => {
           this.data = res.response.results;
+          this.stats = res.response
+          console.log(this.stats)
         }, () => {
           console.log("erreur d'appel a league service");
         });

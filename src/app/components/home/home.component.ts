@@ -35,6 +35,7 @@ export class HomeComponent implements  OnInit{
       res => {
 
         this.data = res.response.g;
+        console.log(res.response);
         this.url = ('https://www.scorebat.com/embed/g/'+ this.data)
       }, () => {
         console.log("erreur d'appel a league service");

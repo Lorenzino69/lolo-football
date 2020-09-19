@@ -7,7 +7,7 @@ import {PremierLeagueComponent} from './components/premier-league/premier-league
 import {Ligue1Component} from './components/ligue1/ligue1.component';
 
 export const appRoutes: Routes = [
-  { path: 'Home', component: HomeComponent},
+  { path: '', component: HomeComponent},
   { path: 'Ligue1/:id', component: Ligue1Component},
   { path: 'Bundesliga/:id', component: BundesligaComponent},
   { path: 'LigueA/:id', component: LigueAComponent},
