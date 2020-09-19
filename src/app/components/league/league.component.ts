@@ -63,19 +63,13 @@ export class LeagueComponent implements AfterViewInit, OnInit {
           this.data = res.response.standings.rows;
           const league = this.data;
           this.dataSource = new MatTableDataSource<LeagueItem>(this.data);
-          // console.log(this.data)
-          // console.log(EXAMPLE_DATA)
         }, () => {
           console.log("erreur d'appel a league service");
         });
     });
-    console.log(EXAMPLE_DATA);
-    // this.dataSource = new MatTableDataSource<LeagueItem>(this.data);
   }
 
   ngAfterViewInit() {
-    this.dataSource.sort = this.sort;
-    this.dataSource.paginator = this.paginator;
     this.table.dataSource = this.dataSource;
   }
 

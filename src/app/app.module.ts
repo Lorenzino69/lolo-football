@@ -21,7 +21,6 @@ import { LeagueComponent } from './components/league/league.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
-import { ResultsComponent } from './components/results/results.component';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
 import { MatMenuModule } from '@angular/material/menu';
@@ -29,6 +28,8 @@ import {LeagueService} from './services/league.service';
 import {HttpClientModule} from '@angular/common/http';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {SafePipe} from './Pipe/safe.pipe';
+import {MatTabsModule} from '@angular/material/tabs';
+import { ResultatComponent } from './components/resultat/resultat.component';
 
 @NgModule({
   declarations: [
@@ -40,8 +41,8 @@ import {SafePipe} from './Pipe/safe.pipe';
     SerieAComponent,
     PremierLeagueComponent,
     LeagueComponent,
-    ResultsComponent,
-    SafePipe
+    SafePipe,
+    ResultatComponent,
   ],
   imports: [
     BrowserModule,
@@ -61,7 +62,8 @@ import {SafePipe} from './Pipe/safe.pipe';
     MatCardModule,
     MatMenuModule,
     HttpClientModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatTabsModule
   ],
   providers: [LeagueService],
   bootstrap: [AppComponent]
