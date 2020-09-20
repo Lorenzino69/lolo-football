@@ -56,17 +56,18 @@ export class LeagueComponent implements AfterViewInit, OnInit {
   ngOnInit() {
 
 
-    this.route.params.subscribe((params) => {
+   const route =  this.route.params.subscribe((params) => {
       const id = params['id'];
-      this.leagueService.getLigue(id).subscribe(
+      const league = this.leagueService.getLigue(id).subscribe(
         res => {
           this.data = res.response.standings.rows;
-          const league = this.data;
           this.dataSource = new MatTableDataSource<LeagueItem>(this.data);
         }, () => {
           console.log("erreur d'appel a league service");
-        });
-    });
+        },
+        () => { if (league) { league.unsubscribe() } });
+    },
+     () => { if (route) { route.unsubscribe() } });
   }
 
   ngAfterViewInit() {

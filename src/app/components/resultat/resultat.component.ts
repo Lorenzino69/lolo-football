@@ -43,6 +43,11 @@ export class ResultatComponent implements OnInit {
   }
 
   getUrl(scid){
-    return this.url = "https://www.scorebat.com/embed/g/" + scid + "/";
+
+    // window.location.href = ('https://www.scorebat.com/embed/g/' + scid + '/', "_blank");
+    window.open('https://www.scorebat.com/embed/g/' + scid + '/', "_blank");
+    // return this.url = "https://www.scorebat.com/embed/g/" + scid + "/";
+
+
   }
 }
