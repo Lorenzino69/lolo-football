@@ -31,6 +31,8 @@ import {SafePipe} from './Pipe/safe.pipe';
 import {MatTabsModule} from '@angular/material/tabs';
 import { ResultatComponent } from './components/resultat/resultat.component';
 import { StatComponent } from './components/stat/stat.component';
+import { ActuComponent } from './components/actu/actu.component';
+import {ActuService} from './services/actu.service';
 
 @NgModule({
   declarations: [
@@ -45,6 +47,7 @@ import { StatComponent } from './components/stat/stat.component';
     SafePipe,
     ResultatComponent,
     StatComponent,
+    ActuComponent,
   ],
   imports: [
     BrowserModule,
@@ -67,7 +70,7 @@ import { StatComponent } from './components/stat/stat.component';
     MatExpansionModule,
     MatTabsModule
   ],
-  providers: [LeagueService],
+  providers: [LeagueService,ActuService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

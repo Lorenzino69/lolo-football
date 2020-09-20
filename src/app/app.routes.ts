@@ -5,9 +5,11 @@ import {LigueAComponent} from './components/ligue-a/ligue-a.component';
 import {SerieAComponent} from './components/serie-a/serie-a.component';
 import {PremierLeagueComponent} from './components/premier-league/premier-league.component';
 import {Ligue1Component} from './components/ligue1/ligue1.component';
+import {ActuComponent} from './components/actu/actu.component';
 
 export const appRoutes: Routes = [
-  { path: '', component: HomeComponent},
+  { path: '', component: ActuComponent},
+  { path: 'Home', component: HomeComponent},
   { path: 'Ligue1/:id', component: Ligue1Component},
   { path: 'Bundesliga/:id', component: BundesligaComponent},
   { path: 'LigueA/:id', component: LigueAComponent},
