@@ -13,6 +13,8 @@ export class ResultatDetailsComponent implements OnInit {
   public listcartonJaune: Array<any>;
   public cartonJaune1: Array<any>;
   public cartonJaune2: Array<any>;
+  public Team1: Array<any>;
+  public Team2: Array<any>;
   private i: number;
   public matchDate: string;
   public possession: any;
@@ -33,6 +35,7 @@ export class ResultatDetailsComponent implements OnInit {
   public pourcentagecarton1: any;
   public pourcentagecarton2: any;
   private percent: string;
+  public url: String;
   constructor(private resultdetailservice: ResultDetailService,private route: ActivatedRoute) { }
 
   ngOnInit(): void {
@@ -40,6 +43,8 @@ export class ResultatDetailsComponent implements OnInit {
     this.listcartonJaune = new Array<any>();
     this.cartonJaune1 = new Array<any>();
     this.cartonJaune2 = new Array<any>();
+    this.Team1 = new Array<any>();
+    this.Team2 = new Array<any>();
     this.route.params.subscribe((params) => {
       const team1 = params['team1'];
       const team2 = params['team2'];
@@ -56,7 +61,6 @@ export class ResultatDetailsComponent implements OnInit {
           this.corners = this.data.st[4];
           this.arrets = this.data.st[5];
           this.touches = this.data.st[6];
-          console.log(res.response.ev)
           for(this.i=0; this.i<res.response.ev.length; this.i++){
             if(res.response.ev[this.i].t =='goal' || res.response.ev[this.i].t == 'og'
               || res.response.ev[this.i].t == 'rc' || res.response.ev[this.i].t == 'pen'){
@@ -66,7 +70,6 @@ export class ResultatDetailsComponent implements OnInit {
 
           for(this.i=0; this.i<res.response.ev.length; this.i++){
             if(res.response.ev[this.i].t =='yc'){
-              console.log(res.response.ev[this.i].s)
               if(res.response.ev[this.i].s == 1){
                 this.cartonJaune1.push(res.response.ev[this.i])
               }else if(res.response.ev[this.i].s == 2){
@@ -75,9 +78,19 @@ export class ResultatDetailsComponent implements OnInit {
             }
           }
 
+          //team1
+          for(this.i=0; this.i<res.response.l1.length; this.i++){
+           this.Team1.push(res.response.l1[this.i]);
+          }
+          //team2
+          for(this.i=0; this.i<res.response.l2.length; this.i++){
+            this.Team2.push(res.response.l2[this.i]);
+          }
+          console.log(this.Team1)
 
 
-            // console.log(this.cartonJaune1)
+
+            console.log(this.data)
           //arret
           this.pourcentagearret1 =  String((this.arrets.v1 / (this.arrets.v1 + this.arrets.v2)) * 100);
           this.pourcentagearret1 =  this.pourcentagearret1.concat(this.percent.toString());
@@ -111,6 +124,11 @@ export class ResultatDetailsComponent implements OnInit {
           console.log("erreur d'appel a league service");
         });
     });
+  }
+
+  switchTeam(){
+    const element = document.getElementById('SegmentControlButton');
+    element.classList.toggle("SegmentControlButton SegmentControlButtonActive");
   }
 
 }

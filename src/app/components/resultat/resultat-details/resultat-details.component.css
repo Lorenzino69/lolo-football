@@ -3341,9 +3341,9 @@ a.GameSetHeader:hover .GameSetHeaderTitle{
   background: #fff;
 }
 .MatchViewLineupPlayerTb{
-  display: table;
-  width: 100%;
-  table-layout: fixed;
+  /*display: table;*/
+  /*width: 100%;*/
+  /*table-layout: fixed;*/
 }
 .MatchViewLineupPlayerCl{
   display: table-cell;
@@ -5640,4 +5640,13 @@ div.item {
 }
 .caption {
   display: block;
+}
+
+div#bloc1 {
+  float: left;
+  background: #789;
+  width: 200px;
+}
+div#bloc2 {
+  background: #abc;
 }
