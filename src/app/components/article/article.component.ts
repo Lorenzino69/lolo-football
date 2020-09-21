@@ -13,6 +13,7 @@ export class ArticleComponent implements OnInit {
   public imagesUrl: Array<any>;
   public contentlegend: Array<any>;
   public content: Array<any>;
+  metas: any;
 
   constructor(private articleservice: ArticleService, private route: ActivatedRoute) {
   }
@@ -26,20 +27,31 @@ export class ArticleComponent implements OnInit {
       this.articleservice.getArticle(id).subscribe(
         res => {
           this.data = res;
+          this.metas = res.metas;
 
-          console.log(this.data);
             this.imagesUrl.push(this.data.medias[0].url);
             this.contentlegend.push(this.data.items[1].objet.title);
+
+          // if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+          //   this.imagesUrl = this.imagesUrl.map(function(x) {
+          //     return x.replace('-{width}-{height}-{quality}/', '-320-213-75/');
+          //   });
+          // }else{
             this.imagesUrl = this.imagesUrl.map(function(x) {
               return x.replace('-{width}-{height}-{quality}/', '-624-416-75/');
             });
+          // }
 
-            for(this.i=0; this.i<this.data.items[3].objet.paragraphs.length; this.i++){
-              this.content.push(this.data.items[3].objet.paragraphs[this.i]);
+
+            if(this.data.items[3].objet.paragraphs ==undefined){
+              for(this.i=0; this.i<this.data.items[2].objet.paragraphs.length; this.i++){
+                this.content.push(this.data.items[2].objet.paragraphs[this.i]);
+              }
+            }else{
+              for(this.i=0; this.i<this.data.items[3].objet.paragraphs.length; this.i++){
+                this.content.push(this.data.items[3].objet.paragraphs[this.i]);
+              }
             }
-
-
-            console.log(this.content)
 
         }, () => {
           console.log('erreur d\'appel a league service');

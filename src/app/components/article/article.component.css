@@ -4,18 +4,27 @@
   justify-content: center;
   align-items: center;
   margin-bottom:50px;
+  text-align:center;
 }
 .subtitle{
-  margin-left:10px;
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align:center;
+  margin-bottom:50px;
 }
 .content{
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top:10px;
+  /*margin-top:10px;*/
+  font-family: DINNextLTPro-Regular,sans-serif;
+  font-size: 18px;
+  line-height: 26px;
+  font-weight: 400;
+  color: #1d1d1b;
+  margin: 0 24px 24px;
+  /*color: var(--color-black,#1d1d1b);*/
 }
 .matCardSize{
   /*width:75%;*/
@@ -24,8 +33,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width:auto;
-  height:auto;
+  width:624px;
+  height:416px;
+  text-align:center;
+  margin: 0 auto;
+  /*width: 100px;*/
 }
 
 .EditorRating {
@@ -93,7 +105,7 @@
   font-size: 18px;
   line-height: 28px;
   font-weight: 400;
-  padding: 16px 24px 32px;
+  padding: 5px 24px 32px;
 }
 
 .EditorRating__value {
@@ -153,4 +165,61 @@
   content: "";
   display: block;
   clear: both;
+}
+
+
+/* =============
+    Responsive
+ =============== */
+
+/* Large desktops and laptops */
+@media (min-width: 1201px) {
+}
+
+/* Landscape tablets and medium desktops */
+@media (min-width: 992px) and (max-width: 1200px) {
+
+
+}
+
+/* Portrait tablets and small desktops */
+@media (min-width: 768px) and (max-width: 991px) {
+  .Image{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*width:auto;*/
+    max-width:100%;
+    height:auto;
+    text-align:center;
+    margin: 0 auto;
+    /*width: 100px;*/
+  }
+}
+
+/* Landscape phones and portrait tablets */
+@media (max-width: 767px) {
+  .Image{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width:100%;
+    height:auto;
+    text-align:center;
+    margin: 0 auto;
+    /*width: 100px;*/
+  }
+}
+
+/* Portrait phones and smaller */
+@media (max-width: 480px) {
+  .Image{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width:100%;
+    height:auto;
+    text-align:center;
+    margin: 0 auto;
+  }
 }

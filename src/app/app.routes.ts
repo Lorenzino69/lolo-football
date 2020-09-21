@@ -7,6 +7,7 @@ import {PremierLeagueComponent} from './components/premier-league/premier-league
 import {Ligue1Component} from './components/ligue1/ligue1.component';
 import {ActuComponent} from './components/actu/actu.component';
 import {ArticleComponent} from './components/article/article.component';
+import {ResultatDetailsComponent} from './components/resultat/resultat-details/resultat-details.component';
 
 export const appRoutes: Routes = [
   { path: '', component: ActuComponent},
@@ -17,5 +18,6 @@ export const appRoutes: Routes = [
   { path: 'SerieA/:id', component: SerieAComponent},
   { path: 'PremierLeague/:id', component: PremierLeagueComponent},
   { path: 'article/:id', component: ArticleComponent},
+  { path: 'result-details/:team1/:team2', component: ResultatDetailsComponent},
 
 ];

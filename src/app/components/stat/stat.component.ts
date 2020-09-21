@@ -4,6 +4,7 @@ import {BreakpointObserver, Breakpoints} from '@angular/cdk/layout';
 import {map, shareReplay} from 'rxjs/operators';
 import {LeagueService} from '../../services/league.service';
 import {ActivatedRoute} from '@angular/router';
+import {ResultDetailService} from '../../services/result-detail.service';
 
 @Component({
   selector: 'app-stat',
@@ -22,7 +23,8 @@ export class StatComponent implements OnInit {
   private stats: any;
   events: any;
 
-  constructor(private breakpointObserver: BreakpointObserver,private leagueService: LeagueService,private route: ActivatedRoute) {
+  constructor(private breakpointObserver: BreakpointObserver,private leagueService: LeagueService,private route: ActivatedRoute,
+  private resultdetailservice: ResultDetailService) {
   }
 
   ngOnInit() {
@@ -33,7 +35,6 @@ this.getMatch("brest","marseille");
       const league = this.leagueService.getLigue(id).subscribe(
         res => {
           this.data = res.response.results;
-          console.log(this.data)
         }, () => {
           console.log("erreur d'appel a league service");
         },
@@ -42,11 +43,10 @@ this.getMatch("brest","marseille");
   }
 
   getMatch(team1,team2){
-    const match= this.leagueService.getMatch(team1,team2).subscribe(
+    const match= this.resultdetailservice.getMatch(team1,team2).subscribe(
       res => {
         this.stats = res.response;
         this.events = res.response.ev;
-        console.log(this.events)
       }, () => {
         console.log("erreur d'appel a league service");
       },

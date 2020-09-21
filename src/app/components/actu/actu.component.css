@@ -27,3 +27,11 @@
   align-items: center;
   height:auto;
 }
+.typecard{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height:auto;
+  max-width:100%;
+}

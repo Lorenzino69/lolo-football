@@ -35,6 +35,9 @@ import { ActuComponent } from './components/actu/actu.component';
 import {ActuService} from './services/actu.service';
 import { ArticleComponent } from './components/article/article.component';
 import {ArticleService} from './services/article.service';
+import {FlexLayoutModule} from '@angular/flex-layout';
+import { ResultatDetailsComponent } from './components/resultat/resultat-details/resultat-details.component';
+import {ResultDetailService} from './services/result-detail.service';
 
 @NgModule({
   declarations: [
@@ -51,6 +54,7 @@ import {ArticleService} from './services/article.service';
     StatComponent,
     ActuComponent,
     ArticleComponent,
+    ResultatDetailsComponent,
   ],
   imports: [
     BrowserModule,
@@ -71,9 +75,10 @@ import {ArticleService} from './services/article.service';
     MatMenuModule,
     HttpClientModule,
     MatExpansionModule,
-    MatTabsModule
+    MatTabsModule,
+    FlexLayoutModule
   ],
-  providers: [LeagueService,ActuService,ArticleService],
+  providers: [LeagueService,ActuService,ArticleService,ResultDetailService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

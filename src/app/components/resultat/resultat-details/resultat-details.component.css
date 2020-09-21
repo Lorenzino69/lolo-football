@@ -1,0 +1,5643 @@
+*{
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+.BatFeedItemEmbed{
+  padding: 12px;
+  margin-top: 0;
+  background: #111;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+.BatFeedTitle{
+  font-size: 12px;
+  color: #00172f;
+  font-weight: 400;
+  padding: 15px;
+  margin: 0;
+  line-height: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-align: center;
+  padding-bottom: 0;
+}
+.BatFeedItemEmbedLb{
+  padding: 10px;
+  padding-bottom: 0;
+  color: #ccc;
+  text-align: center;
+  line-height: 14px;
+  font-size: 14px;
+}
+.BatFeedItemNoPadding{
+  padding: 0;
+}
+.BatFeedItemPaddingNoB{
+  padding-bottom: 0;
+}
+.BatFeedItemPaddingNoL{
+  padding-left: 0;
+}
+.BatFeedItemPaddingNoR{
+  padding-right: 0;
+}
+.BatFeedItemExtraPadding{
+  padding: 30px;
+}
+.BatFeedItemPaddingNoT{
+  padding-top: 0;
+}
+.BatFeedItemHeaderPaddingV{
+  padding: 20px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.BatFeedItemPaddingBottom{
+  padding-bottom: 20px;
+}
+.BatFeedItemNoBackground{
+  background: none;
+}
+.BatFeedItemNoShadow{
+  box-shadow: none;
+}
+.BatFeedItemHeaderW{
+  padding: 16px;
+}
+.BatFeedSideBarHB{
+  position: absolute;
+  padding: 30px;
+  right: 0;
+  top: 0;
+  display: none;
+}
+.BatFeedSideBarCMW{
+}
+.BatFeedCLT{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 15px;
+  height: 15px;
+  overflow: hidden;
+  transform: translateZ(0);
+}
+.BatFeedCRT{
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 15px;
+  height: 15px;
+  overflow: hidden;
+  transform: translateZ(0);
+}
+.BatFeedCLT:after,.BatFeedCRT:after{
+  content: '';
+  width: 30px;
+  height: 30px;
+  display: block;
+  box-shadow: 0px 0px 0px 15px #fbf9f9;
+  transform: translateZ(0);
+  border-radius: 15px;
+}
+.BatFeedCRT:after{
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.AlertWrapper{
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,.85);
+  position: fixed;
+  top: 0;
+  left: 0;
+  transform: translateZ(0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 55;
+}
+.Alert{
+  max-width: 300px;
+  margin: 20px;
+  background: #fff;
+  box-shadow: 0 4px 16px 0 #333;
+  border-radius: 10px;
+  padding: 15px;
+  box-sizing: border-box;
+}
+.AlertButtons{
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+.AlertButton{
+  flex: 1;
+  margin-left: 4px;
+  margin-right: 4px;
+  text-align: center;
+  padding-left: 8px;
+  padding-right: 8px;
+  height: 44px;
+  line-height: 44px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  o-text-overflow: ellipsis;
+  border-radius: 22px;
+  background: #eee;
+  cursor: pointer;
+  transition: background-color .2s ease;
+}
+.AlertButton:hover{
+  background: #e4e4e4;
+}
+.AlertButtonConfirm{
+  background: #54a960;
+  color: #fff;
+}
+.AlertButtonConfirm:hover{
+  background: #43884c;
+}
+.SubscribeButton{
+  background: #e7e7e7;
+  padding: 3px;
+  position: relative;
+  transition: background-color .2s ease;
+  cursor: pointer;
+}
+.SubscribeButton:hover{
+  background: #e1e1e1;
+}
+.SubscribeButtonActive{
+  background: #ffce54;
+}
+.SubscribeButtonActive:hover{
+  background: #f9c952;
+}
+.SubscribeButtonR{
+  padding: 5px;
+  border-radius: 50%;
+  background: #fff;
+  position: absolute;
+  top: 3px;
+  transition: left .2s ease;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
+}
+.SubscribeButtonAnimated .SubscribeButtonRing, .SubscribeButtonAnimatedOnce .SubscribeButtonRing{
+  animation: bell 2s infinite ease-out;
+  transform-origin: center top;
+}
+.SubscribeButtonAnimatedOnce .SubscribeButtonRing{
+  animation-iteration-count: 1;
+}
+.SubscribeButtonRing img{
+  width: 100%;
+  height: 100%;
+  display:block;
+  opacity: 0.3;
+  transition: opacity .2s ease;
+}
+.SubscribeButtonActive .SubscribeButtonRing img{
+  opacity: 0.55;
+}
+@keyframes bell {
+  0% {transform: rotate(35deg);}
+  6.25% {transform: rotate(-30deg);}
+  12.5% {transform: rotate(25deg);}
+  18.75% {transform: rotate(-20deg);}
+  25% {transform: rotate(15deg);}
+  31.25% {transform: rotate(-10deg)}
+  37.5% {transform: rotate(5deg)}
+  50% {transform: rotate(0);}
+  100% {transform: rotate(0);}
+}
+.FailoverImage{
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  vertical-align: top;
+  transition: opacity .5s ease;
+  opacity: 0;
+}
+.FailoverImageReady{
+  opacity: 1;
+}
+.BatFeedDateWrp{
+  padding: 20px;
+  transition: background-color 1s ease;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+.BatFeedDateWrp:hover{
+  cursor: pointer;
+  background: #fafafa;
+  transition: background-color .3s ease;
+}
+.BatFeedDate{
+  text-align: left;
+  color: #ed5565;
+  padding-left: 60px;
+  position: relative;
+}
+.BatFeedDate:before{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  margin-top: -20px;
+  background: #ed5565;
+}
+.BatFeedDate:after{
+  content: '';
+  display: block;
+  width: 21px;
+  height: 20px;
+  position: absolute;
+  left: 9px;
+  top: 50%;
+  margin-top: -10px;
+  content: "";
+
+  background-image: url(https://d37kf7rs4g1hyv.cloudfront.net/scorebat/spriteflsc-min.png);
+  background-size: 146px;
+  background-repeat: no-repeat;
+  background-position: -65px -201px;
+}
+.BatFeedDateW{
+  font-size: 1.4em;
+  color: #ed5565;
+  line-height: 1em;
+  display: inline-block;
+  position: relative;
+}
+.BatFeedDateW:before{
+  display: inline-block;
+  content: "\25bc";
+  position: absolute;
+  right: -20px;
+  bottom: 0;
+  color: #ed5565;
+  font-size: 12px;
+  line-height: 14px;
+  transition: transform .2s ease;
+}
+.BatFeedDateOth:before{
+  background: #815e62;
+}
+.BatFeedDateOth .BatFeedDateW:before,.BatFeedDateOth .BatFeedDateW{
+  color: #815e62;
+}
+.BatFeedDateWrpOpen .BatFeedDateW:before{
+  transform: rotate(180deg);
+}
+.BatFeedDateC{
+  margin: auto;
+  padding-bottom: 60px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.BatFeedDateD{
+  text-transform: uppercase;
+  margin-top: 1px;
+}
+.BatFeedDateLW{
+  border-bottom: dashed 1px #eee;
+}
+.BatFeedDateL{
+  padding: 15px;
+  display: flex;
+}
+.DatePickerLineW{
+  flex: 1;
+  position: relative;
+}
+.DatePickerLineW .DatePickerLine{
+  transition: opacity .15s ease;
+}
+.DatePickerLineWH .DatePickerLine{
+  opacity: 0;
+}
+.DatePickerLineWH:after{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  content: '';
+}
+.BatFeedDateDrop{
+  width: 40px;
+  position: relative;
+  margin-left: 2px;
+  cursor: pointer;
+}
+.BatFeedDateDrop:before{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  margin-top: -20px;
+  background: #aaa;
+  transition: background .15s ease-in-out;
+}
+.BatFeedDateDrop:after{
+  content: '';
+  display: block;
+  width: 21px;
+  height: 20px;
+  position: absolute;
+  left: 9px;
+  top: 50%;
+  margin-top: -10px;
+  content: "";
+
+  background-image: url(https://d37kf7rs4g1hyv.cloudfront.net/scorebat/spriteflsc-min.png);
+  background-size: 146px;
+  background-repeat: no-repeat;
+  background-position: -65px -201px;
+}
+.BatFeedDateDrop:hover:before{
+  background-color: #888;
+}
+.DatePickerWeekDayNames{
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+}
+.DatePickerWeekDayName{
+  flex: 1;
+  text-align: center;
+  font-size: 0.7em;
+  color: #aaa;
+  text-transform: uppercase;
+  font-weight: 300;
+  line-height: 22px;
+}
+.DatePickerWeek{
+  display: flex;
+  margin-bottom:4px;
+}
+.DatePickerDay{
+  flex: 1;
+  margin: 0;
+  padding: 0;
+  height: 38px;
+  position: relative;
+  vertical-align: top;
+  line-height: 27px;
+  text-align: center;
+  font-size: 19px;
+  color: #9e9494;
+  border-radius: 22px;
+  margin-left: 1px;
+  margin-right: 1px;
+}
+.DatePickerDayButton{
+  background-color:#f2f2f2;
+  -webkit-transition: background 0.2s ease;
+  -moz-transition: background 0.2s ease;
+  -ms-transition: background 0.2s ease;
+  -o-transition: background 0.2s ease;
+  transition: background 0.2s ease;
+  text-decoration: none;
+  cursor: pointer;
+}
+.DatePickerDayButton:hover{
+  background-color: #eaeaea;
+}
+.DatePickerDayMonth{
+  position: absolute;
+  bottom: 5px;
+  left: 0;
+  display: block;
+  width: 100%;
+  text-align: center;
+  color: #aaa;
+  font-size: 12px;
+  line-height: 10px;
+  font-weight: 400;
+}
+.DatePickerDayZero{
+  color: #f10019;
+  font-weight: 700;
+}
+.DatePickerDayZero .DatePickerDayMonth{
+  color: #f10019;
+}
+.DatePickerDayActive.DatePickerDayZero{
+  background-color: #ea6674;
+}
+.DatePickerDayActive{
+  color: #fff;
+  font-weight: 900;
+  background-color: #a7a4a4;
+  cursor: default;
+}
+.DatePickerDayActive .DatePickerDayMonth{
+  color: #fff;
+  font-weight: 400;
+}
+.DatePickerLine .DatePickerWeek{
+  margin-bottom: 0;
+}
+.DMCAWrapper{
+  display: none;
+}
+.CompetitionMenu{
+  margin-bottom: 10px;
+}
+.CompetitionMenuCoutryList{
+  margin-top: 30px;
+}
+.CompetitionMenuCoutryListLabel{
+  font-size:0.8em;
+  font-weight: 900;
+  text-transform: uppercase;
+  line-height: 25px;
+  padding-left:10px;
+  color:#aaa;
+}
+.CompetitionMenuCoutryListShrinked{
+  display: none;
+}
+.CompetitionMenuButton{
+  display: table;
+  width: 100%;
+
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 20px;
+  transition: background-color .2s ease-in-out;
+  margin-top: 6px;
+}
+.CompetitionMenuButton0{
+  margin-top: 0;
+}
+.CompetitionMenuButtonContent{
+  padding: 4px;
+  display: block;
+}
+.CompetitionMenuCountryComps{
+  display: none;
+  padding-top: 3px;
+  padding-bottom: 9px;
+}
+.CompetitionMenuCountryExpanded .CompetitionMenuCountryComps{
+  display: block;
+}
+.CompetitionMenuCountryComp{
+  padding-left: 20px;
+  padding-top:3px;
+  padding-bottom:3px;
+}
+.CompetitionMenuCountryComp a{
+  text-decoration: none;
+  color: #777;
+}
+.CompetitionMenuCountryComp a:hover{
+  text-decoration: underline;
+}
+.CompetitionMenuButton:hover{
+  /*background-color: #f7f7f7;*/
+
+  background-color: #f2f2f2;
+}
+.CompetitionMenuCountryComp a span{
+  display: none;
+}
+.CompetitionMenuButtonSp{
+  display: table-cell;
+  width: 10px;
+}
+.CompetitionMenuButtonName{
+  /*text-transform: uppercase;*/
+  font-weight: 400;
+  color: #777;
+  display: table-cell;
+  line-height:32px;
+  vertical-align: top;
+}
+.CompetitionMenuButtonFlag{
+  display: table-cell;
+  width:32px;
+  height:32px;
+  background-size:22px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  text-align: center;
+  background-color: #fff;
+  border-radius: 16px;
+  box-shadow: 0 1px 6px #e7e7e7;
+}
+.SpinWhileFetching{
+  padding-top: 70px;
+  padding-bottom: 70px;
+}
+.SpinnerDark{
+  border-top: 2px solid #242122;
+  border-right: 2px solid #242122;
+  border-bottom: 2px solid #242122;
+  border-left: 2px solid #888;
+}
+.SpinnerBounce {
+  text-align: center;
+}
+.SpinnerBounce > div {
+  width: 5px;
+  height: 5px;
+  background-color: #fff;
+  margin-left: 1px;
+  margin-right: 1px;
+  border-radius: 100%;
+  display: inline-block;
+  -webkit-animation: sk-bouncedelay 1s infinite ease-in-out both;
+  animation: sk-bouncedelay 1s infinite ease-in-out both;
+}
+
+.SpinnerBounce .SpinnerBounce1 {
+  -webkit-animation-delay: -0.22s;
+  animation-delay: -0.22s;
+}
+
+.SpinnerBounce .SpinnerBounce2 {
+  -webkit-animation-delay: -0.11s;
+  animation-delay: -0.11s;
+}
+
+@-webkit-keyframes sk-bouncedelay {
+  0%, 80%, 100% { -webkit-transform: scale(0) }
+  40% { -webkit-transform: scale(1.0) }
+}
+
+@keyframes sk-bouncedelay {
+  0%, 80%, 100% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  } 40% {
+      -webkit-transform: scale(1.0);
+      transform: scale(1.0);
+    }
+}
+.SpinnerBounceDark > div{
+  background-color: #522d40;
+}
+.SpinnerBounceBig > div{
+  width: 10px;
+  height: 10px;
+}
+.SpinnerBounceInit{
+  margin-top: 40px;
+}
+.SpinnerBounceInline{
+  display: inline-block;
+}
+.SpinnerClock {
+  width: 40px;
+  height: 40px;
+  border: 3px solid white;
+  border-radius: 100%;
+  position: relative;
+}
+.SpinnerClock:before,
+.SpinnerClock:after {
+  position: absolute;
+  display: block;
+  content: "";
+  width: 2px;
+  left: 19px; /* half width of clock - half width of hand */
+  background: white;
+  box-shadow: 0 0 2px rgba(0,0,0,0.1);
+}
+/* Animations */
+@keyframes SpinnerClockRotate {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+/* Big hand */
+.SpinnerClock:before {
+  top: 5px;
+  height: 20px; /* half the width/height of the clock */
+  transform-origin: 1px 15px;
+  animation: SpinnerClockRotate 1s infinite linear;
+}
+/* Little hand */
+.SpinnerClock:after {
+  top: 11px;
+  height: 14px; /* top + height for little hand must = top + height for big hand */
+  transform-origin: 1px 9px;
+  animation: SpinnerClockRotate 12s infinite linear; /* time should be big-hand time * 12 */
+}
+/**/
+.GameCellW{
+  border-top: dashed 1px #f2f2f2;
+}
+.GameCell{
+  display: block;
+  text-decoration: none;
+  /*height: 30px;*/
+  position: relative;
+  background-color: #fff;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
+  line-height: 20px;
+  padding: 6px;
+  padding-bottom: 4px;
+  padding-top: 4px;
+}
+.GameCell:hover{
+  background: #f9f9f9;
+  -webkit-transition: all .2s ease;
+  -moz-transition: all .2s ease;
+  -ms-transition: all .2s ease;
+  -o-transition: all .2s ease;
+  transition: all .2s ease;
+}
+.GameCellWhistle{
+  background-color: #fdfcf6;
+}
+.GameCellWhistle:hover{
+  background:#f9f9ef;
+}
+.GameCellGoal1, .GameCellGoal2{
+
+  background-color: #ed5565;
+  box-shadow: 0 0 1px #d05360;
+  z-index: 2;
+}
+.GameCellGoal1:hover, .GameCellGoal2:hover{
+  background:#e25160;
+}
+.GameCellNoBottomBorder{
+  border-bottom: 0;
+}
+.GameCellVideoIcon{
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  margin-top: -7px;
+  opacity: .65;
+}
+.GameCellVideoIcon:after{
+  content: "";
+  height: 15px;
+  width: 16px;
+  background-image: url(https://d37kf7rs4g1hyv.cloudfront.net/scorebat/spriteflsc-min.png);
+  background-size: 146px;
+  background-position: -33px 0;
+  display: block;
+}
+.GameCellGoal1 .GameCellVideoIcon:after, .GameCellGoal2 .GameCellVideoIcon:after{
+  background-position: -68px -102px;
+  height: 16px;
+}
+
+.GameCellText{
+  color: #555;
+  display: none;
+}
+.GameCellTable{
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+}
+.GameCellTableCell{
+  display: table-cell;
+  padding: 0;
+  margin: 0;
+  table-layout: fixed;
+  white-space: nowrap;
+  vertical-align: top;
+
+}
+.GameCellSide1{
+  text-align: right;
+  padding-left: 10px;
+  padding-right: 1px;
+}
+.GameCellHasVideos .GameCellSide2{
+  padding-right: 20px;
+}
+.GameCellSide2{
+  text-align: left;
+  padding-left: 1px;
+}
+.GameCellSide1,.GameCellSide2{
+  color: #111;;
+  font-weight: 400;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  o-text-overflow: ellipsis;
+  position: relative;
+  font-size: 16px;
+  letter-spacing: -.5px;
+}
+.GameCellScore{
+  width: 44px;
+  text-align: center;
+  color: #3a0115;
+  font-size: 20px;
+  letter-spacing: -1px;
+  font-weight: 700;
+}
+.GameCellState-scheduled .GameCellScore:before,.GameCellState-niy .GameCellScore:before{
+  background-image: url(https://d37kf7rs4g1hyv.cloudfront.net/scorebat/spriteflsc-min.png);
+  background-size: 146px;
+  background-position: -37px -32px;
+  content: "";
+  width: 14px;
+  height: 14px;
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  transform: scale(1.2);
+}
+.GameCellState-live .GameCellScore{
+  /* color: #9a3a44; */
+}
+.GameCellStatus{
+  display: block;
+  font-weight:400;
+  font-size:11px;
+  text-align:center;
+  color:#777;
+  text-transform:uppercase;
+  letter-spacing: -.02em;
+  line-height: 14px;
+  min-height: 14px;
+}
+.GameCellStatus .short{
+  display: none;
+}
+.GameCellState-live .GameCellStatus{
+  color: #ff7a00;
+  font-weight: bold;
+}
+.GameCellStatusMinute{
+  font-size: 14px;
+  padding-left: 4px;
+}
+/*
+.GameCellState-live .GameCellStatusB{
+  background: #ff7100;
+  padding-left: 5px;
+  padding-right: 5px;
+  transition: background 1s ease;
+  border-radius: 4px;
+}
+.GameCellGoal1 .GameCellStatus,.GameCellGoal2 .GameCellStatusB{
+  background: none;
+  transition: background .2s ease;
+}
+*/
+.GameCellState-scheduled .GameCellStatus{
+  color:#aaa;
+  font-size:12px;
+  font-weight: 400;
+}
+/*.GameCellState-scheduled .GameCellStatus:before{
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  margin-top: -6px;
+  width: 13px;
+  height: 13px;
+  background-image: url(https://d37kf7rs4g1hyv.cloudfront.net/scorebat/spriteflsc-min.png);
+  background-size: 146px;
+  background-position: -37px -32px;
+}*/
+.GameCellStatusBlinker{
+  transition:color .35s ease-in-out;
+  -webkit-transition:color .35s ease-in-out;
+}
+.GameCellStatusBlinker0{
+  color: #fff;
+}
+.GameCellStatusBlinker1{
+  color: #ff7a00;
+}
+.GameCellSide1,.GameCellSide2,.GameCellScore,.GameCellStatus{
+  -webkit-transition: color 1s ease;
+  -moz-transition: color 1s ease;
+  -ms-transition: color 1s ease;
+  -o-transition: color 1s ease;
+  transition: color 1s ease;
+}
+.GameCellGoal1 .GameCellSide1,.GameCellGoal2 .GameCellSide1,.GameCellGoal1 .GameCellSide2,.GameCellGoal2 .GameCellSide2,.GameCellGoal1 .GameCellScore,.GameCellGoal2 .GameCellScore,.GameCellGoal1 .GameCellStatus,.GameCellGoal2 .GameCellStatus{
+  color: #fff;
+}
+.GameCellGoal1 .GameCellStatusBlinker0,.GameCellGoal2 .GameCellStatusBlinker0{
+  color: #ed5565;
+}
+.GameCellGoal1 .GameCellStatusBlinker1,.GameCellGoal2 .GameCellStatusBlinker1{
+  color: #fff;
+}
+.GameSet{
+  padding-bottom: 60px;
+}
+.GameSetDivider{
+  color: #a94250;
+  text-align: center;
+  line-height: 2em;
+  font-weight: 900;
+  text-transform: uppercase;
+  padding-top: 20px;
+}
+.GameSetCompDiv{
+  text-align: center;
+  padding-bottom: 10px;
+  line-height: 0;
+}
+.GameSetCompDivNF{
+  padding-top: 20px;
+  border-top: dashed 1px #f2f2f2;
+}
+.GameSetCompDivIcon{
+  width: 32px;
+  height: 32px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: auto;
+}
+.GameSetHeader{
+  text-decoration: none;
+  position: relative;
+
+}
+.GameSetHeader img{
+  border: 0;
+}
+.GameSetHeaderTable{
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+  box-sizing: border-box;
+
+}
+.GameSetHeaderTitle{
+  color: #3a0115;
+  /* color:#702d4f; */
+  text-transform: uppercase;
+  font-weight: 900;
+  line-height: .8em;
+  display: table-cell;
+  padding: 0;
+  margin: 0;
+  margin-left: 44px;
+  padding-top: 3px;
+  font-size: 1.25em;
+  position: relative;
+  letter-spacing: -0.03em;
+  vertical-align: middle;
+  text-decoration: none;
+  transition: all .2s ease-in-out;
+  left: 0;
+}
+.GameSetHeaderTitleSub{
+  font-weight: 400;
+  color: #555;
+  font-size: 0.9em;
+  transition: color .2s ease-in-out;
+  display: block;
+  margin-bottom: 1px;
+}
+a.GameSetHeader:hover .GameSetHeaderTitle{
+  left:5px;
+}
+.GameSetHeaderIconWrapper{
+  display: table-cell;
+  width: 60px;
+  height: 40px;
+  text-align: left;
+  vertical-align: middle;
+  line-height: 0;
+}
+.GameSetHeaderTableSingle .GameSetHeaderTitle{
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.GameCellMatchDate{
+  color: #a94250;
+  line-height: 1em;
+  text-align: center;
+  padding-right: 3px;
+  font-size: .9em;
+}
+.GameSetGames{
+  /* margin-left: 44px; */
+  border-bottom: dashed 1px #f2f2f2;
+  margin-top: 24px;
+}
+.GameSetHeaderIcon{
+  max-width: 40px;
+  max-height: 40px;
+}
+.GameSetIconToday,.GameSetIconScheduled,.GameSetIconFinished,.GameSetIconStandings{
+  width: 40px;
+  height: 40px;
+  background: #c0496e;
+  border-radius: 20px;
+  vertical-align: top;
+}
+.GameSetIconVideo{
+  width: 32px;
+  height: 32px;
+  /* background: url(https://d37kf7rs4g1hyv.cloudfront.net/scorebat/spritemute-min.png) -59px -226px no-repeat; */
+  background-size: 315px;
+  background-repeat: no-repeat;
+  vertical-align: top;
+}
+.GameSetIconToday{
+  background-color: #ed5565;
+}
+.GameSetIconToday:before,.GameSetIconScheduled:before,.GameSetIconFinished:before,.GameSetIconStandings:before{
+  content: "";
+  display: block;
+  width: 25px;
+  height: 25px;
+  background-image: url(https://d37kf7rs4g1hyv.cloudfront.net/scorebat/spriteflsc-min.png);
+  background-size: 146px;
+  background-repeat: no-repeat;
+  background-position: -116px -209px;
+  position: absolute;
+  top: 8px;
+  left: 7px;
+}
+.GameSetIconFinished:before{
+  background-position: -116px -96px;
+}
+.GameSetIconStandings{
+  background-color: #f18000;
+}
+.GameSetIconStandings:before{
+  background-position: -116px -158px;
+}
+.GameSetIconScheduled{
+  background-color: #54a95f;
+}
+.GameSetIconScheduled:before{
+  background-position: -116px -125px;
+}
+.GameSetIconFinished{
+  background-size: 500px;
+  background-position: -243px -90px;
+}
+.TopOfTheDay .GameSetHeaderTitle{
+  /* color: #c04971; */
+  /* color:#3a0115; */
+  font-weight: 900;
+  line-height: 13px;
+  letter-spacing: -0.03em;
+}
+.TopOfTheDay .GameSetIconToday{
+  background-color: #ffc521;
+  background: linear-gradient(135deg, #ffc521 0%, rgb(239, 83, 98) 130%);
+}
+.TabMenu{
+  overflow-x: auto;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+  text-align: center;
+  display: flex;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-top: dashed 1px #eee;
+}
+.BatFeed .TabMenu{
+  border-top: none;
+}
+.TabMenu::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  background: transparent;
+}
+.TabMenuItem{
+  color:#3a3a3a;
+  font-size:1em;
+  text-align:center;
+  line-height:38px;
+  display:inline-block;
+  text-decoration:none;
+  vertical-align:top;
+  position:relative;
+  cursor:pointer;
+  flex: 1;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -.04em;
+  padding-bottom: 3px;
+}
+.TabMenuItem input{
+  color: #76766f;
+  padding:0;
+  width: 100%;
+  font-size:1em;
+  border: none;
+  height: 38px;
+  line-height:46px;
+  vertical-align:top;
+  background-color:rgba(255,255,255,0);
+}
+.TabMenuItemInput{
+  padding-left: 35px;
+}
+.TabMenuItemInput:before{
+  content:"";
+  display: block;
+  position: absolute;
+  left: 9px;
+  top: 50%;
+  margin-top: -8px;
+  width: 16px;
+  height: 16px;
+  background-image: url(https://d37kf7rs4g1hyv.cloudfront.net/scorebat/spriteflsc-min.png);
+  background-size: 146px;
+  background-position: -33px -15px;
+  background-repeat:no-repeat;
+}
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+  color:    #76766f;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+  color:    #76766f;
+  opacity:  1;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+  color:    #76766f;
+  opacity:  1;
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color:    #76766f;
+}
+
+.TabMenuItem:after{
+  content:"";
+  position: absolute;
+  bottom: 0;
+  left:0;
+  display: block;
+  width: 100%;
+  height: 4px;
+  background-color: transparent;
+  transition: background-color .2s ease-in-out;
+  border-radius: 2px;
+}
+.TabMenuItem:hover{
+  color: #c7414e;
+}
+.TabMenuItemActive:after,.TabMenuItemActive:hover:after{
+  background-color: #ed5565;
+}
+.TabMenuItemActive {
+  color: #c7414e;
+}
+*:focus {
+  outline: 0;
+}
+*:focus { outline: none; }
+*::-moz-focus-inner { border: none;}
+.TabMenuItem .shortTitle{
+  display: none;
+}
+.BatFeedAd{
+  padding-top: 50px;
+  padding-bottom: 50px;
+  text-align: center;
+}
+
+.BatFeedAdV{
+  background: #000;
+  background-image: url(https://d37kf7rs4g1hyv.cloudfront.net/scorebat/bifsn3dl.jpg);
+  background-size: 100% auto;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  overflow: hidden;
+  min-height: 250px;
+}
+.AdVBC{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  z-index: 1;
+  overflow: hidden;
+  border-radius: 15px;
+}
+.AdVBDiv{
+  position: relative;
+  z-index: 2;
+}
+.AdVBCnr:before{
+  content: '';
+  position: absolute;
+  display: block;
+  width: 18px;
+  height: 20px;
+  left: 15px;
+  bottom: 15px;
+  background-image: url(https://d37kf7rs4g1hyv.cloudfront.net/scorebat/spriteflsc-min.png);
+  background-size: 146px;
+  background-repeat: no-repeat;
+  background-position: -55px -46px;
+  opacity: .3;
+}
+.AdVBCnr:after{
+  content: '';
+  position: absolute;
+  display: block;
+  width: 20px;
+  height: 20px;
+  left: 15px;
+  top: 15px;
+  background: #ff1b03;
+  box-shadow: 0 0 6px #e51b0b;
+  border-radius: 50%;
+  animation: blink-animation 1.8s infinite;
+  -webkit-animation: blink-animation 1.8s infinite;
+}
+.AdVB{
+  min-height: 100%;
+  min-width: 100%;
+  max-width: 100%;
+  position: relative;
+}
+.AdVBCDm{
+  position: absolute;
+  top: 0;
+  left:0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  opacity: .5;
+}
+.AdVLLb{
+  color: #ff1b03;
+  text-transform: uppercase;
+  font-weight: 900;
+  font-size: 10px;
+  position: absolute;
+  left:40px;
+  top: 14px;
+}
+.BatPlayerRC{
+  display: flex;
+  align-items: center;
+  position: absolute;
+  right: 12px;
+  top: 6px;
+  height: 31px;
+}
+.AdVSc{
+  display: flex;
+  font-size: 12px;
+  line-height: 25px;
+  align-items: center;
+  cursor: default;
+}
+.VideoInFeedBody .AdVSc{
+  right: 0;
+  top: 50%;
+  margin-top: -10px;
+  font-size: 14px;
+}
+.AdVSczz{
+  display: inline-block;
+  content: "";
+  width: 26px;
+  height: 26px;
+  background-image: url(https://d37kf7rs4g1hyv.cloudfront.net/scorebat/spriteflsc-min.png);
+  background-size: 146px;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: -4px;
+  right: -43px;
+  background-position: -90px -36px;
+  opacity: .5;
+}
+.AdVScr{
+  padding-right: 7px;
+  font-weight: 900;
+  background: #f4f7fa;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.AdVSt{
+  background: #434a54;
+  color: #fff;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  font-weight: 700;
+}
+.AdVStlive{
+  background: #ff425d;
+}
+.VideoInFeedBody .AdVStlive{
+  background: #ff7100;
+}
+.AdVSc .SpinnerClock{
+  transform: scale(.3);
+  top: -15px;
+  right: -15px;
+  opacity: .9;
+}
+.AdVScFl{
+  padding-left: 5px;
+  padding-right: 5px;
+  background: #f4f7fa;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  height: 25px;
+}
+.AdVSch .AdVScFl{
+  border-right: none;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+.OnScreenFlag{
+  width: 17px;
+  height: 19px;
+  margin-top: 3px;
+  display: block;
+}
+.AdVScHFl .AdVScr{
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.AdVFrm{
+  color: #fff;
+  opacity: .7;
+  font-weight: 400;
+  position: relative;
+  left: 3px;
+}
+.AdVBDivW{
+  position: relative;
+}
+.AdVBDivWF {
+  position: absolute;
+  left: 50%;
+  top: 0px;
+  margin-left: 110px;
+  display: block;
+  width: 40px;
+  height: 30px;
+  z-index: 4;
+}
+.Ad{
+  text-align: center;
+}
+.AdSW{
+  position: relative;
+  display: inline-block;
+  margin: auto;
+}
+
+.AffiliateBanner{
+  width: 300px;
+  background: #fff;
+  display: block;
+  z-index: 3;
+  position: relative;
+  margin: auto;
+  border-radius: 15px;
+  padding: 15px;
+  text-decoration: none;
+  text-align: left;
+  box-sizing: border-box;
+  box-shadow: 0 4px 16px 0 #333;
+  cursor: default;
+}
+.AffiliateBannerSof{
+  color: #3c7744;
+  text-transform: uppercase;
+  font-weight: 900;
+  line-height: .8em;
+  font-size: 1.25em;
+  position: relative;
+  letter-spacing: -0.03em;
+  text-align: center;
+}
+.AffiliateBannerButtonWW{
+  margin-top: 30px;
+}
+.AffiliateBannerButtonW{
+  position: relative;
+}
+.AffiliateBannerButton{
+  margin-top: 40px;
+  background: #55a961;
+  color: #fff;
+  padding: 10px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  border-radius: 5px;
+  box-sizing: border-box;
+  text-transform:uppercase;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color .2s ease;
+  position: relative;
+}
+.AffiliateBannerButton:hover{
+  background: #459050;
+}
+.AffiliateBannerButtonA{
+  position: absolute;
+  right: 15px;
+  color: #fff;
+  top: 0;
+  line-height: 42px;
+  font-size: 22px;
+  font-weight: 700;
+}
+.AffiliateBannerButton b{
+  font-weight: 900;
+  padding-right: 19px;
+  margin-right: 19px;
+  border-right: solid 1px rgba(255,255,255,.2);
+  text-transform:none;
+  font-size: 18px;
+}
+.AffiliateBannerName{
+  margin-top: 40px;
+  color: #3a0115;
+  font-size: 1.6em;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 900;
+  letter-spacing: -.03em;
+  line-height: 1em;
+}
+.AffiliateBannerBonus .AffiliateBannerName{
+  font-size: 2.5em;
+}
+.AffiliateBannerLS{
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 1.2em;
+  color: #ff0000;
+  font-weight: 900;
+  letter-spacing: -.04em;
+}
+.AffiliateBannerButtonS::before{
+  width: 16px;
+  background-image: url(https://d37kf7rs4g1hyv.cloudfront.net/scorebat/spriteflsc-min.png);
+  background-size: 146px;
+  background-position: -94px -126px;
+  height: 16px;
+  display: block;
+  position: absolute;
+  left: -26px;
+  top: 50%;
+  margin-top: -8px;
+}
+.AffiliateBannerNotice{
+  color: #ea9ba7;
+  font-size: 10px;
+  text-align: center;
+  padding-bottom: 5px;
+  text-transform: uppercase;
+}
+@keyframes blink-animation {
+  0% {
+    opacity: .5;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: .5;
+  }
+}
+@-webkit-keyframes blink-animation {
+  0% {
+    opacity: .5;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: .5;
+  }
+}
+.VideoPlayerGroupedSeeMore{
+  color: #c0496e;
+  line-height: 60px;
+  cursor: pointer;
+  position: relative;
+  padding-left: 75px;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  border-top: dashed 1px #eee;
+}
+.VideoPlayerGroupedSeeMore:before{
+  display: inline-block;
+  content: "\25bc";
+  position: absolute;
+  left: 35px;
+  top: 50%;
+  line-height: 10px;
+  font-size: 8px;
+  margin-top: -5px;
+  color: #c0496e;
+}
+.VideoPlayerGroupedSeeMore:hover{
+  background-color: #fffbf5;
+}
+.VideoPlayerW{
+  position: relative;
+}
+.VideoPlayer{
+  background: #000;
+  -webkit-transform: translateZ(0);
+  -moz-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  -o-transform: translateZ(0);
+  transform: translateZ(0);
+  position: relative;
+  overflow: hidden;
+  /* border-top: solid 1px #ed5565; */
+  /* border-bottom: solid 1px #ed5565; */
+
+}
+.VideoPlayerMute{
+  position: absolute;
+  width: 50px;
+  height: 49px;
+  top: 0;
+  right: 0;
+  transition:background-color .2s ease-in-out;
+  -webkit-transition:background-color .2s ease-in-out;
+  /* border-bottom: solid 1px #f3eabc; */
+  border-radius: 25px;
+  border-top-right-radius: 0;
+  background-color: rgba(0,0,0,.65);
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  -moz-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  -o-transform: translateZ(0);
+  transform: translateZ(0);
+}
+.VideoPlayerMute:hover{
+  background-color: rgba(0,0,0,.85);
+}
+.VideoPlayerMute:after{
+  position: absolute;
+  top: 13px;
+  left: 15px;
+  width: 23px;
+  height:23px;
+  background-image: url(https://d37kf7rs4g1hyv.cloudfront.net/scorebat/spriteflsc-min.png);
+  background-size: 146px;
+  background-repeat: no-repeat;
+  background-position: 0 -33px;
+  content: "";
+}
+.VideoPlayerMute0:after{
+  background-position: 0 -56px;
+}
+.VideoPlayerFullScreenButtonW{
+  position: absolute;
+  top: 55px;
+  right: 6px;
+}
+.VideoPlayerFullScreenButton{
+  width: 40px;
+  height: 40px;
+  transition: all .2s ease-in-out;
+  -webkit-transition: all .2s ease-in-out;
+  border-radius: 20px;
+  background-color: rgba(0,0,0,.65);
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  -moz-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  -o-transform: translateZ(0);
+  transform: translateZ(0);
+  overflow: hidden;
+}
+.VideoPlayerFullScreenButton:after{
+  position: absolute;
+  top: 7px;
+  left: 10px;
+  width: 20px;
+  height: 23px;
+  background-image: url(https://d37kf7rs4g1hyv.cloudfront.net/scorebat/spriteflsc-min.png);
+  background-size: 146px;
+  background-repeat: no-repeat;
+  content: "";
+  background-position: -2px -141px;
+}
+.VideoPlayerFullScreenButton:hover{
+  background-color: rgba(0,0,0,1);
+}
+.VideoPlayerEmbedButtonW{
+  position: absolute;
+  top: 100px;
+  right: 6px;
+}
+.VideoPlayerEmbedButtonWNFS{
+  top: 55px;
+}
+.VideoPlayerEmbedButton{
+  width: 40px;
+  height: 40px;
+  transition: all .2s ease-in-out;
+  -webkit-transition: all .2s ease-in-out;
+  border-radius: 20px;
+  background-color: rgba(0,0,0,.65);
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  -moz-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  -o-transform: translateZ(0);
+  transform: translateZ(0);
+  overflow: hidden;
+}
+.VideoPlayerEmbedButton:hover{
+  background-color: rgba(0,0,0,1);
+}
+.VideoPlayerEmbedButton:after,.EmbedCodeIcon:after{
+  position: absolute;
+  top: 5px;
+  left: 10px;
+  width: 20px;
+  height: 23px;
+  background-image: url(https://d37kf7rs4g1hyv.cloudfront.net/scorebat/spriteflsc-min.png);
+  background-size: 146px;
+  background-repeat: no-repeat;
+  content: "";
+  background-position: -119px -184px;
+}
+.VideoPlayerEmbedButton:before,.EmbedCodeIcon:before{
+  content: 'embed';
+  text-transform: uppercase;
+  font-size: 7px;
+  width: 40px;
+  height: 14px;
+  text-align: center;
+  display: block;
+  color: #fff;
+  position: absolute;
+  top: 24px;
+  left: 0;
+  line-height: 10px;
+
+}
+.VideoPlayerEmbedButton1{
+  width: 220px;
+  background-color: rgba(0,0,0,1);
+}
+.VideoPlayerEmbedButton2{
+  width: 150px;
+  background-color: rgba(0,0,0,1);
+}
+.VideoPlayerEmbedButton textarea{
+  position: absolute;
+  left: 40px;
+  top: 7px;
+  height: 20px;
+  line-height: 20px;
+  padding: 3px;
+  width: 160px;
+  color: #ccc;
+  border: 0;
+  background: transparent;
+  resize: none;
+  white-space: nowrap;
+  overflow: hidden;
+  outline: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+.VideoPlayerEmbedButtonSuccess{
+  position: absolute;
+  width: 100px;
+  padding-right: 10px;
+  height: 100%;
+  left: 40px;
+  top: 0;
+  background: #18ae53;
+  color: #fff;
+  line-height: 40px;
+  font-weight: 900;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 14px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+.VideoPlayerBl{
+  width:100%;
+  height:0px;
+  position:relative;
+  padding-bottom:56.250%;
+}
+.VideoPlayerBl iframe, .VideoPlayerBl img, .VideoPlayerTh{
+  width:100%;
+  height:100%;
+  position:absolute;
+  left:0px;
+  top:0px;
+  overflow:hidden;
+}
+.VideoPlayerTh{
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: #000;
+}
+.VideoPlayerBlNP{
+  cursor: pointer;
+}
+.VideoPlayerBlNP:after{
+  content: "";
+  display: block;
+  width: 48px;
+  height: 57px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-top: -30px;
+  margin-left: -24px;
+  background-image: url(https://d37kf7rs4g1hyv.cloudfront.net/scorebat/spriteflsc-min.png);
+  background-size: 146px;
+  background-position: -2px -79px;
+  opacity: .85;
+}
+.VideoPlayerBlNP:hover:after{
+  opacity: 1;
+}
+.VideoPlayerStories:hover{
+  background: #fffbf5;
+  cursor: pointer;
+}
+.VideoPlayerStoriesC{
+  border-bottom-left-radius:  15px;
+  border-bottom-right-radius:  15px;
+  box-shadow: 0 2px 12px -1px #eee;
+}
+.VideoPlayerGrouped .VideoPlayerStoriesActive{
+  margin-bottom: 4px;
+}
+.VideoPlayerStoriesPTT{
+  color: #3a0115;
+  font-weight: 900;
+  padding: 10px;
+  padding-top: 10px;
+  padding-bottom: 12px;
+  line-height: 20px;
+  text-align: left;
+  position: relative;
+  padding-left: 20px;
+  letter-spacing: -.3px;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+.VideoPlayerStoriesEB{
+  position: absolute;
+  right: 12px;
+  top: 9px;
+  font-size: 12px;
+  color: #fff;
+  padding: 2px;
+  padding-left: 8px;
+  padding-right: 8px;
+  line-height: 20px;
+  background: #626569;
+  border-radius: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: -.03em;
+}
+.VideoPlayerStoriesEB:hover{
+  background: #494c50;
+}
+.VideoPlayerStoriesEC{
+  text-align: center;
+  padding: 12px;
+}
+.VideoPlayerStoriesPW{
+  position: relative;
+}
+.VideoPlayerStoriesTW{
+  position: relative;
+}
+
+.VideoPlayerStoriesActive, .VideoPlayerStoriesActive:hover{
+  cursor: default;
+  background: none;
+}
+.VideoPlayerGroupedXL .VideoPlayerStoriesC,.VideoPlayerGroupedXL .VideoPlayerStories{
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+.VideoPlayerGroupedX1{
+  border-top: dashed 1px #eee;
+}
+.VideoPlayerStoriesB{
+  position: relative;
+  border-top: dotted 1px #f2f2f2;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+.VideoPlayerStoriesMtW{
+  color: #bdbdbd;
+  line-height: 1em;
+  padding-right: 15px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+  text-transform: uppercase;
+  transition:background-color .2s ease-in-out;
+  -webkit-transition:background-color .2s ease-in-out;
+  position: relative;
+}
+
+.VideoPlayerStoriesMtWLive{
+  /* color: #fff; */
+  /* background: #ed5565; */
+  /* box-shadow: 0 1px 2px #ed5565; */
+}
+.VideoPlayerStoriesMtS{
+  font-weight: 900;
+  padding-left: 4px;
+
+}
+.VideoPlayerStoriesMtWLive .VideoPlayerStoriesMtS{
+}
+.VideoPlayerStoriesMtLS{
+  padding-left: 16px;
+  /* color: #777; */
+}
+.VideoPlayerStoriesTbC{
+  display: flex;
+}
+.VideoPlayerStoriesTbC1{
+  width: 99%;
+  text-align: left;
+}
+.VideoPlayerStoriesBt{
+  display: inline-block;
+  line-height: 30px;
+  padding-left: 15px;
+  padding-right: 15px;
+  background-color: #c0496f;
+  border-radius: 15px;
+  color:#fff;
+  transition:background-color .2s ease-in-out;
+  -webkit-transition:background-color .2s ease-in-out;
+  position: relative;
+}
+.VideoPlayerStoriesBtShd{
+  background-color: #fff;
+  color: #555;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.VideoPlayerStoriesBt:hover{
+  cursor: pointer;
+  background-color: #a73e60;
+}
+.VideoPlayerStoriesBtShd:hover{
+
+  background-color: #f7f7f7;
+}
+.VideoPlayerStoriesBtClose{
+  position: absolute;
+  right:0;
+  top: 0;
+  width: 35px;
+  height: 35px;
+  color: #ccc;
+  font-size:20px;
+  line-height:35px;
+  text-align: center;
+  cursor: pointer;
+}
+.VideoPlayerStoriesBtClose:hover{
+  color: #777;
+}
+.VideoPlayerStoriesBtEmbed{
+  border-bottom-right-radius: 15px;
+}
+.EmbedCodeWrapper{
+  padding: 10px;
+}
+.EmbedCodeLabel{
+  padding: 10px;
+  padding-bottom: 0;
+  color: #ccc;
+  text-align: center;
+  line-height: 14px;
+  font-size: 14px;
+}
+.EmbedCode{
+  display: flex;
+  height: 40px;
+  border-radius: 20px;
+  background: #f4f4f4;
+}
+.EmbedCodeIcon{
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  background: #717171;
+}
+.EmbedCodeTW{
+  flex: 1;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.EmbedCodeButton{
+  background-color: #18ae53;
+  cursor: pointer;
+  display: inline-block;
+  line-height: 40px;
+  border-radius: 20px;
+  width: 80px;
+  text-align: center;
+  color:#fff;
+  transition:background-color .2s ease-in-out;
+  -webkit-transition:background-color .2s ease-in-out;
+  position: relative;
+  font-weight: 700;
+}
+.EmbedCodeButton:hover{
+  background-color: #17a04d;
+}
+.EmbedCodeButton0, .EmbedCodeButton0:hover{
+  background-color: #ed5565;
+}
+.EmbedCodeButton1, .EmbedCodeButton1:hover,  .VideoPlayerStoriesBtSuccess, .VideoPlayerStoriesBtSuccess:hover{
+  background-color: #54a960;
+}
+.BatPlayer .EmbedCode{
+  background: #2f2f2f;
+}
+.BatPlayer .EmbedCodeIcon{
+  background: #3486e6;
+}
+.BatFeedItemEmbed .EmbedCode{
+  background: #3c3b3b;
+
+}
+.BatFeedItemEmbed .EmbedCodeIcon{
+  background: #585858;
+  opacity: 0.8;
+}
+.BatFeedItemEmbed .EmbedCode textarea{
+  color: #797979;
+}
+.BatFeedItemEmbed .EmbedCodeButton{
+  background: #ccc;
+  color: #555;
+}
+.BatFeedItemEmbed .EmbedCodeButton:hover{
+  background: #eee;
+}
+.VideoPlayerStoriesBtfb:before,.VideoPlayerStoriesBttw:before{
+  content: "";
+  display: block;
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  margin-top: -7px;
+  width: 13px;
+  height: 14px;
+  background-image: url(https://d37kf7rs4g1hyv.cloudfront.net/scorebat/spriteflsc-min.png);
+  background-size: 146px;
+  background-position: -62px 1px;
+  background-repeat:no-repeat;
+}
+.VideoPlayerStoriesBtfb{
+  background-color: #4655ab;
+  padding-left: 30px;
+  margin-left: 8px;
+}
+.VideoPlayerStoriesBtfb:hover{
+  background-color: #3e4b96;
+}
+.VideoPlayerStoriesBtfb:before{
+  background-position: -48px 0;
+}
+.VideoPlayerStoriesBttw{
+  background-color: #4687df;
+  padding-left: 28px;
+  margin-left: 8px;
+}
+.VideoPlayerStoriesBttw:hover{
+  background-color: #407bcc;
+}
+.VideoPlayerStoriesBembed, .VideoPlayerStoriesBshare{
+  text-align: center;
+  padding-bottom: 12px;
+}
+.VideoPlayerStoriesBTtl{
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #444;
+  text-align: left;
+}
+
+.EmbedCode textarea{
+  resize: none;
+  background: transparent;
+  border: none;
+  color: #999;
+  display: block;
+  box-sizing: border-box;
+  white-space: nowrap;
+  overflow: hidden;
+  font-size: 16px;
+  line-height: 36px;
+  height: 40px;
+  width: 100%;
+}
+.VideoPlayerStoriesBshare .VideoPlayerStoriesBTtl{
+  text-align: center;
+}
+.VideoPlayerStoriesSoon{
+
+  color:#555;
+  padding: 20px;
+  text-align: center;
+
+  border-bottom: none;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+.VideoFeedHorizontalWWhorizontal{
+  position: relative;
+  padding-bottom: 130px;
+  margin-top: 7px;
+}
+.VideoFeedHorizontalWWhorizontal .VideoFeedHorizontalW{
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 0;
+}
+.VideoFeedHorizontal .VideoThumbnailTitle{
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.VideoInFeedTitle{
+  font-weight: 700;
+  color:#3a0115;
+  letter-spacing: -.01em;
+  line-height: 1em;
+  text-decoration: none;
+  display: block;
+}
+.VideoInFeedCLogo{
+  width: 40px;
+  padding-left: 5px;
+
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+}
+.VideoInFeedCLogoL{
+
+}
+.VideoInFeedCLogo .FailoverImage{
+  height: 40px;
+  width: 40px;
+}
+.VideoInFeedTitleActive:hover{
+  cursor: pointer;
+  text-decoration: underline;
+}
+.VideoInFeedSubTitle{
+  color: #999;
+  letter-spacing: -.02em;
+  line-height: 1em;
+  margin-top: 4px;
+}
+.VideoInFeedTitleR{
+  display: none;
+}
+.VideoInFeedTitleS{
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  o-text-overflow: ellipsis;
+}
+.VideoInFeedTitle{
+  text-transform: uppercase;
+  font-weight: 900;
+  font-size: 1.25em;
+  letter-spacing: -.03em;
+  line-height: 16px;
+  margin-top: 4px;
+}
+.VideoPlayerStoriesTTSc{
+  font-weight: 900;
+  color: #c34754;
+}
+.VideoPlayerStoriesTTScSt{
+  padding-left: 4px;
+  font-weight: 400;
+}
+.VideoFeedHorizontalTitle{
+  white-space: normal;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  max-height: 3.6em;
+  font-size: 13px;
+  line-height: 1em;
+  margin-top: 2px;
+}
+.VideoInFeedBody{
+  position: relative;
+  display: flex;
+}
+.VideoInFeedBodyJustTt{
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+.VideoInFeedBodyJustTt .VideoInFeedName{
+  padding-left: 30px;
+  padding-right: 2px;
+}
+.VideoInFeedName{
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+}
+.VideoInFeedSubName{
+
+  margin-top: 4px;
+  color: #ccc;
+  line-height: 1;
+}
+.VideoInFeedPic{
+  text-align: left;
+  width: 82px;
+  flex-shrink: 0;
+}
+.VideoInFeedTW{
+  padding-left: 15px;
+  padding-right: 80px;
+}
+.VideoInFeedTeamLogo1,.VideoInFeedTeamLogo2{
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  vertical-align: middle;
+}
+.VideoInFeedTeamLogo2{
+  margin-left: 2px;
+}
+.VideoFeedHorizontal{
+  white-space: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  width: 100%;
+  display: flex;
+  box-sizing: border-box;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+.VideoFeedHorizontalhorizontal{
+  height: 130px;
+}
+.VideoFeedHorizontalSp{
+  padding: 3px;
+}
+.VideoFeedHorizontalItem{
+  text-align: center;
+  width: 100px;
+  margin-right: 10px;
+  position: relative;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+.VideoFeedHorizontal::-webkit-scrollbar{
+  width: 0;
+  height: 0;
+  background: transparent;
+}
+.VideoFeedHorizontalThumbW{
+  border: solid 3px #eee;
+  border-radius: 36px;
+  -webkit-border-radius: 36px;
+  display: inline-block;
+  overflow: hidden;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+.VideoFeedHorizontalThumb{
+  display: block;
+  width: 54px;
+  height: 54px;
+  border: solid 3px #fff;
+  border-radius: 30px;
+  -webkit-border-radius: 30px;
+  background-color: #111;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  overflow: hidden;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+.VideoFeedHorizontalTitle{
+  color: #333;
+}
+.VideoFeedHorizontalItemActive{
+  cursor: default;
+}
+.VideoFeedHorizontalItem:hover .VideoFeedHorizontalThumbW{
+  border-color: #f1bfbf;
+}
+.VideoFeedHorizontalItemActive .VideoFeedHorizontalThumbW,.VideoFeedHorizontalItemActive:hover .VideoFeedHorizontalThumbW{
+  border-color: #ed5565;
+}
+.VideoFeedHorizontalItemActive .VideoFeedHorizontalTitle{
+  font-weight: 700;
+}
+.BatFeedItemFooter{
+  box-shadow: none;
+  padding: 15px;
+  padding-bottom: 60px;
+  margin-top: 60px;
+}
+.FooterST{
+  color: #555;
+  margin-bottom: 5px;
+  font-size: 1.2em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.FooterST a{
+  color: #555;
+  text-decoration: none;
+}
+.FooterAbout{
+  color: #555;
+}
+.FooterAbout a, .FooterL a{
+  color: #555;
+  text-decoration: none;
+}
+.FooterAbout a:hover, .FooterL a:hover{
+  text-decoration: underline;
+}
+.FooterLogo{
+  text-align: left;
+  padding-bottom: 40px;
+  /*border-bottom: solid 1px #5a3749;*/
+}
+.Footer .SiteLogo{
+  padding-left: 0;
+  float: none;
+  margin-bottom: 30px;
+
+}
+.FooterLinkList a{
+  color:#555;
+  text-decoration: none;
+  margin-right: 10px;
+}
+.FooterLinkList a:hover{
+  text-decoration: underline;
+}
+.FooterC{
+  text-align: center;
+  padding-top: 30px;
+}
+.FooterC a{
+  color: #555;
+  text-decoration: none;
+  padding-right: 10px;
+  padding-left: 10px;
+  line-height: 25px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.Message{
+  text-align: center;
+  font-weight: 900;
+  background: #fff;
+  color: #3a0115;
+  transition: background-color .2s ease-in-out;
+  padding: 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: -.03em;
+  font-size: 1.2em;
+}
+.MessageClickable:hover{
+  cursor: pointer;
+  background: #fafafa;
+}
+.BatFeedItemPage{
+  color: #333;
+  padding: 25px;
+}
+.BatFeedItemPage h1{
+  color: #333333;
+  margin-top: 0;
+}
+.BatFeedItemPage h3,.BatFeedItemPage h1{
+  letter-spacing: -.025em;
+
+}
+.BatFeedItemPage a{
+  text-decoration: none;
+  color: #a94250;
+}
+.BatFeedItemPage a:hover{
+  text-decoration: underline;
+}
+.MatchViewTodays{
+  padding-bottom: 60px;
+  margin-bottom: 60px;
+  border-bottom: solid 1px #e7e7e7;
+}
+.MatchViewTodaysAttention{
+  text-transform: uppercase;
+  font-size:2em;
+  font-weight: 900;
+  color: #823636;
+  margin-bottom: 20px;
+}
+.MatchViewTodaysNote{
+  color:#333;
+  font-size: 1.2em;
+}
+.MatchViewTodaysNoteForToday{
+  font-weight: 700;
+  color: #823636;
+  text-transform: uppercase;
+  margin-top: 20px;
+  margin-bottom: 5px;
+}
+.MatchViewInfo{
+  display: flex;
+  padding-bottom: 10px;
+  align-items: flex-start;
+}
+
+.MatchViewInfo .SubscribeButtonWrapper{
+  margin-left: 20px;
+}
+.MatchViewInfoCompFlag img{
+  width: 32px;
+  border:0;
+}
+.MatchViewInfoRows{
+  flex: 1;
+  padding-left: 20px;
+}
+.MatchViewInfoRowCompetition{
+  text-transform: uppercase;
+}
+.MatchViewInfoRowLink:after{
+  top: 0;
+  content: '\203A';
+  position: absolute;
+  right: -10px;
+  color: #aaa;
+  font-size: 18px;
+}
+
+.MatchViewInfoRowMain{
+  line-height: 1;
+  padding: 0;
+  margin: 0;
+  font-size: 1em;
+  font-weight: 400;
+  text-transform: uppercase;
+  margin-top: 5px;
+
+}
+.MatchViewInfoRowMainBig{
+  font-size: 20px;
+  font-weight: 900;
+  display: block;
+  color: #333;
+  letter-spacing: -.7px;
+}
+
+.MatchViewInfoRowTitle{
+  line-height: 1;
+  color: #333;
+  text-align: left;
+  font-weight: 400;
+}
+.MatchViewInfoRowLink{
+  font-weight: 400;
+  color: #3A0014;
+  letter-spacing: -.5px;
+  text-decoration: none;
+  position: relative;
+}
+.MatchViewInfoRowLink:hover{
+  text-decoration: underline;
+}
+.MatchViewInfoBottom{
+  margin-top: 25px;
+}
+.MatchViewInfoRowDate{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.MatchViewInfoRowDate:before{
+  background-image: url(https://d37kf7rs4g1hyv.cloudfront.net/scorebat/spriteflsc-min.png);
+  background-size: 146px;
+  background-position: -37px -32px;
+  content: "";
+  width: 14px;
+  height: 14px;
+  content: "";
+  display: block;
+  margin-right: 6px;
+}
+.MatchViewInfoBottom .MatchViewInfoRow{
+  margin-top: 5px;
+}
+.MatchViewInfoBottom .MatchViewInfoRowTitle{
+  color: #aaa;
+  text-align: center;
+}
+.MatchViewInfoRowCompetition .MatchViewInfoRowIconPlace img{
+  max-height: 20px;
+}
+.MatchViewHead{
+  padding-top: 30px;
+}
+.MatchViewHeadT{
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+  margin-top: 3px;
+}
+.MatchViewHeadSide1,.MatchViewHeadSide2,.MatchViewHeadSS{
+  display: table-cell;
+}
+.MatchViewHeadSide1,.MatchViewHeadSide2{
+  font-size: 1.3em;
+  font-weight: 900;
+  text-transform: uppercase;
+  vertical-align: top;
+  line-height: 20px;
+  padding-top: 49px;
+  letter-spacing: -0.7px;
+  word-wrap: break-word;
+  text-align: center;
+  position: relative;
+
+}
+.MatchViewHeadSide1 a,.MatchViewHeadSide2 a{
+  color: #3a0115;
+  text-decoration: none;
+}
+.MatchViewHeadSide1 a:hover,.MatchViewHeadSide2 a:hover{
+  text-decoration: underline;
+}
+.MatchViewHeadScore{
+  font-weight: 900;
+}
+.MatchViewHeadSS{
+  width: 122px;
+  text-align: center;
+  vertical-align: top;
+  position: relative;
+  cursor: default;
+}
+.MatchViewHeadScoreWr{
+  position: relative;
+}
+.MatchViewHeadSS .FieldStatusWrapper{
+  position: absolute;
+  top: 100%;
+  margin-top: 4px;
+  margin-left: -110px;
+  left: 50%;
+  width: 220px;
+}
+.MatchViewHeadScoreDg{
+  display: inline-block;
+  background-color: #3a0115;
+  color: #fff;
+  padding: 8px;
+  font-size: 33px;
+  line-height: 33px;
+  padding-top: 2px;
+  padding-bottom:4px;
+  border-radius: 6px;
+  transition: all .2s ease-in-out;
+}
+.MatchViewHeadScoreDg1{
+  margin-right: 4px;
+}
+.MatchViewHeadScoreDg2{
+  margin-left: 4px;
+}
+.MatchViewGoal1 .MatchViewHeadScoreDg1,.MatchViewGoal2 .MatchViewHeadScoreDg2{
+  transform: scale(1.2);
+  background: #e2203c;
+}
+.MatchViewHeadScoreTime{
+  font-size: 2em;
+  line-height: .6em;
+  font-weight: 300;
+  color: #888;
+  border-color: #eee;
+  letter-spacing: 0;
+}
+.MatchViewHeadTeamLogo{
+  width: 60px;
+  height: 60px;
+  display: block;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  position: absolute;
+  top: -45px;
+  right: 50%;
+  margin-right: -60px;
+}
+.MatchViewMainEvents{
+  margin-top:25px;
+  padding-bottom: 5px;
+}
+.MatchViewMainEventsEvent{
+  padding-top: 5px;
+  padding-bottom: 5px;
+  color: #555;
+  position: relative;
+  font-weight: 400;
+  vertical-align: middle;
+  line-height: 15px;
+  min-height: 15px;
+  font-size: 1.1em;
+  cursor: default;
+  margin-top: 6px;
+}
+.MatchViewMainEventsEventPLast{
+  display: none;
+}
+.MatchViewMainEventsEventSide1{
+  text-align: right;
+  margin-right: 50%;
+  padding-right: 60px;
+}
+.MatchViewMainEventsEventSide2{
+  text-align: left;
+  margin-left: 50%;
+  padding-left: 60px;
+}
+.MatchViewMainEventsEventType{
+  color:#888;
+  display: none;
+}
+.MatchViewMainEventsEventTypeog .MatchViewMainEventsEventType,
+.MatchViewMainEventsEventTypepen .MatchViewMainEventsEventType,
+.MatchViewMainEventsEventTypempen .MatchViewMainEventsEventType{
+  display: inline;
+}
+.MatchViewMainEventsEventMinute{
+  position: absolute;
+  top: 3px;
+  width: 60px;
+  text-align: center;
+  color: #4b694f;
+  font-weight: 400;
+  line-height: 20px;
+}
+.MatchViewMainEventsEventSide1 .MatchViewMainEventsEventMinute{
+  right: -30px;
+}
+.MatchViewMainEventsEventSide2 .MatchViewMainEventsEventMinute{
+  left: -30px;
+}
+.MatchViewMainEventsEvent:after{
+  content: "";
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  vertical-align: top;
+  top: 5px;
+  position: absolute;
+  background-image: url(https://d37kf7rs4g1hyv.cloudfront.net/scorebat/spriteflsc-min.png);
+  background-size: 146px;
+  background-repeat: no-repeat;
+}
+.MatchViewMainEventsEventTypegoal:after{
+  background-position: -92px 0;
+}
+.MatchViewMainEventsEventTypepen:after{
+  background-position: -126px 0;
+}
+.MatchViewMainEventsEventTypempen:after{
+  background-position: -126px -19px;
+}
+.MatchViewMainEventsEventTypeog:after{
+  background-position: -109px 0;
+}
+.MatchViewMainEventsEventType2yc:after{
+  background-position: -74px 0;
+}
+.MatchViewMainEventsEventTyperc:after{
+  background-position: -74px -17px;
+}
+.MatchViewMainEventsEventTypeyc:after{
+  background-position: -74px -36px;
+}
+.MatchViewMainEventsEventSide1:after{
+  right: 30px;
+}
+.MatchViewMainEventsEventSide2:after{
+  left: 30px;
+}
+.BatFeedStickyTop{
+  background: #fff;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  position: relative;
+  box-shadow:0 3px 3px rgba(175, 175, 175, 0);
+  will-change: box-shadow;
+}
+.BatFeedStickyTopStatus{
+  opacity: 0;
+  transition: all .05s ease;
+  position: absolute;
+  height: 60px;
+  display: block;
+  top: -60px;
+  width: 100%;
+  padding-left: 20px;
+  padding-right: 20px;
+  box-sizing: border-box;
+  background: #fff;
+  visibility: hidden;
+  will-change: opacity, visibility;
+}
+.BatFeedStickyTopStatusC{
+  transition: transform .5s ease;
+  transform: translateY(-10px);
+}
+.BatFeedStickyTopSticked{
+  box-shadow:0 3px 3px rgba(175, 175, 175, 0.2);
+}
+.BatFeedStickyTopSticked .BatFeedStickyTopStatus {
+  opacity: 1;
+  visibility: visible;
+}
+.BatFeedStickyTopSticked .BatFeedStickyTopStatusC{
+  transform: translateY(0);
+}
+.BatFeedStickyTopHdr{
+  padding-top: 14px;
+  padding-bottom: 14px;
+}
+.BatFeedStickyTopHdrT{
+  color: #3a0115;
+  font-weight: 900;
+  text-transform: uppercase;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  o-text-overflow: ellipsis;
+  line-height: 32px;
+  padding-left: 48px;
+  position: relative;
+  letter-spacing: -.03em;
+}
+.BatFeedStickyTopHdrTmg{
+  width:32px;
+  height:32px;
+  position: absolute;
+  top:0;
+  left:0;
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+.MatchViewTimelineMinimized .MatchViewTimelineEventEarly{
+  display: none;
+}
+.MatchViewTimeline{
+  position: relative;
+}
+.MatchViewTimelineH2H{
+  padding-bottom: 20px;
+  padding-top: 5px;
+  min-height: 20px;
+  transition: opacity 1s ease;
+  opacity: 0;
+}
+.MatchViewTimelineH2HReady{
+  opacity: 1;
+}
+.MatchViewTimelineEvent{
+  padding-left: 35px;
+  margin-left: 10px;
+  position: relative;
+  color: #555;
+  box-sizing: border-box;
+  vertical-align: middle;
+}
+.MatchViewTimelineEventTW{
+  min-height: 60px;
+  display: table;
+  width: 100%;
+  vertical-align: middle;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+.MatchViewTimelineEventTWC{
+  display: table-cell;
+  vertical-align: middle;
+}
+.MatchViewTimelineEventTb{
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+  vertical-align: middle;
+}
+.MatchViewTimelineEventIcon{
+  display: block;
+  width: 44px;
+  height: 44px;
+  position: absolute;
+  left: -10px;
+  top: 50%;
+  margin-top: -22px;
+  border-radius: 25px;
+
+  background-color: #522d40;
+  /* background-color: rgba(82, 45, 64, 0.95); */
+  box-shadow: 0px 1px 2px #522d40;
+}
+.MatchViewTimelineEventIcon:before{
+  display: inline-block;
+  content: "";
+  width: 26px;
+  height: 26px;
+  background-image: url(https://d37kf7rs4g1hyv.cloudfront.net/scorebat/spriteflsc-min.png);
+  background-size: 146px;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 9px;
+  left: 9px;
+}
+.MatchViewTimelineEventIcongoal:before{
+  background-position: -90px -36px;
+}
+.MatchViewTimelineEventIconstatusChange:before{
+  background-position: -115px -95px;
+}
+.MatchViewTimelineEventIcon2yc:before{
+  background-position: -51px -16px;
+}
+.MatchViewTimelineEventIconyc:before{
+  background-position: -89px -66px;
+}
+.MatchViewTimelineEventIconrc:before{
+  background-position: -116px -66px;
+}
+.MatchViewTimelineEventIconpen:before{
+  background-position: -65px -144px;
+}
+.MatchViewTimelineEventIconmpen:before{
+  background-position: -119px -36px;
+}
+.MatchViewTimelineEventIconsub:before{
+  background-position: -62px -73px;
+}
+.MatchViewTimelineEventIconog:before{
+  background-position: -24px -49px;
+}
+.MatchViewTimelineEventIconInfo:before{
+  background-position: -88px -94px;
+}
+.MatchViewTimelinePseudoEventRed .MatchViewTimelineEventIcon,.MatchViewTimelineEventRed .MatchViewTimelineEventIcon{
+  background: #ff7100;
+  box-shadow: 0 2px 1px #ea6408;
+}
+.MatchViewTimelineEventMinute{
+  width: 80px;
+  display: table-cell;
+  vertical-align: middle;
+  font-weight: 900;
+  color: #502f40;
+  font-size: 1.3em;
+  text-align: center;
+}
+.MatchViewTimelineEventBody{
+  display: table-cell;
+  vertical-align: middle;
+}
+.MatchViewTimelineWrapper{
+  position: relative;
+}
+.MatchViewTimelineWrapper:before{
+  content: "";
+  position: absolute;
+  width: 21px;
+  height: 100%;
+  height: calc(100% - 67px);
+  left: 0;
+  top: 40px;
+  border-right: dashed 1px #aaa;
+}
+.MatchViewTimelineSeeAll{
+  color: #5a394a;
+  padding: 10px;
+  padding-left:0;
+  position: relative;
+  font-weight: 900;
+  text-transform: uppercase;
+  text-align: left;
+  cursor: pointer;;
+}
+.MatchViewTimelineSeeAll span{
+  width: 43px;
+  text-align: center;
+  display: inline-block;
+}
+.MatchViewTimelineSeeAll:hover{
+  color: #803159;
+}
+.MatchViewTimelineEventStatuschange{
+  padding-left: 85px;
+}
+.MatchViewTimelineEventTitle{
+  font-size: 1.3em;
+  line-height: 20px;
+  color: #502f40;
+}
+.MatchViewTimelineEventRed .MatchViewTimelineEventTitle{
+  color: #ff6800;
+}
+.MatchViewTimelineEventDesc{
+  line-height: 1.1em;
+}
+.MatchViewTimelinePseudoEvent .MatchViewTimelineEventDesc{
+  padding-left: 15px;
+}
+.MatchViewTimelineEventChildren{
+  padding-top: 20px;
+}
+.MatchViewTimelineEventIsGoal .MatchViewTimelineEventTitle{
+  font-weight: 900;
+  font-size: 1.5em;
+  /*padding-bottom: 5px*/
+}
+.MatchViewTimelineEventIsMajorStatus .MatchViewTimelineEventTitle{
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -0.03em;
+}
+.MatchViewTimelineEventIsMajor .MatchViewTimelineEventTitle{
+  font-weight: 700;
+}
+.MatchViewTimelineEventCustomIcon.MatchViewTimelineEventIcon:before{
+  display: none;
+}
+.MatchViewTimelineEventIcon .SpinnerBounce{
+  position: relative;
+  top: 9px;
+}
+.MatchViewTimelinePseudoEvent .MatchViewTimelineEventBigMinute{
+  color: #ff6800;
+}
+.MatchViewTimelinePseudoEventMinuteBlinker{
+  transition:color .35s ease-in-out;
+  -webkit-transition:color .35s ease-in-out;
+}
+.MatchViewTimelinePseudoEventMinuteBlinkerfalse{
+  color: #fff;
+}
+.MatchViewTimelineCountdown .SpinnerClock{
+  transform: scale(0.4);
+  left: -1px;
+  top: -1px;
+}
+.Field{
+  position: relative;
+}
+.FieldPitch{
+  background-image: url(https://d37kf7rs4g1hyv.cloudfront.net/scorebat/dasht-min.png);
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: relative;
+  z-index: 4;
+}
+.FieldPitch:before{
+  content: "";
+  display: block;
+  padding-top: 18.75%;
+}
+.FieldHeader{
+  height: 30px;
+  position: relative;
+}
+.FieldHeaderSide1,.FieldHeaderSide2{
+  -webkit-transition: all .25s ease-out;
+  -moz-transition: all .25s ease-out;
+  -ms-transition: all .25s ease-out;
+  -o-transition: all .25s ease-out;
+  transition: all .25s ease-out;
+  opacity: 0;
+  position: absolute;
+  top: -10px;
+  display: block;
+
+}
+.FieldHeaderDisplaySides .FieldHeaderSide1,.FieldHeaderDisplaySides .FieldHeaderSide2{
+  display: block;
+  opacity: 1;
+  top: 8px;
+}
+.FieldHeaderSide1{
+  left: 0;
+}
+.FieldHeaderSide2{
+  right: 0;
+}
+.FieldHeaderScore{
+  display: inline-block;
+  font-weight: 900;
+  color: #3a0115;
+  font-size: 1.5em;
+  line-height: 30px;
+  vertical-align: top;
+  margin-top: 2px;
+  transition:all .2s ease-in-out;
+}
+.FieldHeaderSide1 .FieldHeaderScore{
+  margin-left: 5px;
+}
+.FieldHeaderSide2 .FieldHeaderScore{
+  margin-right: 5px;
+}
+.MatchViewGoal1 .FieldHeaderSide1 .FieldHeaderScore{
+  transform: scale(1.3);
+  color: #e2203c;
+}
+.MatchViewGoal2 .FieldHeaderSide2 .FieldHeaderScore{
+  transform: scale(1.3);
+  color: #e2203c;
+}
+.FieldHeaderLogo{
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.FieldStatusWrapper{
+  text-align: center;
+  cursor: default;
+}
+.FieldStatus{
+  display: inline-block;
+  font-weight: 900;
+  color: #333;
+  font-size: 1.15em;
+  line-height: 29px;
+  height: 30px;
+  text-align: center;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  overflow: hidden;
+  border-radius: 6px;
+  transition:color .5s ease-in-out;
+  -webkit-transition:color .5s ease;
+
+}
+.FieldStatusStatelive{
+  color: #ff7a00;
+  font-size: 1.5em;
+}
+
+.FieldStatusStatescheduled{
+  font-size: .9em;
+  color: #c74a58;
+}
+.FieldStatusConnecting{
+  color: #fbc854;
+  font-size: 1em;
+}
+.FieldStatusStatenospoilers{
+  color: #fff;
+  background: #ff7a00;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-radius: 15px;
+  cursor: pointer;
+}
+.FieldStatusStatenospoilers:hover{
+  background: #dc6902;
+}
+.FieldStatusConnecting .SpinnerBounce > div{
+  background-color: #fbc854;
+}
+.BatFeedConnecting{
+  background: #00172f;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: .8em;
+  font-weight: 700;
+  border-radius: 20px;
+  text-align: center;
+  width: 150px;
+  line-height: 40px;
+  box-shadow: 0 1px 2px #001731;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  -moz-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  -o-transform: translateZ(0);
+  transform: translateZ(0);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-left: -225px;
+  z-index: 21;
+  padding-top: 20px;
+  margin-top: -75px;
+}
+.BatFeedConnecting .Spinner{
+  border: 2px solid #0f3156;
+  border-left: 2px solid #ffd036;
+}
+.FieldStatusConnecting .SpinnerBounce{
+  display: inline-block;
+  position: relative;
+  top: -2px;
+  margin-left: 10px;
+}
+.FieldHeader .FieldStatus{
+  background: #522d40;
+  color: #fff;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-radius: 15px;
+  position: relative;
+  top: 10px;
+  transition:background-color .5s ease-in-out;
+  -webkit-transition:background-color .5s ease;
+}
+.FieldHeader .FieldStatusStatelive{
+  background: #ff7a00 ;
+}
+.FieldHeader .FieldStatusStatescheduled{
+  color: #c74958;
+  background: none;
+}
+.FieldHeader .FieldStatusConnecting{
+  background: #fbc854;
+}
+.FieldHeader .FieldStatusConnecting .SpinnerBounce > div{
+  background-color: #fff;
+}
+.FieldFormation{
+  position: absolute;
+  width: 66.4%;
+  height: 1%;
+  display: block;
+  left: 16.2%;
+  top: 34%;
+}
+.FieldFormationSide{
+  position: absolute;
+  top: 0;
+  width: 46.5%;
+  height: 100%;
+  display: block;
+}
+.FieldFormationSide1{
+  right: 50%;
+}
+.FieldFormationSide2{
+  left: 50%;
+}
+.FieldFormationPlayer{
+  display: block;
+  width: 11%;
+  height: 1700%;
+  position: absolute;
+  top: -850%;
+  opacity: 0.85;
+}
+.FieldFormationPlayer:before{
+  display: block;
+  width: 50%;
+  height: 0;
+  position: absolute;
+  bottom: 20%;
+  left: 50%;
+  margin-left: -25%;
+  box-shadow: 0 0 2px 2px #000;
+  opacity: 0.3;
+  content: "";
+}
+.FieldFormationPlayerNumber{
+  color: #fff;
+  font-weight: 900;
+  font-size: 10px;
+  position: absolute;
+  text-align: center;
+  top: 0;
+  left: 0;
+}
+.MatchViewStats{
+  display: flex;
+  flex-direction: row;
+  padding-top: 10px;
+}
+.MatchViewStatsLayoutrow{
+  flex-direction: column;
+}
+.MatchViewStat{
+  position: relative;
+  display: block;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.MatchViewStatName{
+  padding-left: 10px;
+  padding-right: 10px;
+  line-height: 20px;
+  color: #73596d;
+  font-weight: 400;
+  text-align: center;
+  font-size: 1.1em;
+  margin-bottom: 7px;
+}
+.MatchViewStatDesc{
+  margin-top: 20px;
+}
+.MatchViewStatCharts{
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+  vertical-align: middle;
+}
+.MatchViewStatChart{
+  position: relative;
+  display: table-cell;
+  width: 100%;
+  background: #f7f7f7;
+  height: 28px;
+  -webkit-border-radius: 14px;
+  -moz-border-radius: 14px;
+  border-radius: 14px;
+  vertical-align: top;
+}
+.MatchViewStatChartValue{
+  display: block;
+  height: 100%;
+  background: #a29aa2;
+  -webkit-border-radius: inherit;
+  -moz-border-radius: inherit;
+  border-radius: inherit;
+  transition:all 1s ease;
+  -webkit-transition:all 1s ease;
+}
+.MatchViewStatChartLabel{
+  font-size: 19px;
+  color: #fff;
+  font-weight: 900;
+  line-height: 27px;
+  position: absolute;
+  top: 0;
+  left: 12px;
+}
+.MatchViewStatChartZero .MatchViewStatChartLabel{
+  color: #ddd;
+}
+.MatchViewStatChartSide1 .MatchViewStatChartValue{
+  float:right;
+}
+.MatchViewStatChartSide1 .MatchViewStatChartLabel{
+  right: 12px;
+  left: auto;
+}
+.MatchViewStatChartBigger .MatchViewStatChartValue{
+  background-color: #8a7380;
+}
+.MatchViewStatChartSpacer{
+  display: table-cell;
+  width: 4px;
+}
+.MatchViewStatsFeatured{
+  display: flex;
+  justify-content: space-evenly;
+
+  flex-direction: column;
+  min-height: 100%;
+}
+.MatchViewStatsFeaturedrow{
+  flex-direction:row;
+  padding-bottom: 20px;
+}
+.MatchViewStatsLayoutcol .MatchViewStatsC{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  order:2;
+}
+.MatchViewStatsLayoutrow .MatchViewStatsF{
+  order: 0;
+}
+.MatchViewStatsFeaturedStat{
+  text-align: center;
+  position: relative;
+}
+.MatchViewStatsFeaturedcol .MatchViewStatsFeaturedStat{
+  padding-bottom: 15px;
+}
+.MatchViewStatsFeaturedStatValueSign{
+  font-size: 0.5em;
+  vertical-align: top;
+  font-weight: 300;
+}
+.MatchViewStatsFeaturedStatName{
+  text-align: center;
+  color: #84024a;
+  line-height: 1em;
+  min-height: 18px;
+  font-size: 1.15em;
+
+}
+.MatchViewStatsFeaturedStatValue{
+  font-weight: 700;
+  color:#a10060;
+  font-size: 1.7em;
+  text-align: center;
+  margin-bottom: 8px;
+}
+.MatchViewStatsFeaturedcol .MatchViewStatsFeaturedStat{
+  font-size: 1.2em;
+}
+.MatchViewStatsFeaturedStatBigger .DonutChartTrack{
+  stroke: #b53779;
+}
+.MatchViewStatsFeaturedStatBigger .DonutChartIndicator1{
+  stroke: #941d5e;
+}
+.MatchViewStatsFeaturedSpacer{
+  width: 8px;
+}
+.MatchViewStatsLayoutcol .MatchViewStatsF{
+  order: 1;
+  padding-right: 50px;
+}
+
+.MatchViewYellowCards{
+  color: #6a6a6a;;
+  text-align: left;
+  padding: 5px;
+  padding-bottom: 0;
+}
+.MatchViewYellowCards b{
+  padding-right: 3px;
+  font-weight: 400;
+  color: #333;
+}
+.MatchViewYellowCards b:after{
+  content: "";
+  display: inline-block;
+  width: 14px;
+  height: 15px;
+  background-image: url(https://d37kf7rs4g1hyv.cloudfront.net/scorebat/spriteflsc-min.png);
+  background-size: 146px;
+  /*background-repeat: no-repeat;*/
+
+  background-position: -75px -34px;
+  position: relative;
+  top: 2px;
+}
+.DonutChart{
+  display: inline-block;
+}
+.DonutChartTrack{
+  fill: transparent;
+  stroke: #941d5e;
+  stroke-width: 26;
+  transition: all 1s ease;
+}
+.DonutChartIndicator {
+  fill: transparent;
+
+  stroke-width: 26;
+  stroke-dasharray: 0 10000;
+  transition: all 1s ease;
+}
+.DonutChartIndicator1{
+  stroke: #b53779;
+}
+.DonutChartIndicator2{
+  stroke: #ffb700;
+}
+.DonutChartIndicator3{
+  stroke: #999999;
+}
+
+.DonutChartSvg {
+  margin: 0 auto;
+  border-radius: 50%;
+  display: block;
+}
+.DonutChartWrapper{
+  display: inline-block;
+  vertical-align: top;
+}
+.TitleWithUnderlineWrapper{
+  text-align: center;
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+.TitleWithUnderline{
+  font-size: 2em;
+  padding: 3px;
+  color: #555;
+  border-bottom: solid 4px #ed5565;
+  display: inline-block;
+  text-decoration: none;
+  margin: auto;
+}
+.TitleWithUnderline span{
+  font-weight: 700;
+}
+.TextBlock p{
+  line-height: 1.5em;
+  font-size: 1.1em;
+  font-weight: 400;
+  color: #555;
+}
+.TextBlockWdg{
+  margin-top: 30px;
+  margin-bottom: 30px;
+  font-size: 1em;
+}
+.TextBlock p a{
+  font-weight: 400;
+  color: #a94250;
+  text-decoration: none;
+}
+.TextBlock p a:hover{
+  text-decoration: underline;
+}
+.MatchViewLineupPlayer{
+  padding-top: 8px;
+  padding-bottom: 8px;
+  border-top: solid 1px #eee;
+  position: relative;
+  text-align: right;
+  background: #fafafa;
+}
+.MatchViewLineupPlayerOdd{
+  background: #fff;
+}
+.MatchViewLineupPlayerTb{
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+}
+.MatchViewLineupPlayerCl{
+  display: table-cell;
+  vertical-align: middle;
+}
+.MatchViewLineupPlayerNameFirst{
+  font-weight: 400;
+  color: #777;
+
+  font-size: 0.8em;
+  line-height: 0.9em;
+}
+.MatchViewLineupPlayerNameLast{
+  font-weight: 700;
+  color: #444;
+  font-size: 1.1em;
+  line-height: 1em;
+}
+.MatchViewLineupPlayerNameLastOnly{
+  line-height: 1.9em;
+}
+.MatchViewLineupPlayerPosition{
+  color: #ccc;
+  line-height: 16px;
+  font-size: 0.85em;
+  padding-left: 43px;
+}
+.MatchViewLineupPlayerNumber{
+  color: #868686;
+  line-height: 20px;
+  width: 25px;
+  text-align: center;
+  padding-left: 12px;
+  padding-right: 12px;
+  font-size: 1.4em;
+}
+.MatchViewLineupPlayerImage{
+  width: 30px;
+  text-align: right;
+}
+.MatchViewLineupPlayerImage .FailoverImage{
+  width: 23px;
+  height: 29px;
+  background-position-y: 20%;
+  background-size: cover;
+  border-radius: 15px;
+}
+.MatchViewLineupPlayerLeft{
+  text-align: left;
+}
+.MatchViewLineupPlayerLeft .MatchViewLineupPlayerImage{
+  text-align: left;
+}
+.MatchViewLineupPlayerLast{
+  border-bottom: solid 1px #eee;
+}
+.MatchViewLineupPlayerNameLastW{
+  position: relative;
+}
+.MatchViewLineupPlayerNameWrapper{
+  position: relative;
+}
+.MatchViewLineupPlayerEvents{
+  display: inline-block;
+  vertical-align: middle;
+  position: absolute;
+  top: 50%;
+  margin-top: -10px;
+  left: 3px;
+}
+.MatchViewLineupPlayerEventsNextToName{
+  display: inline-block;
+  vertical-align: middle;
+  position: absolute;
+  bottom: -2px;
+  left: 100%;
+  padding-left: 5px;
+  display: flex;
+}
+.MatchViewLineupPlayerEvent{
+  display: inline-block;
+  height: 20px;
+  line-height: 20px;
+  font-size: 0.8em;
+  font-weight: 700;
+  color: #6f4654;
+  vertical-align: top;
+}
+.MatchViewLineupPlayer .MatchViewLineupPlayerEvent{
+}
+.MatchViewLineupPlayerEvent:before{
+  background-image: url(https://d37kf7rs4g1hyv.cloudfront.net/scorebat/spriteflsc-min.png);
+  background-size: 146px;
+  background-repeat: no-repeat;
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  vertical-align: top;
+  margin-right: 1px;
+  content: "";
+}
+.MatchViewLineupPlayerEventsubOut:before{
+  background-position: -92px -18px;
+  margin-right: 5px;
+}
+.MatchViewLineupPlayerEventsubIn:before{
+  background-position: -92px -18px;
+  margin-right: 5px;
+}
+.MatchViewLineupPlayerEventyc:before{
+  background-position: -74px -33px;
+}
+.MatchViewLineupPlayerEvent2yc:before{
+  background-position: -76px -0;
+}
+.MatchViewLineupPlayerEventrc:before{
+  background-position: -76px -17px;
+}
+.MatchViewLineupPlayerEventog:before{
+  background-position: -109px 0;
+}
+.MatchViewLineupPlayerEventmpen:before{
+  background-position: -126px -17px;
+}
+.MatchViewLineupPlayerEventgoal:before,.MatchViewLineupPlayerEventpen:before{
+  background-position: -92px 0;
+}
+.MatchViewLineupPlayerLeft .MatchViewLineupPlayerEvents{
+  left: auto;
+  right: 3px;
+}
+.MatchViewLineupsSummary .MatchViewLineupPlayer{
+  padding-top: 8px;
+  padding-bottom: 8px;
+  min-height: 0;
+}
+.MatchViewLineupsSummary .MatchViewLineupPlayerPosition{
+  display: none;
+}
+.MatchViewLineupsFormation{
+  margin: auto;
+  margin-bottom: 50px;
+  position: relative;
+  max-height: 400px;
+  position: relative;
+  background: url(https://d37kf7rs4g1hyv.cloudfront.net/scorebat/lineszb-min.png) center;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+
+  cursor: default;
+}
+/*
+.MatchViewLineupsSgmBW{
+  position: relative;
+}
+.MatchViewLineupsSgmB{
+  width: 74.7%;
+  height: 3px;
+  background-color: #434a54;
+  position: absolute;
+  left: 12.5%;
+  top: 0;
+  z-index: 2;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+.MatchViewLineupsFormation:after{
+  content: "";
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: #434a54;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: 2;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}*/
+.MatchViewLineupsFormation:before{
+  display: block;
+  padding-top: 85%;
+  content: "";
+}
+.MatchViewLineupsFormationCircle1{
+  width: 100px;
+  height: 50px;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+  border: solid 3px #eee;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  margin-left: -50px;
+}
+.MatchViewLineupsFormationCircle2{
+  width: 100px;
+  height: 50px;
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+  border: solid 3px #eee;
+  position: absolute;
+  bottom: 20%;
+  left: 50%;
+  margin-left: -50px;
+}
+.MatchViewLineupsFormationVertical{
+  /* background-image: url(https://d37kf7rs4g1hyv.cloudfront.net/scorebat/fieldlinesvertical2-min.png) */
+}
+.MatchViewLineupsFormationLabels{
+  display: block;
+  width: 100%;
+  bottom: -40px;
+  left: 0;
+  position: absolute;
+  text-align: left;
+}
+.MatchViewLineupsFormationLabel1,.MatchViewLineupsFormationLabel2{
+  color: #a74277;
+  display: inline-block;
+  line-height: 30px;
+  line-height: 20px;
+  font-size: 1.5em;
+}
+.MatchViewLineupsFormationHalf1,.MatchViewLineupsFormationHalf2{
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  top: 0;
+  display: flex;
+  justify-content:space-between;
+
+}
+.MatchViewLineupsFormationHalf1{
+  left: 0;
+  flex-flow: row nowrap;
+}
+.MatchViewLineupsFormationHalf2{
+  right: 0;
+  flex-flow: row-reverse nowrap;
+}
+.MatchViewLineupsFormationVertical .MatchViewLineupsFormationHalf1,.MatchViewLineupsFormationVertical .MatchViewLineupsFormationHalf2{
+
+  width: 100%;
+  height: 50%;
+}
+.MatchViewLineupsFormationVertical .MatchViewLineupsFormationHalf1{
+  flex-direction: column;
+  top:0;
+}
+.MatchViewLineupsFormationVertical .MatchViewLineupsFormationHalf2{
+  flex-direction: column-reverse;
+  top:50%;
+}
+.MatchViewLineupsFormationLine{
+  position: relative;
+  height: 100%;
+}
+.MatchViewLineupsFormationVertical .MatchViewLineupsFormationLine{
+  height: auto;
+}
+.MatchViewPlayerOnField{
+  position: absolute;
+  transform: scale(0.9) translateY(20px);
+  left: 0;
+  display: table;
+  z-index: 2;
+}
+.MatchViewPlayerOnFieldEvents{
+  position: absolute;
+  top: 0;
+  left: 50%;
+  margin-left:24px;
+  white-space: nowrap;
+}
+.MatchViewPlayerOnFieldEvents .MatchViewLineupPlayerEventgoal:before,.MatchViewPlayerOnFieldEvents .MatchViewLineupPlayerEventpen:before{
+  background-image: url(https://d37kf7rs4g1hyv.cloudfront.net/scorebat/spriteflsc-min.png);
+  background-size: 146px;
+  background-repeat: no-repeat;
+
+}
+.MatchViewPlayerOnFieldContentWrapper{
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  padding-bottom: 20px;
+}
+.MatchViewLineupsFormationVertical .MatchViewPlayerOnFieldContentWrapper{
+  padding-bottom: 0;
+}
+.MatchViewLineupsFormationHalf2 .MatchViewPlayerOnField{
+  left: auto;
+  right: 0;
+  text-align: right;
+}
+.MatchViewLineupsFormationVertical .MatchViewLineupsFormationHalf1 .MatchViewPlayerOnField{
+  top:0;
+  left: auto;
+}
+.MatchViewLineupsFormationVertical .MatchViewLineupsFormationHalf2 .MatchViewPlayerOnField{
+  right: auto;
+  bottom:50%;
+}
+.MatchViewPlayerOnFieldShirt{
+  width: 50px;
+  height: 30px;
+  vertical-align: top;
+}
+.MatchViewLineupsFormationOnlySide1 .MatchViewLineupsFormationLabel1{
+  float:none;
+  padding-right: 0;
+}
+.MatchViewLineupsFormationOnlySide1 .MatchViewLineupsFormationLabels,.MatchViewLineupsFormationOnlySide2 .MatchViewLineupsFormationLabels{
+  text-align: center;
+}
+.MatchViewPlayerOnFieldName{
+  background: #3a232f;
+  color: #fff;
+  font-size: 12px;
+  line-height: 20px;
+  padding-left: 5px;
+  padding-right: 5px;
+  max-width: 80px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  o-text-overflow: ellipsis;
+  overflow: hidden;
+  border-radius: 5px;
+}
+.MatchViewPlayerOnFieldShirtWrapper{
+  position: relative;
+  text-align: center;
+}
+.MatchViewPlayerOnFieldX .MatchViewPlayerOnFieldContentWrapper{
+  padding-bottom: 0;
+}
+.MatchViewPlayerOnFieldNumber{
+  line-height: 25px;
+  width: 30px;
+  font-size: 19px;
+  color: #fff;
+  text-align: center;
+  font-weight: 900;
+  min-height: 25px;
+  position: absolute;
+  left: 50%;
+  margin-left: -15px;
+  top: 26%;
+  -webkit-text-stroke-width: .8px;
+  -webkit-text-stroke-color: #000;
+}
+.MatchViewPlayerOnFieldWithImage{
+  text-align: center;
+  width: 100%;
+}
+.MatchViewPlayerOnFieldImage{
+  width:66px;
+  height:39px;
+  /*border-top-left-radius: 15px;
+  border-top-right-radius: 15px;*/
+}
+.MatchViewPlayerOnFieldWithImage .MatchViewPlayerOnFieldName{
+  vertical-align: top;
+  display: table-cell;
+  line-height: 25px;
+  font-size: 14px;
+}
+.MatchViewPlayerOnFieldWithImage .MatchViewPlayerOnFieldNameWrapper{
+  display: table;
+  vertical-align: middle;
+  width: 100px;
+  left:50%;
+  margin-left: -50px;
+  position: absolute;
+  table-layout: fixed;
+}
+.MatchViewLineupsFormationHalf2 .MatchViewPlayerOnFieldWithImage{
+  text-align: center;
+}
+.MatchViewLineupsFormationOnlySide2 .MatchViewLineupsFormationHalf2,.MatchViewLineupsFormationOnlySide1 .MatchViewLineupsFormationHalf1{
+  width: 95%;
+  height:100%;
+  top:0;
+  left:0;
+  right: auto;
+}
+.MatchViewLineupsFormationVertical.MatchViewLineupsFormationOnlySide2 .MatchViewLineupsFormationHalf2,
+.MatchViewLineupsFormationVertical.MatchViewLineupsFormationOnlySide1 .MatchViewLineupsFormationHalf1{
+  width: 100%;
+}
+
+.MatchViewLineupsFormationOnlySide2 .MatchViewLineupsFormationHalf1,.MatchViewLineupsFormationOnlySide1 .MatchViewLineupsFormationHalf2{
+  display: none;
+}
+.MatchViewLineupsFormationVertical .MatchViewPlayerOnFieldX .MatchViewPlayerOnFieldNumber{
+  width: 45px;
+  line-height:45px;
+}
+.MatchViewLineupsT{
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+  vertical-align: top;
+  border-top: solid 1px #f8f8f8;
+}
+
+.MatchViewLineupsSide1,.MatchViewLineupsSide2{
+  display: table-cell;
+  vertical-align: top;
+}
+.MatchViewLineupsSide1{
+  border-right: solid 1px #f7f7f7;
+}
+.MatchViewLineupsSubsButton{
+  text-align: left;
+  padding-left: 43px;
+  font-size: 1.5em;
+  color: #388a43;
+  margin-bottom: 20px;
+  position: relative;
+}
+.MatchViewLineupsSubsButtonC:before{
+  display: inline-block;
+  content: "\25bc";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  margin-top: -6px;
+  color: #ddd;
+  font-size: 12px;
+  line-height: 14px;
+  transition: transform .3s ease;
+  width: 43px;
+  text-align: center;
+}
+.MatchViewLineupsSubsButtonC.MatchViewLineupsSubsButtonEx:before{
+  transform: rotate(180deg);
+}
+.Standings{
+
+}
+.StandingsWithHeader .GameSetHeader{
+  margin-bottom: 20px;
+}
+.StandingsSkippedSection{
+  display: block;
+  height: 20px;
+  /*background: #fafafa;*/
+  color: #aaa;
+  text-align: center;
+  line-height: 10px;
+}
+.StandingsRow{
+  line-height: 44px;
+
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  text-decoration: none;
+  color: #000;
+
+  transition: all .2s ease-in-out;
+}
+.StandingsRow1{
+  border-top: dashed 1px #f2f2f2;
+}
+.StandingsRow:hover{
+  background-color: #fafafa;
+}
+.StandingsRowHighlighted{
+  background-color: #bf518b;
+  color: #fff;
+  box-shadow: 0 1px 2px #9e4473;
+  border:0;
+  margin-bottom: 2px;
+  border-radius: 28px;
+}
+.StandingsRowHighlighted:hover{
+  background-color: #b94c85;
+}
+
+.StandingsRowCol{
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+}
+.StandingsRowCol30{
+  width: 30px;
+}
+.StandingsRowColTeam{
+  text-align: left;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  o-text-overflow: ellipsis;
+  padding-left: 10px;
+  line-height: 21px;
+}
+.StandingsRowColPnt{
+  width: 57px;
+  text-align: center;
+  font-weight: 700;
+}
+.StandingsRowColPnt span{
+  border: solid 3px #eee;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  color: #333;
+  border-radius: 18px;
+  display: inline-block;
+  font-weight: 900;
+  font-size: 17px;
+}
+.StandingsRowColNum{
+  padding-left: 10px;
+  font-weight: 900;
+  font-size: 17px;
+}
+.StandingsRowLogo{
+  width: 27px;
+  height: 27px;
+  position: relative;
+  top: 9px;
+  vertical-align: baseline;
+}
+.StandingsRowStats{
+  line-height: 15px;
+  white-space: normal;
+}
+.StandingsRowStat{
+  display: inline-block;
+  font-size: 0.71em;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-radius: 8px;
+  margin-right: 4px;
+  font-weight: 400;
+  background: #fff;
+  color: #6a6a6a;;
+}
+.StandingsRowStatW{
+  background: #54a960;
+  color: #fff;
+}
+.StandingsRowStatD{
+  background: #ffc114;
+  color: #fff;
+}
+.StandingsRowStatL{
+  background: #ed5565;
+  color: #fff;
+}
+.StandingsRowStatGoals:before{
+  content: "";
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  background-image: url(https://d37kf7rs4g1hyv.cloudfront.net/scorebat/spriteflsc-min.png);
+  background-size: 146px;
+  background-repeat: no-repeat;
+  vertical-align: middle;
+  margin-right: 4px;
+  background-position: -24px -33px;
+  margin-bottom: 2px;
+}
+.StandingsRowHighlighted .StandingsRowColPnt span{
+  color: #fff;
+  border-color: #fff;
+}
+.StandingsGroup{
+  padding-bottom: 10px;
+}
+.StandingsGroup1{
+  margin-top: 44px;
+}
+.StandingsSeeFull{
+  text-align: right;
+  padding-right: 20px;
+}
+.StandingsSeeFull a{
+  text-decoration: none;
+  color: #6a6a6a;;
+}
+.StandingsSeeFull a:hover{
+  text-decoration: underline;
+}
+.H2HSplit{
+  display: table;
+  width: 100%;
+}
+.H2HSplit1, .H2HSplit2{
+  display: table-cell;
+}
+.H2HSplit2{
+  text-align: right;
+}
+.H2HBetween{
+  margin: auto;
+  margin-top: 20px;
+  max-width: 700px;
+  position: relative;
+}
+.H2HBetweenLogo1,.H2HBetweenLogo2{
+  display: block;
+  width: 30px;
+  height: 30px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  position: absolute;
+  top: 7px;
+}
+.H2HBetweenLogo1{
+  left: 0;
+}
+.H2HBetweenLogo2{
+  right: 0;
+}
+.H2HBetweenL{
+  text-align: center;
+  color: #6a6a6a;;
+  line-height: 40px;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #5c394b;
+}
+.H2HBetweenG{
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+.H2HBetweenGMeta{
+  text-align: center;
+  color: #a7404b;
+  margin-bottom: 1px;
+  font-size: 0.9em;
+  cursor: default;
+}
+.H2HBetweenGT{
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+}
+.H2HBetweenGTP{
+  display: table-cell;
+  width: 17px;
+
+}
+.H2HBetweenGTP1{
+  text-align: left;
+}
+.H2HBetweenGTP2{
+  text-align: right;
+}
+.H2HBetweenRL,.H2HBetweenRD,.H2HBetweenRW{
+  display: inline-block;
+  border-radius: 5px;
+  width: 10px;
+  height: 10px;
+}
+.H2HBetweenRW{
+  background: #64b16f;
+}
+.H2HBetweenGC{
+  display: table-cell;
+}
+.MatchViewHomeVideos{
+  padding-bottom: 30px;
+}
+.MatchViewHomeTHB{
+  margin-top: 20px;
+}
+.MatchViewHomeH2HWrapper{
+  margin-top: 20px;
+}
+.RecentForm{
+  display: inline-block;
+}
+.RecentForm:before{
+  display: inline-block;
+  line-height: 20px;
+  content:"\02039";
+  width: 10px;
+  text-align: center;
+  color: #aaa;
+}
+.RecentFormItem{
+  display: inline-block;
+  vertical-align: top;
+  text-align: center;
+  line-height: 21px;
+  width: 21px;
+  border-radius: 11px;
+  color: #fff;
+  text-transform: uppercase;
+  margin-left: 1px;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 900;
+}
+.RecentFormItemW{
+  background-color: #54a960;
+}
+.RecentFormItemD{
+  background-color: #ffcf47;
+}
+.RecentFormItemL{
+  background-color: #ed5565;
+}
+.GameCellPast{
+  /*border:solid 1px #f2f2f2;*/
+  position: relative;
+  border-radius: 13px;
+  display: block;
+  text-decoration: none;
+}
+.GameCellPastW{
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+}
+.GameCellPastSide1{
+  display: table-cell;
+  text-align: right;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  o-text-overflow: ellipsis;
+  padding-left:10px;
+  padding-right:35px;
+  line-height: 26px;
+  font-weight: 400;
+  color: #555;
+}
+.GameCellPastSide2{
+  display: table-cell;
+  text-align: left;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  o-text-overflow: ellipsis;
+  padding-right:10px;
+  padding-left:35px;
+  line-height: 26px;
+  font-weight: 400;
+  color: #555;
+}
+.GameCellPastWinner1 .GameCellPastSide1,.GameCellPastWinner2 .GameCellPastSide2{
+  font-weight: 700;
+}
+.GameCellPastScore{
+  display: table-cell;
+  width: 40px;
+  text-align: center;
+  font-weight: 900;
+  font-size:1.3em;
+  line-height: 26px;
+  letter-spacing: -.06em;
+  color: #333;
+}
+.GameCellPastLogo{
+  display: block;
+  width:20px;
+  height:20px;
+  position: absolute;
+  top:-5px;
+  padding: 8px;
+}
+.GameCellPastLogo1{
+  right: 50%;
+  margin-right: 20px;
+}
+.GameCellPastLogo2{
+  left: 50%;
+  margin-left: 20px;
+}
+.GameCellPastLogoImage{
+  display: block;
+  width: 20px;
+  height: 20px;
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+
+}
+.sticky-outer-wrapper{
+  transition: height 1s ease;
+}
+.MatchView .VideoPlayerStoriesC{
+  background: none;
+  margin-bottom: 14px;
+  border-radius: 0;
+  box-shadow: none;
+  border-bottom: dashed 1px #eee;
+}
+.MatchView .VideoPlayerStoriesBtShd{
+  text-align: center;
+  background: #f2f2f2;
+  margin-left: 4px;
+  margin-right: 4px;
+}
+.MatchView .VideoPlayerStoriesBtShd:hover{
+  background-color: #e7e7e7;
+}
+.MatchView .VideoPlayerStoriesB{
+  border-top: 0;
+  padding-bottom: 20px;
+}
+.SegmentControl{
+  text-align: center;
+}
+.SegmentControlButtons{
+  display: flex;
+  table-layout: fixed;
+  text-align: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+.SegmentControlButton{
+  flex: 1;
+  padding-left:10px;
+  padding-right:10px;
+  line-height: 44px;
+  text-align: center;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  o-text-overflow: ellipsis;
+  cursor: pointer;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  font-weight: 900;
+  letter-spacing: -.04em;
+  text-transform: uppercase;
+  color: #555;
+  transition: all ease-in .2s;
+  font-size: 16px
+}
+.SegmentControlButton:hover{
+  color: #ed5565;
+  background: #f5f5f5;
+}
+.SegmentControlButtonActive,.SegmentControlButtonActive:hover{
+  background-color: #fff;
+  color: #ff415d;
+  cursor: pointer;
+  position: relative;
+}
+/*
+.SegmentControlButtonActive:after {
+    content: "";
+    display: block;
+    border: 6px solid transparent;
+    border-bottom-color: #fff;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    margin-left: -6px;
+  }
+  */
+.MatchViewSectionTitleSmall{
+  color: #555;
+  font-size: 2em;
+  text-align: left;
+  letter-spacing: -0.03em;
+  font-weight: 400;
+}
+.MatchViewSectionTitleSmallCenter{
+  text-align: center;
+}
+.NumberStatStrkW{
+  line-height: 0;
+}
+.NumberStatStrk{
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background: #efe7ea;
+  border-radius: 50%;
+  margin: 1px;
+  vertical-align: middle;
+}
+.NumberStatStrkSmall{
+  width: 6px;
+  height:6px;
+}
+.MatchViewFacts{
+  display: flex;
+  justify-content: space-around;
+  padding-bottom: 20px;
+  padding-top: 10px;
+}
+.MatchViewFact{
+  flex-grow: 1;
+  flex-basis: 0;
+  max-width: 200px;
+  text-align: center;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.NumberStatNum{
+  font-size: 6em;
+  line-height: 1em;
+  font-weight: 900;
+  color: #da527e;
+  letter-spacing: -.06em;
+  position: relative;
+  box-sizing: border-box;
+  text-align: center;
+  padding-bottom: 10px;
+}
+.NumberStatNumn{
+  position: relative;
+  display: inline-block;
+  text-align: center;
+}
+.NumberStatLogoW{
+  margin-bottom: 10px;
+}
+.NumberStatLogo{
+
+  display: block;
+  width: 25px;
+  height: 25px;
+  margin: auto;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+
+}
+.NumberStatC{
+  margin-top: 20px;
+}
+.NumberStatDesc{
+  color: #555;
+  font-size: 1.1em;
+  line-height: 1.4em;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.NumberStatArr{
+  position: absolute;
+  right: -8px;
+  top:50%;
+  line-height: 20px;
+  margin-top: -12px;
+  font-size: 16px;
+  color: #aaa;
+  font-weight: 300;
+}
+.CompetitionStandingsHW{
+  padding-bottom: 20px;
+}
+.CompetitionStandingsHWS{
+  padding-top: 20px;
+  border-top: none;
+}
+.BatFeedPage{
+  padding-left: 100px;
+  padding-right: 20px;
+  border-bottom: 0;
+  background-repeat: no-repeat;
+  background-position: 10px center;
+  background-size: 32px;
+  position: relative;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.BatFeedPageSubName{
+  color: #333;
+  line-height: 15px;
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: 400;
+  padding: 0;
+  margin: 0;
+  display: block;
+}
+.BatFeedPageName{
+  color: #3a0115;
+  letter-spacing: -1px;
+  line-height: 25px;
+  text-transform: uppercase;
+  font-size: 30px;
+  font-weight: 900;
+  padding: 0;
+  margin: 0;
+  display: block;
+}
+.BatFeedPageNameLL{
+  display: block;
+  font-size:.4em;
+  line-height: 1.1em;
+  letter-spacing: 1px;
+  font-weight: 300;
+  margin-left:1px;
+  margin-top: 3px;
+}
+.BatFeedPageFlag{
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  margin-top: -25px;
+}
+.TeamPageFeaturedGames{
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.TeamPage .BatFeedPageFlag{
+  width: 60px;
+  height: 60px;
+  margin-top: -30px;
+}
+.FeaturedGame{
+  background-color: #ed5565;
+
+  /* padding: 20px; */
+  padding-bottom: 0;
+  display: block;
+  text-decoration: none;
+  transition:background-color .2s linear;
+  -webkit-transition:background-color .2s linear;
+  border-radius: 35px;
+  padding-top: 30px;
+}
+.FeaturedGameRed{
+  box-shadow: 0 1px 2px #ce4a57;
+}
+.FeaturedGameInfo{
+  line-height: 1em;
+  text-align: center;
+  font-size: .9em;
+  padding-top: 13px;
+  padding-bottom: 13px;
+  margin-top: 20px;
+  border-top: dashed 1px #ca4553;
+  color: #96353f;
+}
+.FeaturedGameSet{
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.FeaturedGameSetTitle{
+  line-height: 1.5em;
+  text-transform: uppercase;
+  text-align: center;
+  color: #823636;
+  font-weight: 900;
+  text-align: left;
+  padding-bottom: 5px;
+  padding-left: 15px;
+}
+.FeaturedGame:hover{
+  background-color: #e25160;
+}
+.FeaturedGameTb{
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+}
+.FeaturedGameSide1,.FeaturedGameSide2{
+  display: table-cell;
+  vertical-align: top;
+}
+.FeaturedGameScore{
+  display: table-cell;
+  width: 120px;
+  text-align: center;
+  color: #fff;
+  font-weight: 900;
+  font-size: 3.4em;
+  vertical-align: top;
+  line-height: 1em;
+  letter-spacing: -1px;
+}
+.FeaturedGameStatusString{
+  font-size: .35em;
+  font-weight: 400;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 1em;
+  text-transform: uppercase;
+
+}
+.FeaturedGameTime .FeaturedGameStatusString{
+  font-size: .4em;
+  color: rgba(255, 255, 255, 0.51);
+}
+.FeaturedGameTime{
+  font-weight: 300;
+  font-size: 1.7em;
+}
+.FeaturedGameSideName{
+  color: #fff;
+  font-weight: 700;
+  text-align: center;
+  word-wrap: break-word;
+  line-height: .8em;
+  margin-top: 7px;
+  text-transform: uppercase;
+  letter-spacing: -0.04em;
+}
+.FeaturedGameLogoWrapper{
+  text-align: center;
+}
+.FeaturedGameLogo{
+  width: 50px;
+  height: 50px;
+}
+.FeaturedGameGray{
+  background-color: #eaeaea;
+  box-shadow: 0 1px 3px #eee;
+}
+.FeaturedGameGray:hover{
+  background-color: #e1e1e1;
+}
+
+.FeaturedGameGray .FeaturedGameSideName{
+  color: #333;
+
+}
+.FeaturedGameGray .FeaturedGameScore{
+  color: #333;
+
+}
+
+.FeaturedGameGray .FeaturedGameInfo{
+
+  color: #b1a3a3;
+  border-color: #ddd;
+}
+.NewsItemFeature{
+  text-decoration: none;
+  display: block;
+}
+.NewsItemFeatureTitle{
+  font-size: 1.5em;
+  font-weight: 900em;
+  letter-spacing: -.025em;
+  line-height: .9em;
+  font-weight: 900;
+  text-transform: uppercase;
+  margin: auto;
+  text-decoration: none;
+  color: #333;
+
+}
+
+.NewsItemFeatureExcerpt{
+  color: #6a6a6a;
+  text-decoration: none;
+  padding-top: 15px;
+}
+.FeaturedNewsFlex{
+  display: flex;
+}
+.FeaturedNewsFlex .NewsItemFeature{
+  flex: 1;
+}
+.FeaturedNewsFlexSpacer{
+  width: 35px;
+  height: 20px;
+}
+.NewsItem{
+  color: #333;
+  text-decoration: none;
+  line-height: 1.1em;
+  display: block;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-size: 1.1em;
+  padding-left: 25px;
+  position: relative;
+}
+.NewsItem:before{
+  display: block;
+  content: "";
+  width: 12px;
+  height: 12px;
+  border-radius: 6px;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  margin-top: -6px;
+  background: #ed5565;
+}
+.NewsItem:hover{
+  text-decoration: underline;
+}
+.NewsItemList{
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: dashed 1px #eee;
+}
+.NewsItemList .NewsItem{
+  margin-bottom: 10px;
+}
+.NewsPageTime{
+  color: #aaa;
+  line-height: 0.9em;
+  text-transform: uppercase;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+.NewsPageTitle{
+  color: #3a0115;
+  /* letter-spacing: -.06em; */
+  line-height: 1em;
+  text-transform: uppercase;
+  font-size: 2.1em;
+  font-weight: 900;
+  margin-bottom: 10px;
+  letter-spacing: -.035em;
+}
+.NewsPageImage img{
+  width: 80%;
+  max-width: 500px;
+}
+.NewsPageExcerpt{
+  color: #555;
+  margin-top: 40px;
+  line-height: 1.7em;
+  font-size: 1.1em;
+}
+.NewsPageGoToSourceWrapper{
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: dashed 1px #eee;
+}
+.NewsPageGoToSource{
+  text-decoration: none;
+  line-height: 40px;
+  color: #555;
+  font-weight: 700;
+}
+.NewsPageGoToSource:hover{
+  border-color: #333;
+}
+.AlphaDirectoryAZ{
+  text-align: center;
+  margin-bottom: 20px;
+  word-wrap: break-word;
+}
+.AlphaDirectoryAZ a{
+  color:#777;
+  padding:10px;
+  text-decoration: none;
+  display: inline-block;
+}
+.AlphaDirectoryAZ a:hover{
+  text-decoration: underline;
+}
+.AlphaDirectoryList a{
+  border-top: solid 1px #f2f2f2;
+  color:#777;
+  display: block;
+  text-decoration: none;
+  padding: 10px;
+}
+.AlphaDirectoryList a:hover{
+  background: #fafafa;
+}
+.react-slidedown {
+  height: 0;
+  transition-property: none;
+  transition-duration: .2s;
+  transition-timing-function: ease;
+}
+
+.react-slidedown.transitioning {
+  overflow-y: hidden;
+}
+
+.react-slidedown.closed {
+  display: none;
+}
+
+.hamburger {
+  display: inline-block;
+  transition-property: opacity, filter;
+  transition-duration: 0.15s;
+  transition-timing-function: linear;
+  font: inherit;
+  color: inherit;
+  text-transform: none;
+  background-color: transparent;
+  border: 0;
+  margin: 0;
+  overflow: visible; }
+
+.hamburger-box {
+  width: 20px;
+  height: 20px;
+  display: block;
+  position: relative; }
+
+.hamburger-inner {
+  display: block;
+  top: 50%;
+  margin-top: -2px; }
+.hamburger-inner, .hamburger-inner:before, .hamburger-inner:after {
+  width: 20px;
+  height: 2px;
+  background-color: #ffce54;
+  border-radius: 4px;
+  position: absolute;
+  transition-property: transform;
+  transition-duration: 0.15s;
+  transition-timing-function: ease; }
+.hamburger-inner:before, .hamburger-inner:after {
+  content: "";
+  display: block; }
+.hamburger-inner:before {
+  top: -10px; }
+.hamburger-inner:after {
+  bottom: -10px; }
+.hamburger--slider .hamburger-inner {
+  top: 2px; }
+.hamburger--slider .hamburger-inner:before {
+  top: 8px;
+  transition-property: transform, opacity;
+  transition-timing-function: ease;
+  transition-duration: 0.15s; }
+.hamburger--slider .hamburger-inner:after {
+  top: 16px; }
+
+.hamburger--slider.is-active .hamburger-inner {
+  transform: translate3d(0, 8px, 0) rotate(45deg); }
+.hamburger--slider.is-active .hamburger-inner:before {
+  transform: rotate(-45deg) translate3d(-5.71429px, -6px, 0);
+  opacity: 0; }
+.hamburger--slider.is-active .hamburger-inner:after {
+  transform: translate3d(0, -16px, 0) rotate(-90deg); }
+.StayInTouchButts{
+  display: flex;
+  padding: 20px;
+}
+
+.StayInTouchFb,.StayInTouchInsta,.StayInTouchVbet{
+  flex: 1;
+  line-height: 44px;
+
+  color: #fff;
+  border-radius: 22px;
+  text-align: left;
+
+  text-align: center;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background .3s ease;
+  position: relative;
+  display: block;
+}
+.StayInTouchFb{
+  background: #4655ab;
+  box-shadow: 0 1px 2px #3e4b98;
+}
+.StayInTouchLb{
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  background-color: #0d0709;
+}
+.StayInTouchLb a{
+  display: block;
+}
+.StayInTouchImg{
+  width: 100%;
+  padding-top: 47%;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  background-color: #091114;
+  display: block;
+  background-size: 100%;
+  position: relative;
+  transition: background-position .5s ease;
+}
+.StayInTouchImg:hover{
+  background-position: center 80%;
+}
+.StayInTouchFb:before,.StayInTouchInsta:before,.StayInTouchVbet:before{
+  content:"";
+  background-image: url(https://d37kf7rs4g1hyv.cloudfront.net/scorebat/spriteflsc-min.png);
+  background-size: 146px;
+  background-position: -43px -173px;
+  background-repeat:no-repeat;
+  width: 22px;
+  height: 22px;
+  left: 12px;
+  top: 10px;
+  position: absolute;
+  display: block;
+}
+.StayInTouchInsta:before{
+  background-position: -71px -173px;
+}
+.StayInTouchVbet:before{
+  background-position: -89px -122px;
+}
+.StayInTouchFb:hover{
+  background-color: #3e4b98;
+}
+.StayInTouchInsta,.StayInTouchVbet{
+  background: #ff425d;
+  box-shadow: 0 1px 2px #de1c4d;
+}
+.StayInTouchInsta:hover,.StayInTouchVbet:hover{
+  background-color: #e23a52;
+}
+.StayInTouchAd{
+  padding-top: 40px;
+  padding-bottom: 50px;
+  text-align: center;
+}
+.StoryCover{
+  background-size: cover;
+  position: relative;
+  padding-top: 85%;
+}
+.StoryCover::after{
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 40%;
+  background-image: linear-gradient(to top, #0c0004 0%, rgba(0,0,0,0) 100%);
+  bottom: 0;
+}
+.StoryPageTitle{
+
+  margin:0;
+  text-transform: uppercase;
+  font-weight: 900;
+  letter-spacing: -.03em;
+  font-size: 28px;
+  line-height: 24px;
+  color: #3a0115;
+
+
+}
+.StoryPageMeta{
+  font-size: 14px;
+  color: #bbb;
+  margin-top: 4px;
+}
+.StoryPageTop{
+  border-bottom: solid 2px #ffcf47;
+  border-top: solid 2px #ffcf47;
+}
+.StoryPageTagline{
+  font-size: 1.4em;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: -.03em;
+  color: #3a0115;
+}
+.StoryPageBody{
+  font-size: 1.2em;
+  color: #555;
+  margin-top: 25px;
+}
+.BatPlayer{
+  background: #111;
+  position: relative;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  /* overflow: hidden; */
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  /* overflow: hidden; */
+  box-sizing: border-box;
+}
+.StoryPage .BatPlayer,.StoryPage .BatPlayerDm{
+  border-radius: 0;
+}
+.StoryPage .BatFeedCLT,.StoryPage .BatFeedCRT{
+  display: none;
+}
+.BatPlayerInterrupted{
+
+}
+.BatPlayerVPlc{
+  display: block;
+  width: 100%;
+}
+.BatPlayer .EmbedCode textarea{
+  color: #bbb;
+  border: none;
+}
+.BatPlayer .VideoPlayerStoriesEB{
+  background: #343434;
+}
+.BatPlayer .VideoPlayerStoriesEB:hover{
+  background: #272727;
+}
+.SkipButton{
+  display: block;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #000;
+  color: #fff;
+  text-align: center;
+  line-height: 30px;
+  font-weight: 900;
+  text-transform: uppercase;
+  cursor: default;
+  position: relative;
+}
+.SkipButton .DonutChart{
+  position: absolute;
+  left: -1px;
+  top: -1px;
+}
+.SkipButton .DonutChartTrack{
+  stroke: transparent;
+
+}
+.SkipButton .DonutChartIndicator{
+  transition: all 8s linear;
+  stroke: #ffce54;
+}
+.SkipButtonClickable{
+  cursor: pointer;
+  font-size: 14px;
+}
+.SkipButtonClickable:hover{
+  cursor: pointer;
+  background-color: #54a960;
+  transition: all .2s ease;
+}
+.SkipButtonClickable .DonutChartIndicator{
+  transition: all 1s ease;
+  stroke: #54a960;
+}
+.SkipButtonPending{
+  position: absolute;
+  display: block;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: #ed5565;
+  left: 50%;
+  top: 50%;
+  margin-left: -2px;
+  margin-top: -2px;
+  z-index: 4;
+  animation: blink-animation 1.8s infinite;
+  -webkit-animation: blink-animation 1.8s infinite;
+  animation-timing-function: ease;
+}
+.Ad .SkipButton{
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  z-index: 4;
+}
+.BatPlayerLC{
+  position: absolute;
+  left:14px;
+  top: 6px;
+  display: flex;
+  align-items: center;
+  height: 31px;
+
+}
+.BatPlayerRC .SubscribeButtonWrapper {
+  margin-right: 8px;
+}
+.BatPlayerRC .SubscribeButton {
+  background: #5d5d5d;
+}
+.BatPlayerRC .SubscribeButton:hover {
+  background: #777;
+}
+.BatPlayerRC .SubscribeButtonActive {
+  background: #9c803b;
+}
+.BatPlayerRC .SubscribeButtonActive:hover {
+  background: #bb9841;
+}
+.BatPlayerLLb:before{
+  content: '';
+
+  display: block;
+  width: 20px;
+  height: 20px;
+  background: #ff1b03;
+  box-shadow: 0 0 6px #e51b0b;
+  border-radius: 50%;
+  animation: blink-animation 1.8s infinite;
+  -webkit-animation: blink-animation 1.8s infinite;
+  animation-timing-function: ease;
+  z-index: 3;
+  margin-right: 8px;
+}
+.BatPlayerEnded.BatPlayerGolz .BatPlayerLLb:before{
+  background: #fff;
+  box-shadow: 0 0 6px #fff;
+}
+.BatPlayerLLb{
+  color: #ff1b03;
+  text-transform: uppercase;
+  font-weight: 900;
+  font-size: 10px;
+  cursor: default;
+  display: flex;
+  align-items: center;
+}
+.BatPlayerEnded.BatPlayerGolz .BatPlayerLLb{
+  color:#fff;
+}
+.BatPlayeFrm{
+  color: #fff;
+  opacity: .7;
+  font-weight: 400;
+  padding-left: 3px;
+}
+.BatPlayerDm{
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: #000;
+  width: 100%;
+  height: 100%;
+  opacity: .5;
+}
+.BatPlayerPs{
+  content: '';
+  position: absolute;
+  display: block;
+  width: 18px;
+  height: 20px;
+  left: 10px;
+  bottom: 10px;
+  background-image: url(https://d37kf7rs4g1hyv.cloudfront.net/scorebat/spriteflsc-min.png);
+  background-size: 146px;
+  background-repeat: no-repeat;
+  background-position: -55px -46px;
+  opacity: .3;
+  transform: scale(.8);
+}
+.BatPlayerInterruption{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 20px;
+  padding-bottom: 40px;
+}
+.BatPlayerPlcPr{
+  padding-top: 45px;
+}
+.BatPlayerPlcPrC{
+  position: relative;
+  min-height: 250px;
+}
+.BatPlayerPlcPrCPlc{
+  display: grid;
+  grid-template-columns: 1fr;
+}
+.BatPlayerPlcPrCPlc .BatPlayerPlcWO, .BatPlayerPlcPrCPlc .BatPlayerInterruption{
+  grid-row-start: 1;
+  grid-column-start: 1;
+}
+.BatPlayerPlcW{
+
+}
+.BatPlayerPlcWO{
+}
+.BatPlayerVPlcWW{
+  padding-top: 56.25%;
+  position: relative;
+  background: #333;
+}
+.BatPlayerVPlc{
+  position: absolute;
+  top:0;
+  left:0;
+  width: 100%;
+  height: 100%;
+}
+.BatPlayerW{
+  /* padding-top: 50px; */
+}
+.BatPlayer .VideoPlayer{
+  border-top: 0;
+  border-bottom: 0;
+}
+.BatPlayer .VideoPlayerStories{
+  padding-top: 44px;
+}
+.BatPlayer .VideoPlayerStoriesC{
+  border-bottom: 0;
+  margin-bottom: 0;
+}
+.BatPlayer .VideoPlayerStoriesPTT{
+  color: #fff;
+  padding-left: 16px;
+  background-color: #0a0a0a;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+.BatPlayer .VideoFeedHorizontalThumb{
+  border-color: #111;
+  opacity: .5;
+}
+.BatPlayer .VideoFeedHorizontalItemActive .VideoFeedHorizontalThumb{
+  opacity: 1;
+}
+.BatPlayer .VideoFeedHorizontalThumbW{
+  border-color: #292929;
+}
+.BatPlayer .VideoFeedHorizontalItem:hover .VideoFeedHorizontalThumbW{
+  border-color: #333;
+}
+.BatPlayer .VideoFeedHorizontalItemActive .VideoFeedHorizontalThumbW, .BatPlayer .VideoFeedHorizontalItemActive:hover .VideoFeedHorizontalThumbW {
+  border-color: #fff;
+}
+.BatPlayer .VideoFeedHorizontalTitle{
+  color: #fff;
+}
+.HorizontalScroll{
+  position: relative;
+  overflow: hidden;
+}
+.HorizontalScrollAR{
+  position: absolute;
+  background: #fff;
+  background-color: rgba(255,255,255,.95);
+  position: absolute;
+  width: 44px;
+  height: 100%;
+  right: 0;
+  top: 0;
+  transition: background-color .2s ease;
+}
+.HorizontalScrollAL{
+  position: absolute;
+  background: #fff;
+  background-color: rgba(255,255,255,.95);
+  position: absolute;
+  width: 44px;
+  height: 100%;
+  left: 0;
+  top: 0;
+  transition: background-color .2s ease;
+}
+.HorizontalScrollAR:after,.HorizontalScrollAL:after{
+  content: '\203A';
+  display: block;
+  width: 100%;
+  text-align: center;
+  color: #aba8a8;
+  font-size: 50px;
+  line-height: 30px;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  margin-top: -30px;
+}
+.HorizontalScrollAL:after{
+  content: '\2039';
+}
+.HorizontalScrollAL:hover,.HorizontalScrollAR:hover{
+  background-color: rgba(255,255,255,1);
+}
+.HorizontalScrollW{
+  position: absolute;
+  left: 0;
+  top:0;
+  width: 100%;
+}
+.HorizontalScrollC{
+  white-space: nowrap;
+  /* overflow-x: auto; */
+  /* overflow-y: hidden; */
+  -webkit-overflow-scrolling: touch;
+  display: flex;
+
+  position: relative;
+}
+.HorizontalScrollMouse .HorizontalScrollC{
+  transition: transform .3s ease;
+}
+.HorizontalScrollTouch .HorizontalScrollC{
+  overflow-x: auto;
+}
+.VideoPlayerStories .HorizontalScrollC {
+  padding: 15px;
+  padding-bottom: 20px;
+}
+.VideoPlayerStories .HorizontalScrollAR{
+  border-bottom-right-radius: 15px;
+}
+.VideoPlayerStories .HorizontalScrollAL{
+  border-bottom-left-radius: 15px;
+}
+.BatPlayer .HorizontalScrollAR, .BatPlayer .HorizontalScrollAL{
+  background: #111;
+  background-color: rgba(17,17,17,.85);
+}
+.BatPlayer .HorizontalScrollAR:hover, .BatPlayer .HorizontalScrollAL:hover{
+  background-color: rgba(17,17,17,.9);
+}
+.StoriesCarouselDummyW{
+  height: 240px;
+  position: relative;
+  overflow: hidden;
+}
+.StoriesCarouselDummy{
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+}
+.StoriesCarouselItemDummy{
+  width: 240px;
+  height: 240px;
+  background: #f2f2f2;
+  border-radius: 15px;
+  margin-left: 20px;
+}
+.StoriesCarouselItem{
+  width: 240px;
+  position: relative;
+  box-sizing: border-box;
+  display: block;
+  background: #000;
+  border-radius: 15px;
+  text-decoration: none;
+  margin-left: 20px;
+}
+.StoriesCarouselItem1{
+  margin-right: 20px;
+}
+.StoriesCarouselItemImg .FailoverImage{
+  height: 240px;
+  background-size: cover;
+  border-radius: 15px;
+}
+.StoriesCarouselItemO{
+  border-radius: 15px;
+  padding-left: 20px;
+  padding-right: 20px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding-bottom: 20px;
+  transition: background .2s ease;
+}
+.StoriesCarouselItemTW{
+  background: #000;
+  padding: 10px;
+  border-left: solid 4px #ffcf47;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+.StoriesCarouselItemT{
+  white-space: normal;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 900;
+  letter-spacing: -.6px;
+  font-size: 18px;
+  line-height: 18px;
+  word-wrap: break-word;
+  white-space: normal;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.StoriesCarouselItem:hover .StoriesCarouselItemO{
+  background-color: rgba(0,0,0,.4)
+}
+code{
+  padding: 10px;
+  overflow: auto;
+  background: #fafafa;
+  border: 1px solid #ddd;
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 13px;
+}
+code a,.BatFeedItemPage code a{
+  color: #333;
+}
+.CodeNote{
+  padding: 25px;
+  background: #fafafa;
+  border: 1px solid #ddd;
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.CodeNoteT{
+  display: block;
+  color: #1f2758;
+  font-size: 22px;
+}
+.CodeLine{
+  display: block;
+  line-height: 18px;
+}
+.CodeTab{
+  padding-left: 20px;
+  display: block;
+}
+.CodeB{
+  color: #233282;
+}
+.CodeLB{
+  color: #669dde;
+}
+.CodeBlockS{
+  background: #e6e6e6;
+}
+.watchXt{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding-bottom: 40px;
+}
+.noise{
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.2;
+  width: 100%;
+  height: 100%;
+  animation: breathe-animation 30s infinite;
+  -webkit-animation: breathe-animation 30s infinite;
+  animation-timing-function: linear;
+}
+.watchXtDsc{
+  color: #fff;
+  color: rgba(255,255,255,0.6);
+  padding: 20px;
+  font-size: 16px;
+  max-width: 350px;
+  text-align: center;
+}
+.watchXtBt{
+  padding: 12px;
+  line-height: 20px;
+  color: #fff;
+  border-radius: 24px;
+  border: solid 2px #fff;
+  text-transform: uppercase;
+  font-size: 16px;
+  text-align: center;
+  z-index: 2;
+  font-weight: 900;
+  display: flex;
+  position: relative;
+  justify-content: space-around;
+  padding-left: 55px;
+  padding-right: 50px;
+  cursor: pointer;
+  background: rgba(0,0,0,.2);
+  transition:background-color .2s ease-in-out;
+  -webkit-transition:background-color .2s ease-in-out;
+  text-decoration: none;
+}
+.watchXtBt:hover{
+  background: rgba(255,255,255,.1);
+}
+.watchXtBt:before{
+  content: "";
+  background-image: url(https://d37kf7rs4g1hyv.cloudfront.net/scorebat/spriteflsc-min.png);
+  background-size: 146px;
+  background-position: -91px -126px;
+  background-repeat: no-repeat;
+  width: 17px;
+  height: 17px;
+  left: 15px;
+  top: 15px;
+  position: absolute;
+  display: block;
+  transform: scale(1.3);
+}
+.watchXtBt:after{
+  content: '\203A';
+  position: absolute;
+  right: 15px;
+  color: #fff;
+  top: 0;
+  line-height: 42px;
+  font-size: 22px;
+  font-weight: 700;
+}
+@keyframes breathe-animation {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.3);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@-webkit-keyframes breathe-animation {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.3);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@media only screen and (max-width : 980px) {
+  .BatFeedConnecting{
+    margin-left: -200px;
+  }
+}
+@media only screen and (max-width : 750px) {
+  .BatFeedConnecting{
+    margin-left: -75px;
+  }
+  .BatFeedSideBarHB{
+    display: block;
+  }
+
+  .BatFeedItemNoShadow{
+    box-shadow: none;
+  }
+
+  .BatFeedItemExtraPadding{
+    padding: 20px;
+  }
+  .BatFeedItemHeaderPaddingV{
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .BatFeedItemPaddingNoT{
+    padding-top: 0;
+  }
+  .TabMenuItem .shortTitle{
+    display: inline;
+  }
+  .TabMenuItem .fullTitle{
+    display: none;
+  }
+  .BatFeedFlex{
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+  .BatFeedPage{
+    padding-left: 70px;
+  }
+  .TeamPage .BatFeedPage{
+    padding-left: 90px;
+  }
+  .BatFeedPageFlag{
+    left: 10px;
+  }
+  .GameCell{
+  }
+
+  .GameCellScore{
+    /* width: 53px; */
+  }
+  .GameCellScore{
+    /* font-size: 1.5em; */
+  }
+  .GameCellSide1,.GameCellSide2{
+    letter-spacing: -0.5px;
+  }
+  .GameCellStatus{
+    font-size: 12px;
+  }
+  .GameCellState-scheduled .GameCellStatus:before{
+    background: none;
+    display: none;
+  }
+  .VideoInFeedTitle{
+    font-weight: 900;
+  }
+  .MatchViewStat{
+    margin-bottom: 10px;
+  }
+  .MatchViewStatsFeaturedStatValue{
+    font-size: 1.6em;
+  }
+  .MatchViewFacts{
+    flex-direction: column;
+  }
+  .MatchViewFact{
+    max-width: none;
+  }
+  .MatchViewFact1{
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: solid 1px #f2f2f2;
+  }
+  .MatchViewFact{
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .NumberStat{
+    display: flex;
+    align-items: center
+  }
+  .NumberStatLogo{
+  }
+  .NumberStatLogoW{
+    margin-bottom: 5px;
+  }
+  .NumberStatDesc{
+    text-align: left;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .NumberStatC{
+    margin-top: 0;
+  }
+  .NumberStatNum{
+    font-size: 5em;
+  }
+  .NumberStatStrkW{
+    padding-left: 30px;
+    padding-right: 30px;
+    text-align: left;
+    width:36px;
+    flex-shrink: 0;
+  }
+  .BatFeedItemStretch{
+    position: relative;
+    left: -5px;
+    width: 100vw;
+  }
+  .MatchViewMainEventsEventPFull{
+    /*display: none;*/
+  }
+  .MatchViewMainEventsEventPLast{
+    display: inline;
+  }
+  .VideoFeedHorizontalItem{
+    width: 90px;
+    margin-right: 5px;
+  }
+  .VideoFeedHorizontal{
+    padding-left: 6px;
+  }
+  .BatFeedItemStretch .VideoPlayer{
+    box-shadow: 0 0 4px rgba(117, 45, 52, 0.77);
+  }
+  .FeaturedNewsFlex{
+    flex-direction: column;
+  }
+  .FeaturedNewsFlexSpacer{
+    margin-bottom: 20px;
+    border-bottom: dashed 1px #eee;
+    width: 100%;
+  }
+  .MatchViewLineupsFormationHorizontal .MatchViewPlayerOnFieldImage{
+    width: 53px;
+    height: 30px;
+  }
+  .MatchViewLineupsFormationHorizontal .MatchViewPlayerOnFieldNumber{
+    font-size:16px;
+    line-height: 18px;
+  }
+
+  .FeaturedGameScore{
+    font-size: 2em;
+    width: 110px;
+  }
+  .FeaturedGameStatusString{
+    font-size: .4em;
+  }
+  .MatchViewInfo{
+    padding-left: 6px;
+  }
+  .MatchViewHead{
+    padding-top: 20px;
+  }
+  .MatchViewInfoRows{
+    padding-left: 16px;
+  }
+  .FeaturedGameInfo{
+    padding-top: 8px;
+    padding-bottom: 8px;
+    font-size: .8em;
+  }
+  .VideoPlayerStoriesBt{
+    line-height: 44px;
+    border-radius: 22px;
+  }
+  .VideoPlayerStoriesBtEmbed{
+    border-bottom-right-radius: 22px;
+  }
+  .VideoPlayerStoriesTb{
+    border-radius: 22px;
+  }
+
+  .VideoFeedHorizontalWWhorizontal{
+    margin-top: 5px;
+  }
+  .StandingsRowStat{
+    margin-right: 2px;
+  }
+  .StandingsRowStatGoals:before{
+    display: none;
+  }
+  .StandingsRowOc{
+    display: none;
+  }
+  .StayInTouchButts{
+    padding: 10px;
+  }
+  .StayInTouchBL{
+    display: none;
+  }
+  .StayInTouchFb{
+
+  }
+  .StayInTouchInsta{
+    margin-left: 5px;
+  }
+  .CompetitionMenuButton{
+    border-radius: 26px;
+  }
+  .CompetitionMenuButtonSp{
+    width: 15px;
+  }
+  .CompetitionMenuButtonName{
+    line-height: 44px;
+    font-size: 1.1em;
+  }
+  .CompetitionMenuButtonFlag{
+    width: 44px;
+    height: 44px;
+    border-radius: 22px;
+    background-size: 26px;
+  }
+  .VideoPlayerStoriesPTT{
+    padding-left: 15px;
+  }
+  .MatchViewPlayerOnField{
+    transform: scale(.75) translateY(27px);
+  }
+}
+@media only screen and (max-width : 350px) {
+  .MatchViewPlayerOnField{
+    transform: scale(.65) translateY(30px);
+  }
+  .MatchViewStatsFeaturedStatValue{
+    font-size: 1.4em;
+  }
+  .NumberStatStrkW{
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .BatFeedDateL {
+    padding: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+}
+
+div.item {
+  vertical-align: top;
+  display: inline-block;
+  text-align: center;
+  width: 120px;
+}
+.caption {
+  display: block;
+}

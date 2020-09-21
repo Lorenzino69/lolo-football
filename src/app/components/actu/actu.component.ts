@@ -30,7 +30,6 @@ this.data =new Array<any>();
 
           }
         }
-        console.log(this.data)
 
 
       }, () => {

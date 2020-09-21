@@ -1,34 +1,93 @@
-<mat-sidenav-container class="sidenav-container">
-  <mat-sidenav #drawer class="sidenav" fixedInViewport
-               [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
-               [mode]="(isHandset$ | async) ? 'over' : 'side'"
-               [opened]="(isHandset$ | async) === false">
-    <mat-toolbar>Menu</mat-toolbar>
-    <mat-nav-list>
-      <a mat-list-item routerLink="/">Accueil</a>
-      <a mat-list-item routerLink="/Ligue1/10"><img class="logoleague" src="https://d37kf7rs4g1hyv.cloudfront.net/img/flags/64/ligue1A.png">Ligue 1</a>
-      <a mat-list-item routerLink="/Bundesliga/11"><img class="logoleague" src="https://d37kf7rs4g1hyv.cloudfront.net/img/flags/64/bundesliga.png">BundesLiga</a>
-      <a mat-list-item routerLink="/LigueA/14"><img class="logoleague" src="https://d37kf7rs4g1hyv.cloudfront.net/img/flags/64/laliga.png">La LIGA</a>
-      <a mat-list-item routerLink="/SerieA/13"><img class="logoleague" src="https://d37kf7rs4g1hyv.cloudfront.net/img/flags/64/seriea.png">Série A</a>
-      <a mat-list-item routerLink="/PremierLeague/15"><img class="logoleague" src="https://d37kf7rs4g1hyv.cloudfront.net/img/flags/64/epl.png">Première League</a>
-    </mat-nav-list>
-  </mat-sidenav>
-  <mat-sidenav-content>
-    <mat-toolbar color="primary">
-      <button
-        type="button"
-        aria-label="Toggle sidenav"
-        mat-icon-button
-        (click)="drawer.toggle()"
-        *ngIf="isHandset$ | async">
-        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+<!--<mat-toolbar color="primary">-->
+<!--  <button-->
+<!--    type="button"-->
+<!--    aria-label="Toggle sidenav"-->
+<!--    mat-icon-button-->
+<!--    (click)="drawer.toggle()"-->
+<!--    *ngIf="isHandset$ | async">-->
+<!--    <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>-->
+<!--  </button>-->
+<!--  <span>LOLO-FOOTBALL</span>-->
+<!--</mat-toolbar>-->
+<!--<mat-sidenav-container class="sidenav-container">-->
+<!--  <mat-sidenav #drawer class="sidenav" fixedInViewport-->
+<!--               [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"-->
+<!--               [mode]="(isHandset$ | async) ? 'over' : 'side'"-->
+<!--               [opened]="(isHandset$ | async) === false">-->
+<!--    <mat-toolbar>Menu</mat-toolbar>-->
+<!--    <mat-nav-list>-->
+<!--      <a mat-list-item routerLink="/">Accueil</a>-->
+<!--      <a mat-list-item routerLink="/Ligue1/10"><img class="logoleague" src="https://d37kf7rs4g1hyv.cloudfront.net/img/flags/64/ligue1A.png">Ligue 1</a>-->
+<!--      <a mat-list-item routerLink="/Bundesliga/11"><img class="logoleague" src="https://d37kf7rs4g1hyv.cloudfront.net/img/flags/64/bundesliga.png">BundesLiga</a>-->
+<!--      <a mat-list-item routerLink="/LigueA/14"><img class="logoleague" src="https://d37kf7rs4g1hyv.cloudfront.net/img/flags/64/laliga.png">La LIGA</a>-->
+<!--      <a mat-list-item routerLink="/SerieA/13"><img class="logoleague" src="https://d37kf7rs4g1hyv.cloudfront.net/img/flags/64/seriea.png">Série A</a>-->
+<!--      <a mat-list-item routerLink="/PremierLeague/15"><img class="logoleague" src="https://d37kf7rs4g1hyv.cloudfront.net/img/flags/64/epl.png">Première League</a>-->
+<!--    </mat-nav-list>-->
+<!--  </mat-sidenav>-->
+<!--  <mat-sidenav-content>-->
+<!--&lt;!&ndash;    <mat-toolbar color="primary">&ndash;&gt;-->
+<!--&lt;!&ndash;      <button&ndash;&gt;-->
+<!--&lt;!&ndash;        type="button"&ndash;&gt;-->
+<!--&lt;!&ndash;        aria-label="Toggle sidenav"&ndash;&gt;-->
+<!--&lt;!&ndash;        mat-icon-button&ndash;&gt;-->
+<!--&lt;!&ndash;        (click)="drawer.toggle()"&ndash;&gt;-->
+<!--&lt;!&ndash;        *ngIf="isHandset$ | async">&ndash;&gt;-->
+<!--&lt;!&ndash;        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>&ndash;&gt;-->
+<!--&lt;!&ndash;      </button>&ndash;&gt;-->
+<!--&lt;!&ndash;      <span>LOLO-FOOTBALL</span>&ndash;&gt;-->
+<!--&lt;!&ndash;    </mat-toolbar>&ndash;&gt;-->
+<!--    &lt;!&ndash; Add Content Here &ndash;&gt;-->
+<!--    <router-outlet></router-outlet>-->
+<!--  </mat-sidenav-content>-->
+<!--</mat-sidenav-container>-->
+
+<div>
+  <mat-toolbar color="primary">
+    <div fxShow="true">
+      <button mat-icon-button (click)="sidenav.toggle()">
+        <mat-icon>menu</mat-icon>
       </button>
-      <span>LOLO-FOOTBALL</span>
-    </mat-toolbar>
-    <!-- Add Content Here -->
-    <router-outlet></router-outlet>
-  </mat-sidenav-content>
-</mat-sidenav-container>
+    </div>
+
+    <a mat-button class="companyName" routerLink="/">
+      <span>Lolo Football</span>
+    </a>
+    <span class="example-spacer"></span>
+    <div fxShow="true" fxHide.lt-md="true">
+      <a mat-button routerLink="/contact">Contact</a>
+    </div>
+
+  </mat-toolbar>
+  <mat-sidenav-container fxFlexFill class="example-container">
+
+    <mat-sidenav color="primary" #sidenav fxLayout="column" mode="over" opened="false">
+      <div fxLayout="column">
+
+        <a mat-list-item routerLink="/" (click)="sidenav.toggle()">Actualités</a>
+        <a mat-list-item routerLink="/Ligue1/10" (click)="sidenav.toggle()"><img class="logoleague"
+                                                      src="https://d37kf7rs4g1hyv.cloudfront.net/img/flags/64/ligue1A.png">Ligue
+          1</a>
+        <a mat-list-item routerLink="/Bundesliga/11" (click)="sidenav.toggle()"><img class="logoleague"
+                                                          src="https://d37kf7rs4g1hyv.cloudfront.net/img/flags/64/bundesliga.png">BundesLiga</a>
+        <a mat-list-item routerLink="/LigueA/14" (click)="sidenav.toggle()"><img class="logoleague"
+                                                      src="https://d37kf7rs4g1hyv.cloudfront.net/img/flags/64/laliga.png">La
+          LIGA</a>
+        <a mat-list-item routerLink="/SerieA/13" (click)="sidenav.toggle()"><img class="logoleague"
+                                                      src="https://d37kf7rs4g1hyv.cloudfront.net/img/flags/64/seriea.png">Série
+          A</a>
+        <a mat-list-item routerLink="/PremierLeague/15" (click)="sidenav.toggle()"><img class="logoleague"
+                                                             src="https://d37kf7rs4g1hyv.cloudfront.net/img/flags/64/epl.png">Première
+          League</a>
+      </div>
+    </mat-sidenav>
+    <mat-sidenav-content fxFlexFill>
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+
+  </mat-sidenav-container>
+</div>
+
+
 
 
 

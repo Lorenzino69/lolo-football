@@ -35,7 +35,6 @@ export class ResultatComponent implements OnInit {
         res => {
           this.data = res.response.results;
           this.stats = res.response
-          console.log(this.stats)
         }, () => {
           console.log("erreur d'appel a league service");
         });
