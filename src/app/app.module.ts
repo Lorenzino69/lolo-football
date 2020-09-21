@@ -33,6 +33,8 @@ import { ResultatComponent } from './components/resultat/resultat.component';
 import { StatComponent } from './components/stat/stat.component';
 import { ActuComponent } from './components/actu/actu.component';
 import {ActuService} from './services/actu.service';
+import { ArticleComponent } from './components/article/article.component';
+import {ArticleService} from './services/article.service';
 
 @NgModule({
   declarations: [
@@ -48,6 +50,7 @@ import {ActuService} from './services/actu.service';
     ResultatComponent,
     StatComponent,
     ActuComponent,
+    ArticleComponent,
   ],
   imports: [
     BrowserModule,
@@ -70,7 +73,7 @@ import {ActuService} from './services/actu.service';
     MatExpansionModule,
     MatTabsModule
   ],
-  providers: [LeagueService,ActuService],
+  providers: [LeagueService,ActuService,ArticleService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
