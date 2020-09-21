@@ -506,20 +506,80 @@
                       </div>
                       <div class="MatchViewMainEvents">
                         <div *ngFor="let goal of goals">
-                          <div *ngIf="goal.s == '1'">
-                            <div
-                              class="MatchViewMainEventsEvent MatchViewMainEventsEventSide1 MatchViewMainEventsEventTypegoal">
-                              <span class="MatchViewMainEventsEventPFull">{{goal.n}}</span><span
-                              class="MatchViewMainEventsEventType"> (goal)</span><span
-                              class="MatchViewMainEventsEventMinute">{{goal.m}}'</span>
+
+
+                          <div *ngIf="goal.t == 'rc'">
+                            <div *ngIf="goal.s == '1'">
+                              <div
+                                class="MatchViewMainEventsEvent MatchViewMainEventsEventSide1 MatchViewMainEventsEventTyperc">
+                                <span class="MatchViewMainEventsEventPFull">{{goal.n}}</span><span
+                                class="MatchViewMainEventsEventType"> (rc)</span><span
+                                class="MatchViewMainEventsEventMinute">{{goal.m}}'</span>
+                              </div>
+                            </div>
+                            <div *ngIf="goal.s == '2'">
+                              <div
+                                class="MatchViewMainEventsEvent MatchViewMainEventsEventSide2 MatchViewMainEventsEventTyperc">
+                                <span class="MatchViewMainEventsEventPFull">{{goal.n}}</span><span
+                                class="MatchViewMainEventsEventType"> (rc)</span><span
+                                class="MatchViewMainEventsEventMinute">{{goal.m}}'</span>
+                              </div>
                             </div>
                           </div>
-                          <div *ngIf="goal.s == '2'">
-                            <div
-                              class="MatchViewMainEventsEvent MatchViewMainEventsEventSide2 MatchViewMainEventsEventTypegoal">
-                              <span class="MatchViewMainEventsEventPFull">{{goal.n}}</span><span
-                              class="MatchViewMainEventsEventType"> (goal)</span><span
-                              class="MatchViewMainEventsEventMinute">{{goal.m}}'</span>
+                          <div *ngIf="goal.t == 'goal'">
+                            <div *ngIf="goal.s == '1'">
+                              <div
+                                class="MatchViewMainEventsEvent MatchViewMainEventsEventSide1 MatchViewMainEventsEventTypegoal">
+                                <span class="MatchViewMainEventsEventPFull">{{goal.n}}</span><span
+                                class="MatchViewMainEventsEventType"> (goal)</span><span
+                                class="MatchViewMainEventsEventMinute">{{goal.m}}'</span>
+                              </div>
+                            </div>
+                            <div *ngIf="goal.s == '2'">
+                              <div
+                                class="MatchViewMainEventsEvent MatchViewMainEventsEventSide2 MatchViewMainEventsEventTypegoal">
+                                <span class="MatchViewMainEventsEventPFull">{{goal.n}}</span><span
+                                class="MatchViewMainEventsEventType"> (goal)</span><span
+                                class="MatchViewMainEventsEventMinute">{{goal.m}}'</span>
+                              </div>
+                            </div>
+                          </div>
+                        <!--penalty-->
+                          <div *ngIf="goal.t == 'pen'">
+                            <div *ngIf="goal.s == '1'">
+                              <div
+                                class="MatchViewMainEventsEvent MatchViewMainEventsEventSide1 MatchViewMainEventsEventTypepen">
+                                <span class="MatchViewMainEventsEventPFull">{{goal.n}}</span><span
+                                class="MatchViewMainEventsEventType"> (pen)</span><span
+                                class="MatchViewMainEventsEventMinute">{{goal.m}}'</span>
+                              </div>
+                            </div>
+                            <div *ngIf="goal.s == '2'">
+                              <div
+                                class="MatchViewMainEventsEvent MatchViewMainEventsEventSide2 MatchViewMainEventsEventTypepen">
+                                <span class="MatchViewMainEventsEventPFull">{{goal.n}}</span><span
+                                class="MatchViewMainEventsEventType"> (pen)</span><span
+                                class="MatchViewMainEventsEventMinute">{{goal.m}}'</span>
+                              </div>
+                            </div>
+                          </div>
+<!--csc-->
+                          <div *ngIf="goal.t == 'og'">
+                            <div *ngIf="goal.s == '1'">
+                              <div
+                                class="MatchViewMainEventsEvent MatchViewMainEventsEventSide1 MatchViewMainEventsEventTypeog">
+                                <span class="MatchViewMainEventsEventPFull">{{goal.n}}</span><span
+                                class="MatchViewMainEventsEventType"> (og)</span><span
+                                class="MatchViewMainEventsEventMinute">{{goal.m}}'</span>
+                              </div>
+                            </div>
+                            <div *ngIf="goal.s == '2'">
+                              <div
+                                class="MatchViewMainEventsEvent MatchViewMainEventsEventSide2 MatchViewMainEventsEventTypeog">
+                                <span class="MatchViewMainEventsEventPFull">{{goal.n}}</span><span
+                                class="MatchViewMainEventsEventType"> (og)</span><span
+                                class="MatchViewMainEventsEventMinute">{{goal.m}}'</span>
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -664,7 +724,8 @@
                             </div>
                           </div>
                           <div class="MatchViewStatDesc">
-                            <div class="MatchViewYellowCards"><b>{{data.s1}}: </b><span *ngFor="let cartonjaune of cartonJaune1">
+                            <div class="MatchViewYellowCards"><b>{{data.s1}}: </b><span
+                              *ngFor="let cartonjaune of cartonJaune1">
                               {{cartonjaune.n}}&nbsp;{{cartonjaune.m}}'/
                             </span>
 

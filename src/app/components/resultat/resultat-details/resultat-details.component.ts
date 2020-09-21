@@ -58,7 +58,8 @@ export class ResultatDetailsComponent implements OnInit {
           this.touches = this.data.st[6];
           console.log(res.response.ev)
           for(this.i=0; this.i<res.response.ev.length; this.i++){
-            if(res.response.ev[this.i].t =='goal' || res.response.ev[this.i].t == 'og'){
+            if(res.response.ev[this.i].t =='goal' || res.response.ev[this.i].t == 'og'
+              || res.response.ev[this.i].t == 'rc' || res.response.ev[this.i].t == 'pen'){
               this.goals.push(res.response.ev[this.i]);
             }
           }
