@@ -61,6 +61,7 @@ export class LeagueComponent implements AfterViewInit, OnInit {
       const league = this.leagueService.getLigue(id).subscribe(
         res => {
           this.data = res.response.standings.rows;
+          console.log(res.response)
           this.dataSource = new MatTableDataSource<LeagueItem>(this.data);
         }, () => {
           console.log("erreur d'appel a league service");

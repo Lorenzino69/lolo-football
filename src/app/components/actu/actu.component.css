@@ -26,6 +26,9 @@
   justify-content: center;
   align-items: center;
   height:auto;
+
+  margin-bottom: 0px;
+
 }
 .typecard{
   display: flex;
