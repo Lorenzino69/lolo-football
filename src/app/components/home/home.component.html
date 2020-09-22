@@ -1,5 +1,5 @@
 <div class="ResultCard">
-  <mat-accordion *ngFor="let data of data ; let i=index">
+  <mat-accordion *ngFor="let data of data ; let i=index" routerLink="/result-details/{{team1[i]}}/{{team2[i]}}">
     <div *ngIf="i<10">
       <mat-expansion-panel hideToggle>
         <mat-expansion-panel-header>
@@ -59,7 +59,6 @@
             </div>
           </mat-panel-title>
         </mat-expansion-panel-header>
-       Statistiques a venir
       </mat-expansion-panel>
     </div>
   </mat-accordion>

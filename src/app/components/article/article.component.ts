@@ -30,7 +30,6 @@ export class ArticleComponent implements OnInit {
         res => {
           this.data = res;
           this.metas = res.metas;
-          console.log(this.data)
           this.testImage = this.data.medias[0];
           if(this.data.medias[0].url !==undefined){
             this.imagesUrl.push(this.data.medias[0].url);

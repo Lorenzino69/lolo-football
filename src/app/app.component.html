@@ -49,37 +49,43 @@
       </button>
     </div>
 
-    <a mat-button class="companyName" routerLink="/">
-      <span>Lolo Football</span>
+    <a mat-button class="companyName" routerLink="/chrono">
+      <span>Chrono</span>
     </a>
-    <span class="example-spacer"></span>
-    <div fxShow="true" fxHide.lt-md="true">
-      <a mat-button routerLink="/contact">Contact</a>
+    <span></span>
+    <div fxShow="true">
+      <a mat-button routerLink="/Home">Matchs du jour</a>
     </div>
 
   </mat-toolbar>
-  <mat-sidenav-container fxFlexFill class="example-container">
+  <mat-sidenav-container fxFlexFill>
 
     <mat-sidenav color="primary" #sidenav fxLayout="column" mode="over" opened="false">
       <div fxLayout="column">
-
-        <a mat-list-item routerLink="/" (click)="sidenav.toggle()">Actualités</a>
-        <a mat-list-item routerLink="/chrono" (click)="sidenav.toggle()">Chrono</a>
-        <a mat-list-item routerLink="/Ligue1/10" (click)="sidenav.toggle()"><img class="logoleague"
-                                                      src="https://d37kf7rs4g1hyv.cloudfront.net/img/flags/64/ligue1A.png">Ligue
-          1</a>
-        <a mat-list-item routerLink="/Bundesliga/11" (click)="sidenav.toggle()"><img class="logoleague"
-                                                          src="https://d37kf7rs4g1hyv.cloudfront.net/img/flags/64/bundesliga.png">BundesLiga</a>
-        <a mat-list-item routerLink="/LigueA/14" (click)="sidenav.toggle()"><img class="logoleague"
-                                                      src="https://d37kf7rs4g1hyv.cloudfront.net/img/flags/64/laliga.png">La
-          LIGA</a>
-        <a mat-list-item routerLink="/SerieA/13" (click)="sidenav.toggle()"><img class="logoleague"
-                                                      src="https://d37kf7rs4g1hyv.cloudfront.net/img/flags/64/seriea.png">Série
-          A</a>
-        <a mat-list-item routerLink="/PremierLeague/15" (click)="sidenav.toggle()"><img class="logoleague"
-                                                             src="https://d37kf7rs4g1hyv.cloudfront.net/img/flags/64/epl.png">Première
-          League</a>
-
+        <mat-list>
+          <a mat-list-item routerLink="/" (click)="sidenav.toggle()">Actualités</a>
+          <a mat-list-item routerLink="/Home" (click)="sidenav.toggle()">Matchs du jour</a>
+          <a mat-list-item routerLink="/chrono" (click)="sidenav.toggle()"><mat-icon>alarm</mat-icon>&nbsp;Chrono</a>
+          <a mat-list-item routerLink="/Ligue1/10" (click)="sidenav.toggle()"><img class="logoleague"
+                                                                                     src="https://d37kf7rs4g1hyv.cloudfront.net/img/flags/64/ligue1A.png">Ligue
+            1
+          </a>
+          <a mat-list-item routerLink="/Bundesliga/11" (click)="sidenav.toggle()"><img class="logoleague"
+                                                                                         src="https://d37kf7rs4g1hyv.cloudfront.net/img/flags/64/bundesliga.png">BundesLiga
+          </a>
+          <a mat-list-item routerLink="/LigueA/14" (click)="sidenav.toggle()"><img class="logoleague"
+                                                                                     src="https://d37kf7rs4g1hyv.cloudfront.net/img/flags/64/laliga.png">La
+            LIGA
+          </a>
+          <a mat-list-item routerLink="/SerieA/13" (click)="sidenav.toggle()"><img class="logoleague"
+                                                                                     src="https://d37kf7rs4g1hyv.cloudfront.net/img/flags/64/seriea.png">Série
+            A
+          </a>
+          <a mat-list-item routerLink="/PremierLeague/15" (click)="sidenav.toggle()"><img class="logoleague"
+                                                                                            src="https://d37kf7rs4g1hyv.cloudfront.net/img/flags/64/epl.png">Première
+            League
+          </a>
+        </mat-list>
       </div>
     </mat-sidenav>
     <mat-sidenav-content fxFlexFill>
