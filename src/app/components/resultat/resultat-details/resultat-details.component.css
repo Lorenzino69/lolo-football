@@ -68,7 +68,9 @@
   color: #aaa;
   font-size: 18px;
 }
-
+.backbutton{
+  float:left;
+}
 
 .MatchViewInfoRowMain{
   line-height: 1;
@@ -864,7 +866,6 @@
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-  o-text-overflow: ellipsis;
   padding-left: 10px;
   line-height: 21px;
 }
@@ -1179,7 +1180,6 @@
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-  o-text-overflow: ellipsis;
   padding-left:10px;
   padding-right:35px;
   line-height: 26px;
@@ -1194,7 +1194,6 @@
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-  o-text-overflow: ellipsis;
   padding-right:10px;
   padding-left:35px;
   line-height: 26px;
@@ -1309,7 +1308,6 @@
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-  o-text-overflow: ellipsis;
   cursor: pointer;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;

@@ -1,10 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import {Observable} from 'rxjs';
-import {BreakpointObserver, Breakpoints} from '@angular/cdk/layout';
-import {map, shareReplay} from 'rxjs/operators';
+import {Component, OnInit} from '@angular/core';
+import {BreakpointObserver} from '@angular/cdk/layout';
 import {LeagueService} from '../../services/league.service';
-import {MatTableDataSource} from '@angular/material/table';
-import {LeagueItem} from '../league/league.component';
 import {ActivatedRoute} from '@angular/router';
 
 @Component({
@@ -14,27 +10,32 @@ import {ActivatedRoute} from '@angular/router';
 })
 export class ResultatComponent implements OnInit {
 
-  isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
-    .pipe(
-      map(result => result.matches),
-      shareReplay()
-    );
   data: any;
   public url: any;
   private stats: any;
+  private i: any;
+  public team1: Array<any>;
+  public team2: Array<any>;
 
   constructor(private breakpointObserver: BreakpointObserver,private leagueService: LeagueService,private route: ActivatedRoute) {
   }
 
   ngOnInit() {
-
-
+    this.team1 = new Array<any>();
+    this.team2 = new Array<any>();
     const route = this.route.params.subscribe((params) => {
       const id = params['id'];
       const league = this.leagueService.getLigue(id).subscribe(
         res => {
           this.data = res.response.results;
           this.stats = res.response
+          console.log(this.data);
+          for(this.i=0; this.i<this.data.length; this.i++){
+            this.team1.push(this.data[this.i].side1.replace('-','').replace(' ','-').toLowerCase());
+            this.team2.push(this.data[this.i].side2.replace('-','').replace(' ','-').toLowerCase());
+          }
+
+
         }, () => {
           console.log("erreur d'appel a league service");
         },
@@ -43,12 +44,4 @@ export class ResultatComponent implements OnInit {
       () => { if (route) { route.unsubscribe() } });
   }
 
-  getUrl(scid){
-
-    // window.location.href = ('https://www.scorebat.com/embed/g/' + scid + '/', "_blank");
-    window.open('https://www.scorebat.com/embed/g/' + scid + '/', "_blank");
-    // return this.url = "https://www.scorebat.com/embed/g/" + scid + "/";
-
-
-  }
 }

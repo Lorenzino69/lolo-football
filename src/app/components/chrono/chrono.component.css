@@ -1,0 +1,17 @@
+.list{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align:center;
+  color:black !important;
+}
+.abonne{
+  color: #c4a749;
+  /*color: var(--color-bronze,#c4a749);*/
+  background-color: transparent;
+  padding: 1px 0 0;
+  font-family: DINNextLTPro-MediumCond,sans-serif;
+}
+.mat-list-item{
+  color:black !important;
+}

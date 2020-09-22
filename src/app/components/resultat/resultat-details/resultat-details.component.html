@@ -1,346 +1,302 @@
-<html lang="en">
-<head>
-  <link rel="apple-touch-icon" sizes="180x180"
-        href="https://d37kf7rs4g1hyv.cloudfront.net/scorebat/favrb3/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32"
-        href="https://d37kf7rs4g1hyv.cloudfront.net/scorebat/favrb3/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16"
-        href="https://d37kf7rs4g1hyv.cloudfront.net/scorebat/favrb3/favicon-16x16.png">
-  <link rel="manifest" href="https://d37kf7rs4g1hyv.cloudfront.net/scorebat/favrb3/site.webmanifest">
-  <link rel="mask-icon" href="https://d37kf7rs4g1hyv.cloudfront.net/scorebat/favrb3/safari-pinned-tab.svg"
-        color="#f73f59">
-  <link rel="shortcut icon" href="https://d37kf7rs4g1hyv.cloudfront.net/scorebat/favrb3/favicon.ico">
-
-</head>
-<body>
-<div id="root">
-  <div class="BatFeedNavigation BatFeedNavigationMouse">
-    <div class="BatFeedFlexW">
-      <div class="BatFeedFlex">
-        <div class="BatFeedFlexSidebar">
-          <div class="BatFeedSideBar">
-            <div class="BatFeedSideBarCMW">
-              <div class="BatFeedItem BatFeedItemPadding BatFeedItemNoM">
+<button (click)="backClick()" class="backbutton">
+  <mat-icon>keyboard_arrow_left</mat-icon>
+</button>
+<div class="MatchView">
+  <div>
+    <div class="BatFeedItemPM">
+      <div class="BatFeedItemPadding">
+        <div class="MatchViewInfo">
+        </div>
+        <div class="MatchViewHead">
+          <div>
+            <div class="FieldStatusWrapper" *ngIf="status == 'FT'">
+              <div class="FieldStatus FieldStatusStateended FieldStatusBlinkerundefined">Fin du Temps
+              </div>
+            </div>
+          </div>
+          <div class="MatchViewHeadT">
+            <div class="MatchViewHeadSide1" itemprop="hometeam" itemscope="">
+              <div
+                class="item FailoverImage FailoverImageReady MatchViewHeadTeamLogo MatchViewHeadTeamLogoSide1">
+                <img src="https://s3.amazonaws.com/bookmkrs/img/logos/mini/{{id1}}.png"/>
+                <span class="caption">{{s1}}</span>
+              </div>
+            </div>
+            <div class="MatchViewHeadSS">
+              <div class="MatchViewHeadScoreWr">
+                <div class="MatchViewHeadScore">
+                  <div>
+                    <div class="MatchViewHeadScoreDg MatchViewHeadScoreDg1">{{sc1}}</div>
+                    <div class="MatchViewHeadScoreDg MatchViewHeadScoreDg2">{{sc2}}</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="MatchViewHeadSide2" itemprop="awayteam" itemscope="">
+              <div
+                class="item FailoverImage FailoverImageReady MatchViewHeadTeamLogo MatchViewHeadTeamLogoSide2">
+                <img src="https://s3.amazonaws.com/bookmkrs/img/logos/mini/{{id2}}.png"/>
+                <span class="caption">{{s2}}</span>
               </div>
             </div>
           </div>
         </div>
-        <div class="BatFeedFlexContent">
-          <div class="BatFeedContent">
-            <div class="MatchView" id="MatchView-1">
-              <div itemscope="" itemtype="http://schema.org/SportsEvent">
-                <div class="BatFeedItemPM">
-                  <div class="BatFeedItem BatFeedItemNoPadding BatFeedItemTopP BatFeedItemNoM">
-                    <div class="BatFeedItemPadding">
-                      <div class="MatchViewInfo">
-                      </div>
-                      <div class="MatchViewHead">
-                        <div>
-                          <div class="FieldStatusWrapper" *ngIf="data.s === 'FT'">
-                            <div class="FieldStatus FieldStatusStateended FieldStatusBlinkerundefined">Fin du Temps
-                            </div>
-                          </div>
-                        </div>
-                        <div class="MatchViewHeadT">
-                          <div class="MatchViewHeadSide1" itemprop="hometeam" itemscope=""
-                               itemtype="https://schema.org/SportsTeam">
-                            <div
-                              class="item FailoverImage FailoverImageReady MatchViewHeadTeamLogo MatchViewHeadTeamLogoSide1">
-                              <img src="https://s3.amazonaws.com/bookmkrs/img/logos/mini/{{data.s1Id}}.png"/>
-                              <span class="caption">{{data.s1}}</span>
-                            </div>
-                          </div>
-                          <div class="MatchViewHeadSS">
-                            <div class="MatchViewHeadScoreWr">
-                              <div class="MatchViewHeadScore">
-                                <div>
-                                  <div class="MatchViewHeadScoreDg MatchViewHeadScoreDg1">{{data.sc1}}</div>
-                                  <div class="MatchViewHeadScoreDg MatchViewHeadScoreDg2">{{data.sc2}}</div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="MatchViewHeadSide2" itemprop="awayteam" itemscope=""
-                               itemtype="https://schema.org/SportsTeam">
-                            <div
-                              class="item FailoverImage FailoverImageReady MatchViewHeadTeamLogo MatchViewHeadTeamLogoSide2">
-                              <img src="https://s3.amazonaws.com/bookmkrs/img/logos/mini/{{data.s2Id}}.png"/>
-                              <span class="caption">{{data.s2}}</span>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="MatchViewMainEvents">
-                        <div *ngFor="let goal of goals">
+        <div class="MatchViewMainEvents">
+          <div *ngFor="let goal of goals">
+            <div *ngIf="goal.t == 'rc'">
+              <div *ngIf="goal.s == '1'">
+                <div
+                  class="MatchViewMainEventsEvent MatchViewMainEventsEventSide1 MatchViewMainEventsEventTyperc">
+                  <span class="MatchViewMainEventsEventPFull">{{goal.n}}</span><span
+                  class="MatchViewMainEventsEventType"> (rc)</span><span
+                  class="MatchViewMainEventsEventMinute">{{goal.m}}'</span>
+                </div>
+              </div>
+              <div *ngIf="goal.s == '2'">
+                <div
+                  class="MatchViewMainEventsEvent MatchViewMainEventsEventSide2 MatchViewMainEventsEventTyperc">
+                  <span class="MatchViewMainEventsEventPFull">{{goal.n}}</span><span
+                  class="MatchViewMainEventsEventType"> (rc)</span><span
+                  class="MatchViewMainEventsEventMinute">{{goal.m}}'</span>
+                </div>
+              </div>
+            </div>
+            <div *ngIf="goal.t == 'goal'">
+              <div *ngIf="goal.s == '1'">
+                <div
+                  class="MatchViewMainEventsEvent MatchViewMainEventsEventSide1 MatchViewMainEventsEventTypegoal">
+                  <span class="MatchViewMainEventsEventPFull">{{goal.n}}</span><span
+                  class="MatchViewMainEventsEventType"> (goal)</span><span
+                  class="MatchViewMainEventsEventMinute">{{goal.m}}'</span>
+                </div>
+              </div>
+              <div *ngIf="goal.s == '2'">
+                <div
+                  class="MatchViewMainEventsEvent MatchViewMainEventsEventSide2 MatchViewMainEventsEventTypegoal">
+                  <span class="MatchViewMainEventsEventPFull">{{goal.n}}</span><span
+                  class="MatchViewMainEventsEventType"> (goal)</span><span
+                  class="MatchViewMainEventsEventMinute">{{goal.m}}'</span>
+                </div>
+              </div>
+            </div>
+            <!--penalty-->
+            <div *ngIf="goal.t == 'pen'">
+              <div *ngIf="goal.s == '1'">
+                <div
+                  class="MatchViewMainEventsEvent MatchViewMainEventsEventSide1 MatchViewMainEventsEventTypepen">
+                  <span class="MatchViewMainEventsEventPFull">{{goal.n}}</span><span
+                  class="MatchViewMainEventsEventType"> (pen)</span><span
+                  class="MatchViewMainEventsEventMinute">{{goal.m}}'</span>
+                </div>
+              </div>
+              <div *ngIf="goal.s == '2'">
+                <div
+                  class="MatchViewMainEventsEvent MatchViewMainEventsEventSide2 MatchViewMainEventsEventTypepen">
+                  <span class="MatchViewMainEventsEventPFull">{{goal.n}}</span><span
+                  class="MatchViewMainEventsEventType"> (pen)</span><span
+                  class="MatchViewMainEventsEventMinute">{{goal.m}}'</span>
+                </div>
+              </div>
+            </div>
+            <!--csc-->
+            <div *ngIf="goal.t == 'og'">
+              <div *ngIf="goal.s == '1'">
+                <div
+                  class="MatchViewMainEventsEvent MatchViewMainEventsEventSide1 MatchViewMainEventsEventTypeog">
+                  <span class="MatchViewMainEventsEventPFull">{{goal.n}}</span><span
+                  class="MatchViewMainEventsEventType"> (og)</span><span
+                  class="MatchViewMainEventsEventMinute">{{goal.m}}'</span>
+                </div>
+              </div>
+              <div *ngIf="goal.s == '2'">
+                <div
+                  class="MatchViewMainEventsEvent MatchViewMainEventsEventSide2 MatchViewMainEventsEventTypeog">
+                  <span class="MatchViewMainEventsEventPFull">{{goal.n}}</span><span
+                  class="MatchViewMainEventsEventType"> (og)</span><span
+                  class="MatchViewMainEventsEventMinute">{{goal.m}}'</span>
+                </div>
+              </div>
+            </div>
+          </div>
 
-
-                          <div *ngIf="goal.t == 'rc'">
-                            <div *ngIf="goal.s == '1'">
-                              <div
-                                class="MatchViewMainEventsEvent MatchViewMainEventsEventSide1 MatchViewMainEventsEventTyperc">
-                                <span class="MatchViewMainEventsEventPFull">{{goal.n}}</span><span
-                                class="MatchViewMainEventsEventType"> (rc)</span><span
-                                class="MatchViewMainEventsEventMinute">{{goal.m}}'</span>
-                              </div>
-                            </div>
-                            <div *ngIf="goal.s == '2'">
-                              <div
-                                class="MatchViewMainEventsEvent MatchViewMainEventsEventSide2 MatchViewMainEventsEventTyperc">
-                                <span class="MatchViewMainEventsEventPFull">{{goal.n}}</span><span
-                                class="MatchViewMainEventsEventType"> (rc)</span><span
-                                class="MatchViewMainEventsEventMinute">{{goal.m}}'</span>
-                              </div>
-                            </div>
-                          </div>
-                          <div *ngIf="goal.t == 'goal'">
-                            <div *ngIf="goal.s == '1'">
-                              <div
-                                class="MatchViewMainEventsEvent MatchViewMainEventsEventSide1 MatchViewMainEventsEventTypegoal">
-                                <span class="MatchViewMainEventsEventPFull">{{goal.n}}</span><span
-                                class="MatchViewMainEventsEventType"> (goal)</span><span
-                                class="MatchViewMainEventsEventMinute">{{goal.m}}'</span>
-                              </div>
-                            </div>
-                            <div *ngIf="goal.s == '2'">
-                              <div
-                                class="MatchViewMainEventsEvent MatchViewMainEventsEventSide2 MatchViewMainEventsEventTypegoal">
-                                <span class="MatchViewMainEventsEventPFull">{{goal.n}}</span><span
-                                class="MatchViewMainEventsEventType"> (goal)</span><span
-                                class="MatchViewMainEventsEventMinute">{{goal.m}}'</span>
-                              </div>
-                            </div>
-                          </div>
-                          <!--penalty-->
-                          <div *ngIf="goal.t == 'pen'">
-                            <div *ngIf="goal.s == '1'">
-                              <div
-                                class="MatchViewMainEventsEvent MatchViewMainEventsEventSide1 MatchViewMainEventsEventTypepen">
-                                <span class="MatchViewMainEventsEventPFull">{{goal.n}}</span><span
-                                class="MatchViewMainEventsEventType"> (pen)</span><span
-                                class="MatchViewMainEventsEventMinute">{{goal.m}}'</span>
-                              </div>
-                            </div>
-                            <div *ngIf="goal.s == '2'">
-                              <div
-                                class="MatchViewMainEventsEvent MatchViewMainEventsEventSide2 MatchViewMainEventsEventTypepen">
-                                <span class="MatchViewMainEventsEventPFull">{{goal.n}}</span><span
-                                class="MatchViewMainEventsEventType"> (pen)</span><span
-                                class="MatchViewMainEventsEventMinute">{{goal.m}}'</span>
-                              </div>
-                            </div>
-                          </div>
-                          <!--csc-->
-                          <div *ngIf="goal.t == 'og'">
-                            <div *ngIf="goal.s == '1'">
-                              <div
-                                class="MatchViewMainEventsEvent MatchViewMainEventsEventSide1 MatchViewMainEventsEventTypeog">
-                                <span class="MatchViewMainEventsEventPFull">{{goal.n}}</span><span
-                                class="MatchViewMainEventsEventType"> (og)</span><span
-                                class="MatchViewMainEventsEventMinute">{{goal.m}}'</span>
-                              </div>
-                            </div>
-                            <div *ngIf="goal.s == '2'">
-                              <div
-                                class="MatchViewMainEventsEvent MatchViewMainEventsEventSide2 MatchViewMainEventsEventTypeog">
-                                <span class="MatchViewMainEventsEventPFull">{{goal.n}}</span><span
-                                class="MatchViewMainEventsEventType"> (og)</span><span
-                                class="MatchViewMainEventsEventMinute">{{goal.m}}'</span>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-
-                      </div>
-                      <div class="MatchViewInfoBottom">
-                        <div class="MatchViewInfoRow MatchViewInfoRowDate">
-                          <div class="MatchViewInfoRowTitle">{{matchDate | date}}</div>
-                        </div>
-                      </div>
-                    </div>
+        </div>
+        <div class="MatchViewInfoBottom">
+          <div class="MatchViewInfoRow MatchViewInfoRowDate">
+            <!--                <div class="MatchViewInfoRowTitle">{{matchDate | date}}</div>-->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="MatchViewHome">
+      <div class="BatFeedItem">
+      </div>
+      <div class="BatFeedItem BatFeedItemPadding">
+        <div class="MatchViewStats MatchViewStatsLayoutrow">
+          <div class="MatchViewStatsF">
+            <div class="MatchViewStatsFeatured MatchViewStatsFeaturedrow">
+              <div class="MatchViewStatsFeaturedStat">
+                <div class="MatchViewStatsFeaturedStatName">Possession</div>
+                <div class="MatchViewStatsFeaturedStatValue">{{possession1}}<span
+                  class="MatchViewStatsFeaturedStatValueSign">%</span> - {{possession2}}<span
+                  class="MatchViewStatsFeaturedStatValueSign">%</span></div>
+                <div class="DonutChart">
+                  <div class="DonutChartWrapper">
+                    <svg width="90" height="90" class="DonutChartSvg">
+                      <circle r="32.14285714285714" cx="45" cy="45" transform="rotate(-90 45,45)"
+                              class="DonutChartTrack" style="stroke-width: 25.7143;"></circle>
+                      <circle r="32.14285714285714" cx="45" cy="45" transform="rotate(-90 45,45)"
+                              class="DonutChartIndicator DonutChartIndicator1"
+                              style="stroke-width: 25.7143; stroke-dasharray: 92.9014, 201.96;"></circle>
+                    </svg>
                   </div>
                 </div>
               </div>
-              <div>
-                <div class="MatchViewHome">
-                  <div class="BatFeedItem">
+              <div class="MatchViewStatsFeaturedSpacer"></div>
+              <div class="MatchViewStatsFeaturedStat MatchViewStatsFeaturedStatBigger">
+                <div class="MatchViewStatsFeaturedStatName">Tir Cadrés</div>
+                <div class="MatchViewStatsFeaturedStatValue">{{tirCadre1}} - {{tirCadre2}}</div>
+                <div class="DonutChart">
+                  <div class="DonutChartWrapper">
+                    <svg width="90" height="90" class="DonutChartSvg">
+                      <circle r="32.14285714285714" cx="45" cy="45" transform="rotate(-90 45,45)"
+                              class="DonutChartTrack" style="stroke-width: 25.7143;"></circle>
+                      <circle r="32.14285714285714" cx="45" cy="45" transform="rotate(-90 45,45)"
+                              class="DonutChartIndicator DonutChartIndicator1"
+                              style="stroke-width: 25.7143; stroke-dasharray: 157.08, 201.96;"></circle>
+                    </svg>
                   </div>
-                  <div class="BatFeedItem BatFeedItemPadding">
-                    <div class="MatchViewStats MatchViewStatsLayoutrow">
-                      <div class="MatchViewStatsF">
-                        <div class="MatchViewStatsFeatured MatchViewStatsFeaturedrow">
-                          <div class="MatchViewStatsFeaturedStat">
-                            <div class="MatchViewStatsFeaturedStatName">Possession</div>
-                            <div class="MatchViewStatsFeaturedStatValue">{{possession.v1}}<span
-                              class="MatchViewStatsFeaturedStatValueSign">%</span> - {{possession.v2}}<span
-                              class="MatchViewStatsFeaturedStatValueSign">%</span></div>
-                            <div class="DonutChart">
-                              <div class="DonutChartWrapper">
-                                <svg width="90" height="90" class="DonutChartSvg">
-                                  <circle r="32.14285714285714" cx="45" cy="45" transform="rotate(-90 45,45)"
-                                          class="DonutChartTrack" style="stroke-width: 25.7143;"></circle>
-                                  <circle r="32.14285714285714" cx="45" cy="45" transform="rotate(-90 45,45)"
-                                          class="DonutChartIndicator DonutChartIndicator1"
-                                          style="stroke-width: 25.7143; stroke-dasharray: 92.9014, 201.96;"></circle>
-                                </svg>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="MatchViewStatsFeaturedSpacer"></div>
-                          <div class="MatchViewStatsFeaturedStat MatchViewStatsFeaturedStatBigger">
-                            <div class="MatchViewStatsFeaturedStatName">Tir Cadrés</div>
-                            <div class="MatchViewStatsFeaturedStatValue">{{tirCadre.v1}} - {{tirCadre.v2}}</div>
-                            <div class="DonutChart">
-                              <div class="DonutChartWrapper">
-                                <svg width="90" height="90" class="DonutChartSvg">
-                                  <circle r="32.14285714285714" cx="45" cy="45" transform="rotate(-90 45,45)"
-                                          class="DonutChartTrack" style="stroke-width: 25.7143;"></circle>
-                                  <circle r="32.14285714285714" cx="45" cy="45" transform="rotate(-90 45,45)"
-                                          class="DonutChartIndicator DonutChartIndicator1"
-                                          style="stroke-width: 25.7143; stroke-dasharray: 157.08, 201.96;"></circle>
-                                </svg>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="MatchViewStatsFeaturedSpacer"></div>
-                          <div class="MatchViewStatsFeaturedStat MatchViewStatsFeaturedStatBigger">
-                            <div class="MatchViewStatsFeaturedStatName">Tirs</div>
-                            <div class="MatchViewStatsFeaturedStatValue">{{tir.v1}} - {{tir.v2}}</div>
-                            <div class="DonutChart">
-                              <div class="DonutChartWrapper">
-                                <svg width="90" height="90" class="DonutChartSvg">
-                                  <circle r="32.14285714285714" cx="45" cy="45" transform="rotate(-90 45,45)"
-                                          class="DonutChartTrack" style="stroke-width: 25.7143;"></circle>
-                                  <circle r="32.14285714285714" cx="45" cy="45" transform="rotate(-90 45,45)"
-                                          class="DonutChartIndicator DonutChartIndicator1"
-                                          style="stroke-width: 25.7143; stroke-dasharray: 128.52, 201.96;"></circle>
-                                </svg>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="MatchViewStatsC">
-                        <div class="MatchViewStat">
-                          <div class="MatchViewStatName">Fautes</div>
-                          <div class="MatchViewStatCharts">
-                            <div class="MatchViewStatChart MatchViewStatChartSide1">
-                              <div class="MatchViewStatChartValue" [ngStyle]="{width: pourcentagefaute1}"></div>
-                              <div class="MatchViewStatChartLabel">{{fautes.v1}}</div>
-                            </div>
-                            <div class="MatchViewStatChartSpacer"></div>
-                            <div class="MatchViewStatChart MatchViewStatChartSide2 MatchViewStatChartBigger">
-                              <div class="MatchViewStatChartValue" [ngStyle]="{width: pourcentagefaute2}"></div>
-                              <div class="MatchViewStatChartLabel">{{fautes.v2}}</div>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="MatchViewStat">
-                          <div class="MatchViewStatName">Corners</div>
-                          <div class="MatchViewStatCharts">
-                            <div class="MatchViewStatChart MatchViewStatChartSide1 MatchViewStatChartBigger">
-                              <div class="MatchViewStatChartValue" [ngStyle]="{width: pourcentagecorner1}"></div>
-                              <div class="MatchViewStatChartLabel">{{corners.v1}}</div>
-                            </div>
-                            <div class="MatchViewStatChartSpacer"></div>
-                            <div class="MatchViewStatChart MatchViewStatChartSide2">
-                              <div class="MatchViewStatChartValue" [ngStyle]="{width: pourcentagecorner2}"></div>
-                              <div class="MatchViewStatChartLabel">{{corners.v2}}</div>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="MatchViewStat">
-                          <div class="MatchViewStatName">Arrêts</div>
-                          <div class="MatchViewStatCharts">
-                            <div class="MatchViewStatChart MatchViewStatChartSide1 MatchViewStatChartBigger">
-                              <div class="MatchViewStatChartValue" [ngStyle]="{width: pourcentagearret1}"></div>
-                              <div class="MatchViewStatChartLabel">{{arrets.v1}}</div>
-                            </div>
-                            <div class="MatchViewStatChartSpacer"></div>
-                            <div class="MatchViewStatChart MatchViewStatChartSide2">
-                              <div class="MatchViewStatChartValue" [ngStyle]="{width: pourcentagearret2}"></div>
-                              <div class="MatchViewStatChartLabel">{{arrets.v2}}</div>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="MatchViewStat">
-                          <div class="MatchViewStatName">Touches</div>
-                          <div class="MatchViewStatCharts">
-                            <div class="MatchViewStatChart MatchViewStatChartSide1 MatchViewStatChartBigger">
-                              <div class="MatchViewStatChartValue" [ngStyle]="{width: pourcentagetouche1}"></div>
-                              <div class="MatchViewStatChartLabel">{{touches.v1}}</div>
-                            </div>
-                            <div class="MatchViewStatChartSpacer"></div>
-                            <div class="MatchViewStatChart MatchViewStatChartSide2">
-                              <div class="MatchViewStatChartValue" [ngStyle]="{width: pourcentagetouche2}"></div>
-                              <div class="MatchViewStatChartLabel">{{touches.v2}}</div>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="MatchViewStat">
-                          <div class="MatchViewStatName">Cartons Jaunes</div>
-                          <div class="MatchViewStatCharts">
-                            <div class="MatchViewStatChart MatchViewStatChartSide1">
-                              <div class="MatchViewStatChartValue" [ngStyle]="{width: pourcentagecarton1}"></div>
-                              <div class="MatchViewStatChartLabel">{{cartonJaune1.length}}</div>
-                            </div>
-                            <div class="MatchViewStatChartSpacer"></div>
-                            <div class="MatchViewStatChart MatchViewStatChartSide2">
-                              <div class="MatchViewStatChartValue" [ngStyle]="{width: pourcentagecarton2}"></div>
-                              <div class="MatchViewStatChartLabel">{{cartonJaune2.length}}</div>
-                            </div>
-                          </div>
-                          <div class="MatchViewStatDesc">
-                            <div class="MatchViewYellowCards"><b>{{data.s1}}: </b><span
-                              *ngFor="let cartonjaune of cartonJaune1">
+                </div>
+              </div>
+              <div class="MatchViewStatsFeaturedSpacer"></div>
+              <div class="MatchViewStatsFeaturedStat MatchViewStatsFeaturedStatBigger">
+                <div class="MatchViewStatsFeaturedStatName">Tirs</div>
+                <div class="MatchViewStatsFeaturedStatValue">{{tir1}} - {{tir2}}</div>
+                <div class="DonutChart">
+                  <div class="DonutChartWrapper">
+                    <svg width="90" height="90" class="DonutChartSvg">
+                      <circle r="32.14285714285714" cx="45" cy="45" transform="rotate(-90 45,45)"
+                              class="DonutChartTrack" style="stroke-width: 25.7143;"></circle>
+                      <circle r="32.14285714285714" cx="45" cy="45" transform="rotate(-90 45,45)"
+                              class="DonutChartIndicator DonutChartIndicator1"
+                              style="stroke-width: 25.7143; stroke-dasharray: 128.52, 201.96;"></circle>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="MatchViewStatsC">
+            <div class="MatchViewStat">
+              <div class="MatchViewStatName">Fautes</div>
+              <div class="MatchViewStatCharts">
+                <div class="MatchViewStatChart MatchViewStatChartSide1">
+                  <div class="MatchViewStatChartValue" [ngStyle]="{width: pourcentagefaute1}"></div>
+                  <div class="MatchViewStatChartLabel">{{fautes1}}</div>
+                </div>
+                <div class="MatchViewStatChartSpacer"></div>
+                <div class="MatchViewStatChart MatchViewStatChartSide2 MatchViewStatChartBigger">
+                  <div class="MatchViewStatChartValue" [ngStyle]="{width: pourcentagefaute2}"></div>
+                  <div class="MatchViewStatChartLabel">{{fautes2}}</div>
+                </div>
+              </div>
+            </div>
+            <div class="MatchViewStat">
+              <div class="MatchViewStatName">Corners</div>
+              <div class="MatchViewStatCharts">
+                <div class="MatchViewStatChart MatchViewStatChartSide1 MatchViewStatChartBigger">
+                  <div class="MatchViewStatChartValue" [ngStyle]="{width: pourcentagecorner1}"></div>
+                  <div class="MatchViewStatChartLabel">{{corners1}}</div>
+                </div>
+                <div class="MatchViewStatChartSpacer"></div>
+                <div class="MatchViewStatChart MatchViewStatChartSide2">
+                  <div class="MatchViewStatChartValue" [ngStyle]="{width: pourcentagecorner2}"></div>
+                  <div class="MatchViewStatChartLabel">{{corners2}}</div>
+                </div>
+              </div>
+            </div>
+            <div class="MatchViewStat">
+              <div class="MatchViewStatName">Arrêts</div>
+              <div class="MatchViewStatCharts">
+                <div class="MatchViewStatChart MatchViewStatChartSide1 MatchViewStatChartBigger">
+                  <div class="MatchViewStatChartValue" [ngStyle]="{width: pourcentagearret1}"></div>
+                  <div class="MatchViewStatChartLabel">{{arrets1}}</div>
+                </div>
+                <div class="MatchViewStatChartSpacer"></div>
+                <div class="MatchViewStatChart MatchViewStatChartSide2">
+                  <div class="MatchViewStatChartValue" [ngStyle]="{width: pourcentagearret2}"></div>
+                  <div class="MatchViewStatChartLabel">{{arrets2}}</div>
+                </div>
+              </div>
+            </div>
+            <div class="MatchViewStat">
+              <div class="MatchViewStatName">Touches</div>
+              <div class="MatchViewStatCharts">
+                <div class="MatchViewStatChart MatchViewStatChartSide1 MatchViewStatChartBigger">
+                  <div class="MatchViewStatChartValue" [ngStyle]="{width: pourcentagetouche1}"></div>
+                  <div class="MatchViewStatChartLabel">{{touches1}}</div>
+                </div>
+                <div class="MatchViewStatChartSpacer"></div>
+                <div class="MatchViewStatChart MatchViewStatChartSide2">
+                  <div class="MatchViewStatChartValue" [ngStyle]="{width: pourcentagetouche2}"></div>
+                  <div class="MatchViewStatChartLabel">{{touches2}}</div>
+                </div>
+              </div>
+            </div>
+            <div class="MatchViewStat">
+              <div class="MatchViewStatName">Cartons Jaunes</div>
+              <div class="MatchViewStatCharts">
+                <div class="MatchViewStatChart MatchViewStatChartSide1">
+                  <div class="MatchViewStatChartValue" [ngStyle]="{width: pourcentagecarton1}"></div>
+                  <div class="MatchViewStatChartLabel">{{cartonJaune1.length}}</div>
+                </div>
+                <div class="MatchViewStatChartSpacer"></div>
+                <div class="MatchViewStatChart MatchViewStatChartSide2">
+                  <div class="MatchViewStatChartValue" [ngStyle]="{width: pourcentagecarton2}"></div>
+                  <div class="MatchViewStatChartLabel">{{cartonJaune2.length}}</div>
+                </div>
+              </div>
+              <div class="MatchViewStatDesc">
+                <div class="MatchViewYellowCards"><b>{{s1}}: </b><span
+                  *ngFor="let cartonjaune of cartonJaune1">
                               {{cartonjaune.n}}&nbsp;{{cartonjaune.m}}'/
                             </span>
 
-                            </div>
-                            <div class="MatchViewYellowCards"><b>{{data.s2}}: </b>
-                              <span *ngFor="let cartonjaune of cartonJaune2">
+                </div>
+                <div class="MatchViewYellowCards"><b>{{s2}}: </b>
+                  <span *ngFor="let cartonjaune of cartonJaune2">
                               {{cartonjaune.n}}&nbsp;{{cartonjaune.m}}'/
                             </span>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <h1>Compositions des équipes</h1>
-                  <div class="BatFeedItemM">
-
-                    <mat-selection-list role="list" [multiple]="false" fxFlex="50">
-                      <h3>{{data.s1}}</h3>
-                      <mat-list-option role="listitem" *ngFor="let team1 of Team1" [value]="team1">
-                        <div>
-                          <strong>{{team1.nm}}</strong>&nbsp;{{team1.n}}
-                        </div>
-                      </mat-list-option>
-                    </mat-selection-list>
-                    <mat-selection-list role="list" [multiple]="false" fxFlex="50">
-                      <h3>{{data.s2}}</h3>
-                      <mat-list-option role="listitem" *ngFor="let team2 of Team2" [value]="team2">
-                        <div>
-                          <strong>{{team2.nm}}</strong>&nbsp;{{team2.n}}
-                        </div>
-                      </mat-list-option>
-                    </mat-selection-list>
-
-
-                  </div>
-
-
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
+      <h1>Compositions des équipes</h1>
+      <div class="BatFeedItemM">
+
+        <mat-selection-list role="list" [multiple]="false" fxFlex="50">
+          <h3>{{s1}}</h3>
+          <mat-list-option role="listitem" *ngFor="let team1 of Team1" [value]="team1">
+            <div>
+              <strong>{{team1.nm}}</strong>&nbsp;{{team1.n}}
+            </div>
+          </mat-list-option>
+        </mat-selection-list>
+        <mat-selection-list role="list" [multiple]="false" fxFlex="50">
+          <h3>{{s2}}</h3>
+          <mat-list-option role="listitem" *ngFor="let team2 of Team2" [value]="team2">
+            <div>
+              <strong>{{team2.nm}}</strong>&nbsp;{{team2.n}}
+            </div>
+          </mat-list-option>
+        </mat-selection-list>
+      </div>
     </div>
   </div>
 </div>
-</body>
-</html>
 
 
 

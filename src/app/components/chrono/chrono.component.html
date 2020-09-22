@@ -1,0 +1,11 @@
+
+<mat-selection-list role="list" [multiple]="false" fxFlex="100">
+        <h3><mat-icon>alarm</mat-icon>&nbsp;Chrono</h3>
+        <mat-list-option role="listitem" *ngFor="let chronos of chrono" class="list" >
+          <div routerLink="/article/{{chronos.content.id}}"  routerLinkActive="active" class="list">
+            {{chronos.content.publication_date | date:'HH:mm'}}&nbsp;<span>
+            <strong>{{chronos.content.breadcrumb[1]?.text}}</strong></span>&nbsp;<span class="abonne">{{chronos.content?.paywall_text_box?.text}}</span>
+            &nbsp;{{chronos.content.title}}
+          </div>
+        </mat-list-option>
+</mat-selection-list>

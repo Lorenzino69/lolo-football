@@ -38,6 +38,8 @@ import {ArticleService} from './services/article.service';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import { ResultatDetailsComponent } from './components/resultat/resultat-details/resultat-details.component';
 import {ResultDetailService} from './services/result-detail.service';
+import { ChronoComponent } from './components/chrono/chrono.component';
+import {ChronoService} from './services/chrono.service';
 
 @NgModule({
   declarations: [
@@ -55,6 +57,7 @@ import {ResultDetailService} from './services/result-detail.service';
     ActuComponent,
     ArticleComponent,
     ResultatDetailsComponent,
+    ChronoComponent,
   ],
   imports: [
     BrowserModule,
@@ -78,7 +81,7 @@ import {ResultDetailService} from './services/result-detail.service';
     MatTabsModule,
     FlexLayoutModule
   ],
-  providers: [LeagueService,ActuService,ArticleService,ResultDetailService],
+  providers: [LeagueService,ActuService,ArticleService,ResultDetailService,ChronoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

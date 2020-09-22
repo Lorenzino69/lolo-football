@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ArticleService} from '../../services/article.service';
 import {ActivatedRoute} from '@angular/router';
+import {Location} from '@angular/common';
 
 @Component({
   selector: 'app-article',
@@ -14,8 +15,9 @@ export class ArticleComponent implements OnInit {
   public contentlegend: Array<any>;
   public content: Array<any>;
   metas: any;
+  testImage: any;
 
-  constructor(private articleservice: ArticleService, private route: ActivatedRoute) {
+  constructor(private articleservice: ArticleService, private route: ActivatedRoute,private _location: Location) {
   }
 
   ngOnInit(): void {
@@ -28,19 +30,21 @@ export class ArticleComponent implements OnInit {
         res => {
           this.data = res;
           this.metas = res.metas;
-
+          console.log(this.data)
+          this.testImage = this.data.medias[0];
+          if(this.data.medias[0].url !==undefined){
             this.imagesUrl.push(this.data.medias[0].url);
-            this.contentlegend.push(this.data.items[1].objet.title);
-
-          // if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-          //   this.imagesUrl = this.imagesUrl.map(function(x) {
-          //     return x.replace('-{width}-{height}-{quality}/', '-320-213-75/');
-          //   });
-          // }else{
             this.imagesUrl = this.imagesUrl.map(function(x) {
               return x.replace('-{width}-{height}-{quality}/', '-624-416-75/');
             });
-          // }
+          }else if (this.data.medias[0].iframe){
+            this.imagesUrl.push(this.data.medias[0].iframe);
+          }
+
+            this.contentlegend.push(this.data.items[1].objet.title);
+
+
+
 
 
             if(this.data.items[3].objet.paragraphs ==undefined){
@@ -57,6 +61,10 @@ export class ArticleComponent implements OnInit {
           console.log('erreur d\'appel a league service');
         });
     });
+  }
+
+  backClick() {
+    this._location.back();
   }
 
 }

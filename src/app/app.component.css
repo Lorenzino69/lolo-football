@@ -35,7 +35,7 @@ button{
 
 .example-spacer {
   flex: 1 1 auto;
-  height:40px;
+  /*height:40px;*/
 }
 
 .mat-sidenav-content{

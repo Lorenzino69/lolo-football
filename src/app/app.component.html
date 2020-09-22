@@ -45,7 +45,7 @@
   <mat-toolbar color="primary">
     <div fxShow="true">
       <button mat-icon-button (click)="sidenav.toggle()">
-        <mat-icon>menu</mat-icon>
+        <mat-icon>stars</mat-icon>
       </button>
     </div>
 
@@ -64,6 +64,7 @@
       <div fxLayout="column">
 
         <a mat-list-item routerLink="/" (click)="sidenav.toggle()">Actualités</a>
+        <a mat-list-item routerLink="/chrono" (click)="sidenav.toggle()">Chrono</a>
         <a mat-list-item routerLink="/Ligue1/10" (click)="sidenav.toggle()"><img class="logoleague"
                                                       src="https://d37kf7rs4g1hyv.cloudfront.net/img/flags/64/ligue1A.png">Ligue
           1</a>
@@ -78,6 +79,7 @@
         <a mat-list-item routerLink="/PremierLeague/15" (click)="sidenav.toggle()"><img class="logoleague"
                                                              src="https://d37kf7rs4g1hyv.cloudfront.net/img/flags/64/epl.png">Première
           League</a>
+
       </div>
     </mat-sidenav>
     <mat-sidenav-content fxFlexFill>
