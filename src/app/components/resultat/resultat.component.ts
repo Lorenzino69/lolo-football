@@ -29,16 +29,18 @@ export class ResultatComponent implements OnInit {
   ngOnInit() {
 
 
-    this.route.params.subscribe((params) => {
+    const route = this.route.params.subscribe((params) => {
       const id = params['id'];
-      this.leagueService.getLigue(id).subscribe(
+      const league = this.leagueService.getLigue(id).subscribe(
         res => {
           this.data = res.response.results;
           this.stats = res.response
         }, () => {
           console.log("erreur d'appel a league service");
-        });
-    });
+        },
+        () => { if (league) { league.unsubscribe() } });
+    },
+      () => { if (route) { route.unsubscribe() } });
   }
 
   getUrl(scid){

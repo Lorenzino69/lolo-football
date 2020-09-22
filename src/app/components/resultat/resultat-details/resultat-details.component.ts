@@ -45,14 +45,15 @@ export class ResultatDetailsComponent implements OnInit {
     this.cartonJaune2 = new Array<any>();
     this.Team1 = new Array<any>();
     this.Team2 = new Array<any>();
-    this.route.params.subscribe((params) => {
+    const route = this.route.params.subscribe((params) => {
       const team1 = params['team1'];
       const team2 = params['team2'];
-      this.resultdetailservice.getMatch(team1,team2).subscribe(
+      const match = this.resultdetailservice.getMatch(team1,team2).subscribe(
         res => {
           this.percent = "%";
           this.data = res.response;
-          this.matchDate = this.data.v[0].t;
+          console.log(this.data)
+          // this.matchDate = this.data.v[0].t;
 
           this.possession = this.data.st[0];
           this.tir = this.data.st[1];
@@ -86,11 +87,6 @@ export class ResultatDetailsComponent implements OnInit {
           for(this.i=0; this.i<res.response.l2.length; this.i++){
             this.Team2.push(res.response.l2[this.i]);
           }
-          console.log(this.Team1)
-
-
-
-            console.log(this.data)
           //arret
           this.pourcentagearret1 =  String((this.arrets.v1 / (this.arrets.v1 + this.arrets.v2)) * 100);
           this.pourcentagearret1 =  this.pourcentagearret1.concat(this.percent.toString());
@@ -122,13 +118,10 @@ export class ResultatDetailsComponent implements OnInit {
           this.pourcentagecarton2 =  this.pourcentagecarton2.concat(this.percent.toString());
         }, () => {
           console.log("erreur d'appel a league service");
-        });
-    });
-  }
-
-  switchTeam(){
-    const element = document.getElementById('SegmentControlButton');
-    element.classList.toggle("SegmentControlButton SegmentControlButtonActive");
+        },
+        () => { if (match) { match.unsubscribe() } });
+    },
+      () => { if (route) { route.unsubscribe() } });
   }
 
 }

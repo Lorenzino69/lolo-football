@@ -2,7 +2,7 @@
   <mat-accordion *ngFor="let data of data ; let i=index">
       <mat-expansion-panel hideToggle >
 <!--        <mat-expansion-panel-header (click)="getUrl(data.gameId)">-->
-        <mat-expansion-panel-header routerLink="/result-details/{{data.side1.replace('-','').replace(' ','-')}}/{{data.side2.replace('-','').replace(' ','-')}}">
+        <mat-expansion-panel-header routerLink="/result-details/{{data.side1.replace('-','').replace(' ','-').toLowerCase()}}/{{data.side2.replace('-','').replace(' ','-').toLowerCase()}}" routerLinkActive="active">
           <mat-panel-title class="ResultLine">
             <div class="over">
               <div class="sub-date-line">
