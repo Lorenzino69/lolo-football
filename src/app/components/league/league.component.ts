@@ -46,7 +46,7 @@ export class LeagueComponent implements AfterViewInit, OnInit {
   constructor (private route: ActivatedRoute,private leagueService: LeagueService) {}
 
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
-  displayedColumns = ['id','team','J','V','N','D','Points'];
+  displayedColumns = ['Rang','team','J','V','N','D','Points'];
   public data: any;
   private i: number;
   public dataSource: MatTableDataSource<LeagueItem>;
