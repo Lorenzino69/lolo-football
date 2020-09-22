@@ -1,9 +1,11 @@
-<button (click)="backClick()" class="backbutton">
-<mat-icon>keyboard_arrow_left</mat-icon>
+<button mat-icon-button (click)="backClick()" color="primary" aria-label="Retour" class="backbutton">
+  <mat-icon>keyboard_arrow_left</mat-icon>
 </button>
+
 <h1 class="title">{{metas.title}}</h1>
 
-<h3 class="subtitle">{{metas.description}}</h3>
+<h3 class="subtitle">{{metas.description.replace('8364','illions').replace('#','')
+  .replace('&','').replace(';','')}}</h3>
 <div *ngIf="testImage.url">
   <img mat-card-image class="Image"
        src="{{imagesUrl}}" alt="">
