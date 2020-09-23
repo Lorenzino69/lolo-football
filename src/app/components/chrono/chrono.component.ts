@@ -30,7 +30,6 @@ export class ChronoComponent implements OnInit {
             }
 
           }
-          console.log(this.chrono)
         }, () => {
           console.log("erreur d'appel a league service");
         });

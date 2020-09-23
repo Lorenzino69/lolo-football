@@ -46,7 +46,7 @@ export class LeagueComponent implements AfterViewInit, OnInit {
   constructor (private route: ActivatedRoute,private leagueService: LeagueService) {}
 
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
-  displayedColumns = ['id','team','J','V','N','D','Points'];
+  displayedColumns = ['Rang','team','J','V','N','D','Points'];
   public data: any;
   private i: number;
   public dataSource: MatTableDataSource<LeagueItem>;
@@ -61,6 +61,7 @@ export class LeagueComponent implements AfterViewInit, OnInit {
       const league = this.leagueService.getLigue(id).subscribe(
         res => {
           this.data = res.response.standings.rows;
+          console.log(res.response)
           this.dataSource = new MatTableDataSource<LeagueItem>(this.data);
         }, () => {
           console.log("erreur d'appel a league service");

@@ -29,7 +29,6 @@ export class ResultatComponent implements OnInit {
         res => {
           this.data = res.response.results;
           this.stats = res.response
-          console.log(this.data);
           for(this.i=0; this.i<this.data.length; this.i++){
             this.team1.push(this.data[this.i].side1.replace('-','').replace(' ','-').toLowerCase());
             this.team2.push(this.data[this.i].side2.replace('-','').replace(' ','-').toLowerCase());

@@ -147,6 +147,8 @@ export class ResultatDetailsComponent implements OnInit {
           this.pourcentagecarton2 =  String((this.cartonJaune2.length / (this.cartonJaune1.length + this.cartonJaune2.length)) * 100);
           this.pourcentagecarton2 =  this.pourcentagecarton2.concat(this.percent.toString());
 
+
+          console.log(this.Team2)
         }, () => {
           console.log("erreur d'appel a league service");
         },

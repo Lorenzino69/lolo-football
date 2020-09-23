@@ -70,6 +70,8 @@
 }
 .backbutton{
   float:left;
+  width:30px;
+  height:30px;
 }
 
 .MatchViewInfoRowMain{
@@ -154,7 +156,7 @@
   display: table-cell;
 }
 .MatchViewHeadSide1,.MatchViewHeadSide2{
-  font-size: 1.3em;
+  /*font-size: 1.3em;*/
   font-weight: 900;
   text-transform: uppercase;
   vertical-align: top;
@@ -1212,7 +1214,7 @@
   width: 40px;
   text-align: center;
   font-weight: 900;
-  font-size:1.3em;
+  /*font-size:1.3em;*/
   line-height: 26px;
   letter-spacing: -.06em;
   color: #333;
