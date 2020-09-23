@@ -34,7 +34,7 @@ export class ResultatComponent implements OnInit {
             this.team1.push(this.data[this.i].side1.replace('-','').replace(' ','-').toLowerCase());
             this.team2.push(this.data[this.i].side2.replace('-','').replace(' ','-').toLowerCase());
           }
-
+console.log(this.data)
 
         }, () => {
           console.log("erreur d'appel a league service");
