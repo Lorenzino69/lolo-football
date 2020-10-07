@@ -40,6 +40,9 @@ import { ResultatDetailsComponent } from './components/resultat/resultat-details
 import {ResultDetailService} from './services/result-detail.service';
 import { ChronoComponent } from './components/chrono/chrono.component';
 import {ChronoService} from './services/chrono.service';
+import { IptvComponent } from './components/iptv/iptv.component';
+import {MatVideoModule} from 'mat-video';
+import {DPlayerModule} from 'angular-dplayer';
 
 @NgModule({
   declarations: [
@@ -58,6 +61,7 @@ import {ChronoService} from './services/chrono.service';
     ArticleComponent,
     ResultatDetailsComponent,
     ChronoComponent,
+    IptvComponent,
   ],
   imports: [
     BrowserModule,
@@ -79,9 +83,13 @@ import {ChronoService} from './services/chrono.service';
     HttpClientModule,
     MatExpansionModule,
     MatTabsModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    MatVideoModule,
+    DPlayerModule.forRoot({ // Global config
+      autoplay: true      // All player can autoplay by default
+    })
   ],
-  providers: [LeagueService,ActuService,ArticleService,ResultDetailService,ChronoService],
+  providers: [LeagueService,ActuService,ArticleService,ResultDetailService,ChronoService,{ provide: Window, useValue: window }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
